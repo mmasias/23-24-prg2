@@ -1,8 +1,8 @@
-# NombreAsignatura
+# Programación II
 
-Repo de materiales y proyectos de la asignatura **NombreAsignatura** del [Grado de Ingeniería Informática](https://www.uneatlantico.es/escuela-politecnica-superior/estudios-grado-oficial-en-ingenieria-informatica) la [Universidad Europea del Atlántico](https://www.uneatlantico.es).
+Repo de materiales y proyectos de la asignatura **Programación II** del [Grado de Ingeniería Informática](https://www.uneatlantico.es/escuela-politecnica-superior/estudios-grado-oficial-en-ingenieria-informatica) la [Universidad Europea del Atlántico](https://www.uneatlantico.es).
 
-## Curso *[x][x+1]*
+## Curso [23][24]
 
 - [Temario](temario/README.md)
   - [A día de hoy, deberíamos saber...](temario/aDiaDeHoy.md)

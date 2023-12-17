@@ -1,13 +1,19 @@
 # Temario
 
 - [x] **[Introducción](00-00-introduccion.md)**
-  - [x] **[Sub tema introducción](00-01-Algoritmos.md)**
-- [ ] Tema 1
-  - [ ] Sub tema 1.1
-  - [ ] Sub tema 1.2
-  - [ ] Sub tema 1.3
-- [ ] Tema 2
-- [ ] Tema 3
+  - [ ] Repaso de programación imperativa
+  - [ ] Repaso de programación estructurada
+- Objetos
+  - Programación basada a objetos
+    - [ ] Clases y objetos
+      - [ ] Vista pública
+      - [ ] Vista privada
+      - [ ] Manejo de errores I: aserciones
+  - Programación orientada a objetos
+    - [ ] Herencia
+    - [ ] Polimorfismo
+- [ ] Programación modular
+- [ ] Manejo de errores II: excepciones
 
 ## Temario++
 
