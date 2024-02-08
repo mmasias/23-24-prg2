@@ -1,0 +1,23 @@
+
+together efectividad {
+
+class Eficacia
+
+class Eficiencia
+
+class Compromiso
+
+class Efectividad
+
+class "Solución" as Solucion
+
+}
+
+Solucion *-down-> Efectividad
+
+Compromiso --> Eficacia
+Compromiso --> Eficiencia
+
+Efectividad *-down-> Eficacia
+Efectividad *-down-> Eficiencia
+Efectividad *-down-> Compromiso

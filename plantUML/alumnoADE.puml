@@ -1,0 +1,38 @@
+@startuml
+class Alumno {
+    +Inversión Educativa
+    +Potencial de Empleabilidad
+    +Contribución al Mercado Laboral
+    +Satisfacción del Cliente
+}
+
+class InversiónEducativa {
+    +Retorno de la Inversión
+    +Costo de la Educación
+    +Becas y Financiamiento
+}
+
+class PotencialDeEmpleabilidad {
+    +Habilidades Adquiridas
+    +Experiencia Práctica
+    +Proyectos y Portafolio
+}
+
+class ContribuciónAlMercadoLaboral {
+    +Emprendimiento
+    +Innovación
+    +Experiencia Laboral
+}
+
+class SatisfacciónDelCliente {
+    +Experiencia Educativa
+    +Servicios de Soporte
+    +Actividades Extracurriculares
+}
+
+Alumno "1" *-- "1" InversiónEducativa : Incluye >
+Alumno "1" *-- "1" PotencialDeEmpleabilidad : Determina >
+Alumno "1" *-- "1" ContribuciónAlMercadoLaboral : Contribuye >
+Alumno "1" *-- "1" SatisfacciónDelCliente : Mide >
+
+@enduml
