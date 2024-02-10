@@ -37,6 +37,30 @@ public class Carrefour {
                 itemsCaja4 = crearItemsCaja(MIN_ITEMS, MAX_ITEMS);
             }
 
+            if (!disponibilidadCaja1) {
+                itemsCaja1--;
+                if (itemsCaja1==0) {
+                    disponibilidadCaja1 = true;
+                }
+            }
+            if (!disponibilidadCaja2) {
+                itemsCaja2--;
+                if (itemsCaja2==0) {
+                    disponibilidadCaja2 = true;
+                }
+            }
+            if (!disponibilidadCaja3) {
+                itemsCaja3--;
+                if (itemsCaja3==0) {
+                    disponibilidadCaja3 = true;
+                }
+            }
+            if (!disponibilidadCaja4) {
+                itemsCaja4--;
+                if (itemsCaja4==0) {
+                    disponibilidadCaja4 = true;
+                }
+            }
 
         }
 
