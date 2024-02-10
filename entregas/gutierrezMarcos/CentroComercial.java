@@ -1,20 +1,27 @@
+import java.util.Arrays;
+
 public class CentroComercial {
     public static void main(String[] args) {
         final int MINUTOS_JORNADA = 720;
-        final int NUM_CAJAS = 4;
+        final int NUM_CAJAS_INICIALES = 4;
+        final int PERSONAS_POR_CAJA = 5;
+        final int MAX_PERSONAS_EN_COLA_PARA_NUEVA_CAJA = 15;
 
         int cola = 0;
-        boolean[] cajaOcupada = new boolean[NUM_CAJAS];
-        int[] itemsClienteCaja = new int[NUM_CAJAS];
+        int numCajas = NUM_CAJAS_INICIALES;
+        boolean[] cajaOcupada = new boolean[NUM_CAJAS_INICIALES];
+        int[] itemsClienteCaja = new int[NUM_CAJAS_INICIALES];
         int minutosSinCola = 0;
         int personasEnColaAlFinalizar = 0;
         int personasAtendidas = 0;
         int itemsVendidos = 0;
 
+        boolean nuevaCajaAgregadaEsteMinuto = false;
+
         for (int minuto = 1; minuto <= MINUTOS_JORNADA; minuto++) {
             cleanScreen();
 
-            for (int i = 0; i < NUM_CAJAS; i++) {
+            for (int i = 0; i < numCajas; i++) {
                 cajaOcupada[i] = cajaEstado(itemsClienteCaja[i]);
             }
 
@@ -26,7 +33,16 @@ public class CentroComercial {
                 minutosSinCola++;
             }
 
-            for (int i = 0; i < NUM_CAJAS; i++) {
+            if (cola > MAX_PERSONAS_EN_COLA_PARA_NUEVA_CAJA && !nuevaCajaAgregadaEsteMinuto) {
+                numCajas++;
+                System.out.println("Nueva caja agregada. Total de cajas: " + numCajas);
+                cola = 0;
+                cajaOcupada = Arrays.copyOf(cajaOcupada, numCajas);
+                itemsClienteCaja = Arrays.copyOf(itemsClienteCaja, numCajas);
+                nuevaCajaAgregadaEsteMinuto = true;
+            }
+
+            for (int i = 0; i < numCajas; i++) {
                 if (cajaOcupada[i] && itemsClienteCaja[i] > 0) {
                     itemsClienteCaja[i]--;
                     System.out.println("El cliente de la caja " + (i + 1) + " tiene un total de: " + itemsClienteCaja[i]);
@@ -44,7 +60,6 @@ public class CentroComercial {
             }
 
             imprimirEstadoCajas(itemsClienteCaja);
-
             pause(2);
         }
 
@@ -56,7 +71,6 @@ public class CentroComercial {
         System.out.println("Número de personas atendidas durante el día: " + personasAtendidas);
         System.out.println("Número de items vendidos en el día: " + itemsVendidos);
     }
-
 
     static void imprimirEstadoCajas(int[] itemsClienteCaja) {
         System.out.print("Estado de las cajas: ");
