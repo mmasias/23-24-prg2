@@ -16,15 +16,14 @@ public class CentroComercial {
 
             if (llegaCliente()) {
                 cola++;
-                System.out.println("Ha llegado un cliente!");
+                System.out.println("MINUTO " + minuto + " - Llega 1 persona - En Cola: " + cola);
+            } else {
+                System.out.println("MINUTO " + minuto + " - Llegan 0 personas - En Cola: " + cola);
             }
-
-            System.out.println("Hay una cola de: " + cola);
 
             for (int i = 0; i < NUM_CAJAS; i++) {
                 if (cajaOcupada[i] && itemsClienteCaja[i] > 0) {
                     itemsClienteCaja[i]--;
-                    System.out.println("El cliente de la caja " + (i + 1) + " tiene un total de: " + itemsClienteCaja[i]);
                 }
 
                 if (cola >= 1 && !cajaOcupada[i]) {
@@ -32,12 +31,20 @@ public class CentroComercial {
                     cola--;
                     cajaOcupada[i] = true;
                     itemsClienteCaja[i] = items();
-                    System.out.println("El cliente tiene un total de: " + itemsClienteCaja[i]);
                 }
             }
 
+            imprimirEstadoCajas(itemsClienteCaja);
+
             pause(2);
         }
+    }
+
+    static void imprimirEstadoCajas(int[] itemsClienteCaja) {
+        for (int i = 0; i < itemsClienteCaja.length; i++) {
+            System.out.print("Caja" + (i + 1) + ":[" + itemsClienteCaja[i] + "] | ");
+        }
+        System.out.println();
     }
 
     static boolean cajaEstado(int items) {
