@@ -62,6 +62,9 @@ public class Carrefour {
                 }
             }
 
+            mostrarEstadisticasPorMinuto(minutoActual, colaLlegadaClientes, itemsCaja1, itemsCaja2, itemsCaja3, itemsCaja4);
+            pause(2);
+            cleanScreen();
         }
 
     }
@@ -73,7 +76,22 @@ public class Carrefour {
         }
     }
     static int crearItemsCaja(int itemsMinimos, int itemsMaximos){
-        int cantidadItems = (int) Math.random() * (itemsMaximos-itemsMinimos) + itemsMinimos;
+        int cantidadItems = (int) (Math.random() * (itemsMaximos-itemsMinimos)) + itemsMinimos;
         return cantidadItems;
+    }
+    static void mostrarEstadisticasPorMinuto(int minutoActual, int colaLlegadaClientes, int itemsCaja1, int itemsCaja2, int itemsCaja3, int itemsCaja4){
+        System.out.println("MINUTO " + minutoActual + " - EN COLA: " + colaLlegadaClientes);
+        System.out.println("Caja 1:[" + itemsCaja1 + "] | Caja 2:[" + itemsCaja2 + "] | Caja 3:[" + itemsCaja3 + "] | Caja 4:[" + itemsCaja4 + "]");
+        System.out.println("----------------------------------------------------------------");
+    }
+    static void cleanScreen() {
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
+    }
+    static void pause(int seconds) {
+        try {
+            Thread.sleep(1000 * seconds);
+        } catch (InterruptedException e) {
+        }
     }
 }
