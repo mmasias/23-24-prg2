@@ -1,0 +1,11 @@
+import java.util.Scanner;
+
+class CentroComercial {
+
+    int personasEnCola = 0;
+    int[] cajas = new int[4];
+    int personasAtendidas = 0;
+    int articulosVendidos = 0;
+    int minutosConColaCero;
+    
+}
