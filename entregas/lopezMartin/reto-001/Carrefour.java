@@ -11,10 +11,17 @@ public class Carrefour {
         int itemsCaja3= 0;
         int itemsCaja4= 0;
         int colaLlegadaClientes = 0;
+        String mensajeLlegaCliente;
         boolean disponibilidadCaja1 = true, disponibilidadCaja2 = true, disponibilidadCaja3 = true, disponibilidadCaja4 = true;
         
         for(int minutoActual = 1; minutoActual<=MINUTOS_FINAL; minutoActual++){
-            colaLlegadaClientes = colaLlegadaClientes + llegaCliente(probabilidadLlegadaClientes);
+            if (llegaCliente(probabilidadLlegadaClientes)) {
+                colaLlegadaClientes = colaLlegadaClientes + 1;
+                mensajeLlegaCliente = "Llega 1 persona";
+            }else{
+                mensajeLlegaCliente = "No llega nadie";
+            }
+            
             
             if (disponibilidadCaja1 == true && colaLlegadaClientes>0) {
                 colaLlegadaClientes--;
@@ -62,25 +69,21 @@ public class Carrefour {
                 }
             }
 
-            mostrarEstadisticasPorMinuto(minutoActual, colaLlegadaClientes, itemsCaja1, itemsCaja2, itemsCaja3, itemsCaja4);
+            mostrarEstadisticasPorMinuto(minutoActual, colaLlegadaClientes, itemsCaja1, itemsCaja2, itemsCaja3, itemsCaja4, mensajeLlegaCliente);
             pause(2);
             cleanScreen();
         }
 
     }
-    static int llegaCliente (double probabilidadLlegada){
-        if (Math.random()<=probabilidadLlegada) {
-            return 1;
-        }else{
-            return 0;
-        }
+    static boolean llegaCliente (double probabilidadLlegada){
+        return Math.random()<=probabilidadLlegada;
     }
     static int crearItemsCaja(int itemsMinimos, int itemsMaximos){
         int cantidadItems = (int) (Math.random() * (itemsMaximos-itemsMinimos)) + itemsMinimos;
         return cantidadItems;
     }
-    static void mostrarEstadisticasPorMinuto(int minutoActual, int colaLlegadaClientes, int itemsCaja1, int itemsCaja2, int itemsCaja3, int itemsCaja4){
-        System.out.println("MINUTO " + minutoActual + " - EN COLA: " + colaLlegadaClientes);
+    static void mostrarEstadisticasPorMinuto(int minutoActual, int colaLlegadaClientes, int itemsCaja1, int itemsCaja2, int itemsCaja3, int itemsCaja4, String mensaje){
+        System.out.println("MINUTO " + minutoActual + " - " + mensaje + " - EN COLA: " + colaLlegadaClientes);
         System.out.println("Caja 1:[" + itemsCaja1 + "] | Caja 2:[" + itemsCaja2 + "] | Caja 3:[" + itemsCaja3 + "] | Caja 4:[" + itemsCaja4 + "]");
         System.out.println("----------------------------------------------------------------");
     }
