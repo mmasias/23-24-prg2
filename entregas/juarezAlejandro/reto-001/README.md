@@ -1,0 +1,1 @@
+Por el momento lo intentaré en español, luego lo iré cambiando a inglés
