@@ -26,6 +26,16 @@ class CentroComercial {
                         centroComercial.personasEnCola--;
                         centroComercial.personasAtendidas++;
                         centroComercial.articulosVendidos += centroComercial.cajas[i];
+
+                        System.out.println("MINUTO " + minuto);
+                        System.out.println("Llega " + (centroComercial.personasEnCola > 0 ? "1 persona" : "nadie"));
+                        System.out.println("En Cola: " + centroComercial.personasEnCola);
+                        System.out.println("Caja1:[" + centroComercial.cajas[0] + "] | Caja2:[" + centroComercial.cajas[1] + "] | Caja3:[" + centroComercial.cajas[2] + "] | Caja4:[" + centroComercial.cajas[3] + "]");
+                        System.out.println("--------------------------------------------------------------------------------------------------");
+                    }
+            
+            
+            
                     }
                 }
     
