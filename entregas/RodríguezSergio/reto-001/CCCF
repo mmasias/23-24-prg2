@@ -46,4 +46,40 @@ class CentroComercial {
         System.out.println("Articulos vendidos en el dia  : " + articulosVendidos());
         System.out.println("============================================================");
     }
+    
+    boolean llegadaCliente() {
+        double random = Math.random();
+        return random < 0.6;
+    }
+
+    int generarItemsCliente() {
+        int numeroAleatorio = (int) (Math.random() * 11) + 5;
+        return numeroAleatorio;
+    }
+
+    int minutosConColaCero() {
+        int minutosConColaCero = 0;
+        for (int i = 0; i < tiempo; i++) {
+            if (personasEnCola == 0) {
+                minutosConColaCero++;
+            }
+        }
+        return minutosConColaCero;
+    }
+
+    int personasAtendidas() {
+        int personasAtendidas = 0;
+        for (int i = 0; i < 4; i++) {
+            personasAtendidas += cajas[i];
+        }
+        return personasAtendidas;
+    }
+
+    int articulosVendidos() {
+        int articulosVendidos = 0;
+        for (int i = 0; i < 4; i++) {
+            articulosVendidos += cajas[i] * 1;
+        }
+        return articulosVendidos;
+    }
 }
