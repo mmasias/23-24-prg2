@@ -30,7 +30,46 @@ public class CentroComercial {
             System.out.println("Personas en cola: " + personasEnCola);
 
             
-           }
-}
+            for (int i = 1; i <= CAJAS; i++) {
+                int packs = cola[i - 1];
+                if (packs > 0) {
+                    int tiempoAtencion = Math.min(packs, INTERVALO_TIEMPO);
+                    packs -= tiempoAtencion;
+                    System.out.println("Caja " + i + " atendiendo a una persona con " + tiempoAtencion + " pack(s) de items en el minuto " + tiempo);
+                    tiempo += tiempoAtencion;
+                    cola[i - 1] = packs; 
+                } else {
+                    if (personasEnCola > 0) {
+                        int packsNuevoCliente = cola[0];
+                        cola[0] = 0; 
+                        System.out.println("Caja " + i + " atendiendo a una persona con " + packsNuevoCliente + " pack(s) de items en el minuto " + tiempo);
+                        tiempo += INTERVALO_TIEMPO;
+                        cola[i - 1] = packsNuevoCliente; 
+                    } else {
+                        System.out.println("Caja " + i + " libre en el minuto " + tiempo);
+                    }
+                }
+            }
+            System.out.println("---------------------------------------");
+        }
+    }
 
+    private static int encontrarIndiceLibre(int[] cola) {
+        for (int i = 0; i < cola.length; i++) {
+            if (cola[i] == 0) {
+                return i;
+            }
+        }
+        return -1; 
+    }
+
+    private static int contarPersonasEnCola(int[] cola) {
+        int contador = 0;
+        for (int i = 0; i < cola.length; i++) {
+            if (cola[i] > 0) {
+                contador++;
+            }
+        }
+        return contador;
+    }
 }
