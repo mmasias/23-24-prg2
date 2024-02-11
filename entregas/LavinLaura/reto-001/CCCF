@@ -7,5 +7,17 @@ class CentroComercial {
     int personasAtendidas = 0;
     int articulosVendidos = 0;
     int minutosConColaCero;
-    
+  
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        CentroComercial centroComercial = new CentroComercial();
+
+
+               for (int minuto = 1; minuto <= 720; minuto++) {
+            
+            if (Math.random() < 0.6) {
+                centroComercial.personasEnCola++;
+            }
+        }
+    }
 }
