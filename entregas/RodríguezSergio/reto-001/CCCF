@@ -2,13 +2,41 @@ import java.util.Scanner;
 
 class CentroComercial {
 
-    public static void main(String[] args) {
-        CentroComercial centroComercial = new CentroComercial();
-        centroComercial.iniciarSimulacion();
-        
     int tiempo = 0;
     int personasEnCola = 0;
     int[] cajas = new int[4];
+
+    public static void main(String[] args) {
+        CentroComercial centroComercial = new CentroComercial();
+        centroComercial.iniciarSimulacion();
+    }
+
+    void iniciarSimulacion() {
+        Scanner scanner = new Scanner(System.in);
+        
+        while (true) {
+            System.out.println("MINUTO " + tiempo + " - Llega " + (llegadaCliente() ? "1 persona" : "nadie") + " - En Cola: " + personasEnCola);
+            for (int i = 0; i < 4; i++) {
+                System.out.print("Caja" + (i + 1) + ":[" + cajas[i] + "] | ");
+            }
+            System.out.println();
+            System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
+
+            for (int i = 0; i < 4; i++) {
+                if (cajas[i] > 0) {
+                    cajas[i]--;
+                } else if (personasEnCola > 0) {
+                    cajas[i] = generarItemsCliente();
+                    personasEnCola--;
+                }
+            }
+
+            tiempo++;
+
+            if (tiempo == 720) {
+                break;
+            }
+        }
 
     }
 }
