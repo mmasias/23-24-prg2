@@ -1,25 +1,34 @@
+import java.util.Scanner;
+
 class Carrefour {
-
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        final int HORA_APERTURA = 9;
+        final int HORA_CIERRE = 21;
+        final int TOTAL_TIEMPO_ABIERTO = 720;
+        final double PROBABILIDAD_LLEGADA_CLIENTE = 0.6;
 
-        final double OPENING_TIME = 9.0;
-        final double CLOSING_TIME = 21.0;
-        final double MINUTE = 1.0 / 60.0;
-        double currentTime = OPENING_TIME;
-        boolean isWorking = true;
+        boolean cajaAbierta = false;
 
-        int line = 0;
-        final double PROBABILITY_ARRIVAL = 0.6;
+        for (int tiempoAbierto = 0; tiempoAbierto <= TOTAL_TIEMPO_ABIERTO; tiempoAbierto++) {
+            int horas = (HORA_APERTURA + tiempoAbierto / 60) % 24;
+            int minutos = tiempoAbierto % 60;
+            scanner.nextLine();
+            System.out.println(horas + ":" + minutos);
+            double probabilidadLlegada = Math.random();
+            if (probabilidadLlegada <= PROBABILIDAD_LLEGADA_CLIENTE) {
+                System.out.println("Llega un cliente");
+                if (!cajaAbierta){
+                    System.out.println("Caja abierta para que pase un cliente");
+                    cajaAbierta = true;
+                    int itemsCliente = (int) (Math.random() * 11) + 5;
+                    tiempoAbierto += itemsCliente;
+                    System.out.println("El cliente lleva " + itemsCliente + " items");
+                    cajaAbierta = false;
+                }
+            }
 
-        do {
-            currentTime = currentTime + MINUTE;
-            isWorking = currentTime < CLOSING_TIME;
-            
-            line = line + (Math.random() < PROBABILITY_ARRIVAL ? 1 : 0);
-            
-            System.out.println(currentTime);
-            System.out.println("> COLA DE " + line);
-
-        } while (isWorking);
+        }
+        scanner.close();
     }
 }

@@ -1,1 +1,2 @@
 Por el momento lo intentaré en español, luego lo iré cambiando a inglés
+Si en algun momento, parece que su código lo copié es porque muchas veces necesitaba darme una idea de como seguir. Además que no se porque en el anterior commit parece que es su código el que subí cuando realmente, los cambios me aparecian guardados con mi código.
