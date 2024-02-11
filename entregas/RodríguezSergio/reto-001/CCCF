@@ -36,6 +36,7 @@ class CentroComercial {
                     int[] nuevoCliente = generarItemsCliente();
                     cajas[i] = nuevoCliente;
                     personasEnCola--;
+                    break;
                 }
             }
 
