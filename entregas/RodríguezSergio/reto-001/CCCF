@@ -1,0 +1,14 @@
+import java.util.Scanner;
+
+class CentroComercial {
+
+    public static void main(String[] args) {
+        CentroComercial centroComercial = new CentroComercial();
+        centroComercial.iniciarSimulacion();
+        
+    int tiempo = 0;
+    int personasEnCola = 0;
+    int[] cajas = new int[4];
+
+    }
+}
