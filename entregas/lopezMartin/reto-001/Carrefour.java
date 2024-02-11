@@ -12,6 +12,9 @@ public class Carrefour {
         int itemsCaja4= 0;
         int colaLlegadaClientes = 0;
         String mensajeLlegaCliente;
+        int minutosSinCola = 0;
+        int personasAtendidas = 0;
+        int articulosVendidos = 0;
         boolean disponibilidadCaja1 = true, disponibilidadCaja2 = true, disponibilidadCaja3 = true, disponibilidadCaja4 = true;
         
         for(int minutoActual = 1; minutoActual<=MINUTOS_FINAL; minutoActual++){
@@ -21,7 +24,10 @@ public class Carrefour {
             }else{
                 mensajeLlegaCliente = "No llega nadie";
             }
-            
+
+            if (colaLlegadaClientes==0) {
+                minutosSinCola++;
+            }
             
             if (disponibilidadCaja1 == true && colaLlegadaClientes>0) {
                 colaLlegadaClientes--;
@@ -46,26 +52,34 @@ public class Carrefour {
 
             if (!disponibilidadCaja1) {
                 itemsCaja1--;
+                articulosVendidos++;
                 if (itemsCaja1==0) {
                     disponibilidadCaja1 = true;
+                    personasAtendidas++;
                 }
             }
             if (!disponibilidadCaja2) {
                 itemsCaja2--;
+                articulosVendidos++;
                 if (itemsCaja2==0) {
                     disponibilidadCaja2 = true;
+                    personasAtendidas++;
                 }
             }
             if (!disponibilidadCaja3) {
                 itemsCaja3--;
+                articulosVendidos++;
                 if (itemsCaja3==0) {
                     disponibilidadCaja3 = true;
+                    personasAtendidas++;
                 }
             }
             if (!disponibilidadCaja4) {
                 itemsCaja4--;
+                articulosVendidos++;
                 if (itemsCaja4==0) {
                     disponibilidadCaja4 = true;
+                    personasAtendidas++;
                 }
             }
 
@@ -73,6 +87,7 @@ public class Carrefour {
             pause(2);
             cleanScreen();
         }
+        mostrarEstadisticasJornada(minutosSinCola, colaLlegadaClientes, personasAtendidas, articulosVendidos);
 
     }
     static boolean llegaCliente (double probabilidadLlegada){
@@ -86,6 +101,15 @@ public class Carrefour {
         System.out.println("MINUTO " + minutoActual + " - " + mensaje + " - EN COLA: " + colaLlegadaClientes);
         System.out.println("Caja 1:[" + itemsCaja1 + "] | Caja 2:[" + itemsCaja2 + "] | Caja 3:[" + itemsCaja3 + "] | Caja 4:[" + itemsCaja4 + "]");
         System.out.println("----------------------------------------------------------------");
+    }
+    static void mostrarEstadisticasJornada(int minutosSinCola, int colaLlegadaClientes, int personasAtendidas, int articulosVendidos){
+        System.out.println("RESUMEN");
+        System.out.println("============================================================");
+        System.out.println("Minutos con cola en cero: " + minutosSinCola);
+        System.out.println("Personas en la cola al cierre " + colaLlegadaClientes);
+        System.out.println("Personas atendidas en el dia: " + personasAtendidas);
+        System.out.println("Articulos vendidos en el dia: " + articulosVendidos);
+        System.out.println("============================================================");
     }
     static void cleanScreen() {
         System.out.print("\033[H\033[2J");
