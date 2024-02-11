@@ -4,7 +4,7 @@ class CentroComercial {
 
     int tiempo = 0;
     int personasEnCola = 0;
-    int[] cajas = new int[4];
+    int[][] cajas = new int[4][];
 
     public static void main(String[] args) {
         CentroComercial centroComercial = new CentroComercial();
@@ -13,20 +13,28 @@ class CentroComercial {
 
     void iniciarSimulacion() {
         Scanner scanner = new Scanner(System.in);
-        
+
+        for (int i = 0; i < 4; i++) {
+            cajas[i] = new int[0];
+        }
+
         while (true) {
             System.out.println("MINUTO " + tiempo + " - Llega " + (llegadaCliente() ? "1 persona" : "nadie") + " - En Cola: " + personasEnCola);
             for (int i = 0; i < 4; i++) {
-                System.out.print("Caja" + (i + 1) + ":[" + cajas[i] + "] | ");
+                System.out.print("Caja" + (i + 1) + ":[" + sumarArticulosCaja(cajas[i]) + "] | ");
             }
             System.out.println();
             System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
 
             for (int i = 0; i < 4; i++) {
-                if (cajas[i] > 0) {
-                    cajas[i]--;
+                if (cajas[i].length > 0) {
+                    cajas[i][0]--;
+                    if (cajas[i][0] == 0) {
+                        cajas[i] = eliminarPrimerElemento(cajas[i]);
+                    }
                 } else if (personasEnCola > 0) {
-                    cajas[i] = generarItemsCliente();
+                    int[] nuevoCliente = generarItemsCliente();
+                    cajas[i] = nuevoCliente;
                     personasEnCola--;
                 }
             }
@@ -46,15 +54,19 @@ class CentroComercial {
         System.out.println("Articulos vendidos en el dia  : " + articulosVendidos());
         System.out.println("============================================================");
     }
-    
+
     boolean llegadaCliente() {
         double random = Math.random();
         return random < 0.6;
     }
 
-    int generarItemsCliente() {
+    int[] generarItemsCliente() {
         int numeroAleatorio = (int) (Math.random() * 11) + 5;
-        return numeroAleatorio;
+        int[] cliente = new int[numeroAleatorio];
+        for (int i = 0; i < numeroAleatorio; i++) {
+            cliente[i] = (int) (Math.random() * 10) + 1; 
+        }
+        return cliente;
     }
 
     int minutosConColaCero() {
@@ -70,7 +82,7 @@ class CentroComercial {
     int personasAtendidas() {
         int personasAtendidas = 0;
         for (int i = 0; i < 4; i++) {
-            personasAtendidas += cajas[i];
+            personasAtendidas += cajas[i].length;
         }
         return personasAtendidas;
     }
@@ -78,8 +90,24 @@ class CentroComercial {
     int articulosVendidos() {
         int articulosVendidos = 0;
         for (int i = 0; i < 4; i++) {
-            articulosVendidos += cajas[i] * 1;
+            articulosVendidos += cajas[i].length;
         }
         return articulosVendidos;
+    }
+
+    int sumarArticulosCaja(int[] caja) {
+        int suma = 0;
+        for (int i = 0; i < caja.length; i++) {
+            suma += caja[i];
+        }
+        return suma;
+    }
+
+    int[] eliminarPrimerElemento(int[] array) {
+        int[] nuevoArray = new int[array.length - 1];
+        for (int i = 1; i < array.length; i++) {
+            nuevoArray[i - 1] = array[i];
+        }
+        return nuevoArray;
     }
 }
