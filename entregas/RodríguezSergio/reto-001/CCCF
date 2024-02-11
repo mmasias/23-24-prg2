@@ -38,5 +38,12 @@ class CentroComercial {
             }
         }
 
+        System.out.println("RESUMEN");
+        System.out.println("============================================================");
+        System.out.println("Minutos con cola en cero      : " + minutosConColaCero());
+        System.out.println("Personas en la cola al cierre : " + personasEnCola);
+        System.out.println("Personas atendidas en el dia  : " + personasAtendidas());
+        System.out.println("Articulos vendidos en el dia  : " + articulosVendidos());
+        System.out.println("============================================================");
     }
 }
