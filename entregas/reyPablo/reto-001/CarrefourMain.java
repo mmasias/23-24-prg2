@@ -6,13 +6,13 @@ public class CarrefourMain {
         int[] caja = { 0, 0, 0, 0, 0 };
         int[] nItems = { 0, 0, 0, 0, 0 };
         boolean[] libre = { true, true, true, true, true };
-        int cola = 0;
-        final int minutosEnUnDia = 12 * 60;
-        int numeroDeClientes = 0;
+        int cola = 0;//Reto extendido
+        final int minutosEnUnDia = 12 * 60; //Se trabajan 12 horas al dia, pero maniobramos con minutos.
+        int numeroDeClientes = 0;//Reto extendido
         boolean llegaNuevo = false;
-        int minutosSinCola = 0;
-        int totalItems = 0;
-        boolean activa = false;
+        int minutosSinCola = 0; //Reto extendido
+        int totalItems = 0;//Reto extendido
+        boolean activa = false;//Reto ampliado
         for (int tiempo = 1; tiempo < minutosEnUnDia; tiempo++) {
 
             if (Math.random() * 100 < 40) { 
@@ -58,10 +58,50 @@ public class CarrefourMain {
                     nItems[4] = ((int) (Math.random() * 100)) % 11 + 5;
                     totalItems = totalItems + nItems[4];
                     cola--;
-
+                    
                 }
                 //Se llenan las cajas y se cuenta la cola.
             }
+            if (nItems[0] > 0) {
+                nItems[0]--;
+                if (nItems[0] == 0) {
+                    libre[0] = true;
+                }
+            }
 
+            if (nItems[1] > 0) {
+                nItems[1]--;
+
+                if (nItems[1] == 0) {
+
+                    libre[1] = true;
+                }
+            }
+            if (nItems[2] > 0) {
+                nItems[2]--;
+
+                if (nItems[2] == 0) {
+
+                    libre[2] = true;
+                }
+            }
+            if (nItems[3] > 0) {
+                nItems[3]--;
+
+                if (nItems[3] == 0) {
+                    libre[3] = true;
+                }
+            }
+            if (nItems[4] > 0) {
+                nItems[4]--;
+                if (nItems[4] == 0) {
+                    libre[4] = true;
+                }
+            }
+            if (cola == 0) {
+                minutosSinCola++;
+            }
+            System.out.println("--------------------------------------------------------------");
+             
     }
 }
