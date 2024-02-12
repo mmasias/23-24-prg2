@@ -12,9 +12,17 @@ public class CentroCarrefour {
     static int maxPack = 15;
     static int tiempoInicio = 9;
     static int tiempoFinal = 21;
+    static int articulosVendidos = 0;
+    static int contadorClientes = 0;
     static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
+        imprimirMarcoHora();
+        System.out.println("Bienvenido al centro comercial Carrefour");
+        System.out.println("El centro comercial abre a las 9:00 y cierra a las 21:00");
+        System.out.println("Pulse enter para comenzar");
+        sc.nextLine();
+        imprimirMarcoHora();
 
         for (int hora = tiempoInicio; hora < tiempoFinal; hora++) {
             imprimirMarcoHora();
@@ -32,6 +40,13 @@ public class CentroCarrefour {
             }
         }
         sc.close();
+        System.out.println("==========================================");
+        System.out.println("El centro comercial ha cerrado");
+        System.out.println("==========================================");
+        System.out.println("Personas en la cola al cierre: " + clientes);
+        System.out.println("Productos vendidos en total: " + articulosVendidos);
+        System.out.println("Personas atendidas el día de hoy: " + contadorClientes);
+        System.out.println("==========================================");
     }
 
     public static void clientesEnCaja() {
@@ -45,53 +60,60 @@ public class CentroCarrefour {
             mensaje = "No ha llegado nadie";
         }
 
-        if (clientes > 0 && caja1 < 15 && caja1 + items <= 15) {
+        if (clientes > 0 && caja1 == 0 && caja1 + items <= 15) {
             mensaje = "Un cliente ha sido atendido";
             caja1 = caja1 + items;
-        } else if (clientes > 0 && caja2 < 15 && caja2 + items <= 15) {
+            clientes = clientes - 1;
+            contadorClientes = contadorClientes + 1;
+        } else if (clientes > 0 && caja2 == 0 && caja2 + items <= 15) {
             mensaje = "Un cliente ha sido atendido";
             caja2 = caja2 + items;
+            clientes = clientes - 1;
+            contadorClientes = contadorClientes + 1;
         }
 
-        else if (clientes > 0 && caja3 < 15 && caja3 + items <= 15) {
+        else if (clientes > 0 && caja3 == 0 && caja3 + items <= 15) {
             mensaje = "Un cliente ha sido atendido";
             caja3 = caja3 + items;
+            clientes = clientes - 1;
+            contadorClientes = contadorClientes + 1;
         }
 
-        else if (clientes > 0 && caja4 < 15 && caja4 + items <= 15) {
+        else if (clientes > 0 && caja4 == 0 && caja4 + items <= 15) {
             mensaje = "Un cliente ha sido atendido";
             caja4 = caja4 + items;
+            clientes = clientes - 1;
+            contadorClientes = contadorClientes + 1;
         }
 
         if (caja1 > 0) {
             caja1 = caja1 - 1;
+            articulosVendidos = articulosVendidos + 1;
         }
         if (caja2 > 0) {
             caja2 = caja2 - 1;
+            articulosVendidos = articulosVendidos + 1;
         }
         if (caja3 > 0) {
             caja3 = caja3 - 1;
+            articulosVendidos = articulosVendidos + 1;
         }
         if (caja4 > 0) {
             caja4 = caja4 - 1;
+            articulosVendidos = articulosVendidos + 1;
         }
     }
 
     public static void imprimirMarcoMinutos() {
         System.out.print("+");
-        for (int i = 0; i < 35; i++) {
+        for (int i = 0; i < 100; i++) {
             System.out.print("-");
         }
         System.out.println("+");
     }
 
     public static void imprimirMarcoHora() {
-        for (int i = 0; i < 40; i++) {
-            System.out.print("=");
-        }
-        System.out.println();
-        System.out.println("Centro Comercial Carrefour");
-        for (int i = 0; i < 40; i++) {
+        for (int i = 0; i < 105; i++) {
             System.out.print("=");
         }
         System.out.println();
