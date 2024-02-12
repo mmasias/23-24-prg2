@@ -2,14 +2,15 @@ public class CCCF {
 
     static boolean Client=false;
     static int itemPacks=0;
+    static int totalItems=0;
     static int queue=0;
+    static int totalClients=0;
     static int cashier1=0;
     static int cashier2=0;
     static int cashier3=0;
     static int cashier4=0;
 
     public static void main(String[] args) {
-
         int initialTime=9;
         int finalTime=21;
         int hours=finalTime-initialTime;
@@ -17,19 +18,24 @@ public class CCCF {
         int minutes=1;
 
         do{
-
             checkNewClient();
+            
+            if(Client){
+                totalClients++;
+            }
 
             timeProgress();
-
             manageNewCLient(minutes);
-
             minutes++;
+            totalItems=totalItems+itemPacks;
         }while (minutes<=totalMinutes);
 
+        totalClients=totalClients-queue;
 
+        System.out.println("Al acabar el dia quedaron " + queue + " personas en la cola");
+        System.out.println("A lo largo del dia se atendieron a " + totalClients + " clientes");
+        System.out.println("A lo largo del dia se vendieron " + totalItems + " items");
     }
-
     static void checkNewClient(){
         int newClient=(int)Math.round(Math.random()*10);
         if(newClient<=6){
@@ -38,24 +44,17 @@ public class CCCF {
             Client=false;
             itemPacks=0;
         }
-
-
     }
-
     static void generateItemPacks() {
         itemPacks=(int)Math.round(Math.random()*10+5);
     }
-
     static void manageNewCLient(int minutesx) {
-
         System.out.print("MINUTO " + minutesx + " - ");
         if(Client){
             System.out.print("Llega 1 persona - ");
         }else if(!Client){
             System.out.print("No llega nadie - ");
         }
-
-
         if(cashier1==0){
             generateItemPacks();
             cashier1=cashier1+itemPacks;
@@ -75,7 +74,6 @@ public class CCCF {
         }else{
             queue++;
         }
-
         if(queue<0){
             queue=0;
         }
@@ -84,9 +82,7 @@ public class CCCF {
         System.out.println();
         System.out.print("Caja1:[" + cashier1 + "] | Caja2:[" + cashier2 + "] | Caja3:[" + cashier3 + "] | Caja4:[" + cashier4 + "]");
         System.out.println("\n");
-
     }
-
     private static void timeProgress() {
         if(cashier1!=0){
             cashier1--;
@@ -101,5 +97,4 @@ public class CCCF {
             cashier4--;
         }
     }
-
 }
