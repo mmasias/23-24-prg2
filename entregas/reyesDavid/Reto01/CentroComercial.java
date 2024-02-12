@@ -3,15 +3,15 @@ import java.util.Arrays;
 public class CentroComercial {
     public static void main(String[] args) {
         final int MINUTOS_JORNADA_TOTAL = 720;
-        final int NUM_CAJAS_INICIALES = 4;
+        final int NUMERO_DE_CAJAS_INICIALES = 4;
         final int PERSONAS_POR_CAJA = 5;
         final int MAX_PERSONAS_EN_COLA_PARA_NUEVA_CAJA = 15;
 
         int cola = 0;
-        boolean[] cajaOcupada = new boolean[NUM_CAJAS_INICIALES];
-        int[] itemsClienteCaja = new int[NUM_CAJAS_INICIALES];
-        int numCajas = NUM_CAJAS_INICIALES;
-        int minutosSinCola = 0;
+        boolean[] cajaOcupada = new boolean[NUMERO_DE_CAJAS_INICIALES];
+        int[] itemsClienteEnLaCaja = new int[NUMERO_DE_CAJAS_INICIALES];
+        int numeroCajas = NUMERO_DE_CAJAS_INICIALES;
+        int minutosSinNadieEnCola = 0;
         int personasEnColaAlFinalizar = 0;
         int personasAtendidas = 0;
         int itemsVendidos = 0;
@@ -21,8 +21,8 @@ public class CentroComercial {
         for (int minuto = 1; minuto <= MINUTOS_JORNADA_TOTAL; minuto++) {
             cleanScreen();
 
-            for (int i = 0; i < numCajas; i++) {
-                cajaOcupada[i] = cajaEstado(itemsClienteCaja[i]);
+            for (int i = 0; i < numeroCajas; i++) {
+                cajaOcupada[i] = cajaEstado(itemsClienteEnLaCaja[i]);
             }
 
             if (llegaCliente()) {
@@ -30,35 +30,47 @@ public class CentroComercial {
                 System.out.println("MINUTO " + minuto + " - Llega 1 persona - En Cola: " + cola);
             } else {
                 System.out.println("MINUTO " + minuto + " - Llegan 0 personas - En Cola: " + cola);
-                minutosSinCola++;
+                minutosSinNadieEnCola++;
             }
 
             if (cola > MAX_PERSONAS_EN_COLA_PARA_NUEVA_CAJA && !nuevaCajaAgregadaEsteMinuto) {
-                numCajas++;
-                System.out.println("Nueva caja agregada. Total de cajas: " + numCajas);
+                numeroCajas++;
+                System.out.println("Nueva caja agregada. Total de cajas: " + numeroCajas);
                 cola = 0;
-                cajaOcupada = Arrays.copyOf(cajaOcupada, numCajas);
-                itemsClienteCaja = Arrays.copyOf(itemsClienteCaja, numCajas);
+                cajaOcupada = Arrays.copyOf(cajaOcupada, numeroCajas);
+                itemsClienteEnLaCaja = Arrays.copyOf(itemsClienteEnLaCaja, numeroCajas);
                 nuevaCajaAgregadaEsteMinuto = true;
             }
 
-            for (int i = 0; i < numCajas; i++) {
-                if (cajaOcupada[i] && itemsClienteCaja[i] > 0) {
-                    itemsClienteCaja[i]--;
+            for (int i = 0; i < numeroCajas; i++) {
+                if (cajaOcupada[i] && itemsClienteEnLaCaja[i] > 0) {
+                    itemsClienteEnLaCaja[i]--;
                     System.out
-                            .println("El cliente de la caja " + (i + 1) + " tiene un total de: " + itemsClienteCaja[i]);
+                            .println("El cliente de la caja " + (i + 1) + " tiene un total de: "
+                                    + itemsClienteEnLaCaja[i]);
                     itemsVendidos++;
                 }
                 if (cola >= 1 && !cajaOcupada[i]) {
                     System.out.println("Ha pasado a la caja " + (i + 1) + " un cliente");
                     cola--;
                     cajaOcupada[i] = true;
-                    itemsClienteCaja[i] = items();
-                    System.out.println("El cliente tiene un total de: " + itemsClienteCaja[i]);
+                    itemsClienteEnLaCaja[i] = items();
+                    System.out.println("El cliente tiene un total de: " + itemsClienteEnLaCaja[i]);
                     personasAtendidas++;
                 }
             }
 
+            imprimirEstadoCajas(itemsClienteEnLaCaja);
+
+            pause(1);
         }
+
+        personasEnColaAlFinalizar = cola;
+        System.out.println("\nEstadística Final de la Jornada:");
+        System.out.println("Número de minutos que pasaron en el cual no hubo nadie en cola: " + minutosSinNadieEnCola);
+        System.out.println(
+                "Número total de personas que estaban en cola al finalizar el día: " + personasEnColaAlFinalizar);
+        System.out.println("Número total de personas atendidas durante el día: " + personasAtendidas);
+        System.out.println("Número total de items vendidos en el día: " + itemsVendidos);
     }
 }
