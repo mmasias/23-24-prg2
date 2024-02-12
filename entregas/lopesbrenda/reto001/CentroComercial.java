@@ -8,18 +8,20 @@ public class CentroComercial {
         final double PROBABILIDAD_LLEGADA_CLIENTE = 0.40;
 
         Random random = new Random();
+        int[] cajas = new int[4];
         int clientesEnCola = 0;
-        int[] cajas=new int[4];
 
         for (int hora = 0; hora < HORAS_DE_TRABAJO; hora++) {
             System.out.println("Hora " + hora + ":");
 
-            for(int minuto = 0; minuto < 60; minuto++){
-                if(random.nextDouble()< PROBABILIDAD_LLEGADA_CLIENTE){
+            for (int minuto = 0; minuto < 60; minuto++) {
+                if (random.nextDouble() < PROBABILIDAD_LLEGADA_CLIENTE) {
                     clientesEnCola++;
                 }
-                for(int i=0; i<4; i++){
-                    if (clientesEnCola > 0) {
+                for (int i = 0; i < 4; i++) {
+                    if (cajas[i] > 0) {
+                        cajas[i]--;
+                    } else if (clientesEnCola > 0) {
                         int packs = 5 + random.nextInt(15 - 5 + 1);
                         cajas[i] = packs * 1;
                         clientesEnCola--;
