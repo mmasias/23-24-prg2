@@ -35,7 +35,7 @@ public class ShoppingCentre {
 
                 minutesPassed += 1;
             
-                if (minutesPassed % 3 == 0){
+                if (minutesPassed % 60 == 0){
                     hour += 1;
                     minutesPassed = 0;
                 }
