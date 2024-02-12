@@ -13,7 +13,22 @@ public class CCCF {
         int queue_size = 0;
         boolean people_queued = false;
 
-        
+        for (int i = 0; i < queue.length; i++){
+
+            double random_num = Math.random();
+
+            if (random_num < arrival_prob){
+               
+                people_queued = true;
+                queue[queue_size++] = (int) (Math.random()*(items_max - items_min + 1)) + items_min;
+                customers_total++;
+
+            }else{
+
+                people_queued = false;
+
+            }
+        }
     }
 
 }
