@@ -36,13 +36,30 @@ public class CCCF {
                     int next_customer = queue[--queue_size];
                     cashiers[j] = next_customer;
                     items_sold = items_sold + next_customer;
-                    
+
                 }
 
                 if (cashiers[j] > 0){
 
                     cashiers[j]--;
                 }
+            }
+
+            System.out.println("Minuto - " + (i + 1));
+
+            if(people_queued){
+
+                System.out.println("Llegó una persona");
+
+            }else{
+
+                System.out.println("No ha llegado nadie");
+
+            }
+
+            for (int k = 0; k < cashiers.length; k++){
+
+                System.out.println("Caja " + (k + 1) + ": [" + cashiers[k] + "] | ");
             }
         }
     }
