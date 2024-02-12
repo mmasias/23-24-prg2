@@ -41,7 +41,7 @@ public class reto001 {
         Random random = new Random();
 
         System.out.println("MINUTO 1 - Llega 1 persona - En cola:0");
-        
+        imprimirEstadoCajas(cajas);
 
         for (int minuto = 2; minuto <= tiempo; minuto++){
 
@@ -71,12 +71,38 @@ public class reto001 {
 
                     cajas[i].ocupada = true;
                 }
+               
+                
             }
 
-           
+            imprimirEstadoCajas(cajas);
 
         }
 
+        System.out.println("RESUMEN");
+        System.out.println("============================================================");
+        System.out.println("Minutos con cola en cero      : " + (tiempo - cola.size()));
+        System.out.println("Personas en la cola al cierre : " + cola.size());
+        System.out.println("Personas atendidas en el dia  : " + (tiempo - cola.size()));
+        System.out.println("Articulos vendidos en el dia  : " + "TODO: Calcula esta métrica");
+        System.out.println("============================================================");
+
+        
+
     }
+
+    private static void imprimirEstadoCajas(Caja[] cajas){
+        System.out.print("Cajas: ");
+
+        for (int i = 0; i < cajas.length; i++) {
+            System.out.print("Caja" + (i + 1) + ":[" + (cajas[i].ocupada ? "X" : "0") + "] | ");
+
+        }
+        System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
+
+        
+    }
+
+        
     
 }
