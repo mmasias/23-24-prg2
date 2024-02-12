@@ -13,27 +13,29 @@ class carrefour {
                 { 0, 0 }
         };
         boolean workingHours = true;
+        int temporarlStatisticCustomer = 0;
 
         do {
             minutes++;
             workingHours = minutes < DAY_MINUTES;
             currentTime(minutes);
             customerQueue = customerQueue + addCustomer(workingHours);
+            temporarlStatisticCustomer = temporarlStatisticCustomer +  addCustomer(workingHours);
             customerQueue = customerQueue - cashierWorking(cashiersStatus, customerQueue);
             System.out.println(customerQueue);
             
         } while (allCustomersLeft(cashiersStatus, workingHours));
+        System.out.println(temporarlStatisticCustomer);
 
     }
 
     static boolean allCustomersLeft(int[][] cashiersStatus, boolean workingHours) {
-        int totalValue = 0;
+        final int EMPLOYEE = 0;
+        int cashierWorking = 0;
         for (int cashierLine = 0; cashierLine < cashiersStatus.length; cashierLine++){
-            for (int employeeOrItems = 0; employeeOrItems < cashiersStatus[cashierLine].length; employeeOrItems++){
-                totalValue = totalValue + cashiersStatus[cashierLine][employeeOrItems];
-            }
+            cashierWorking = cashierWorking + cashiersStatus[cashierLine][EMPLOYEE];
         }
-        if (totalValue == 0 && !workingHours){
+        if (cashierWorking == 0 && !workingHours){
             return false;
         }
         return true;
@@ -64,12 +66,13 @@ class carrefour {
         final int WORKING = 1;
         final int MIN_ITEMS = 5;
         final int MAX_ITEMS = 15;
+        int numberOfCustomersToCheckout = 0;
 
         for (int cashierLine = 0; cashierLine < cashiersStatus.length; cashierLine++) {
             if (cashiersStatus[cashierLine][EMPLOYEE] == NOT_WORKING && customerQueue > 0) {
                 cashiersStatus[cashierLine][EMPLOYEE] = WORKING;
                 cashiersStatus[cashierLine][ITEMS] = (int) (Math.random() * (MAX_ITEMS - MIN_ITEMS) + MIN_ITEMS);
-                customerQueue = customerQueue - 1;
+                numberOfCustomersToCheckout++;
             }
             if (cashiersStatus[cashierLine][EMPLOYEE] == WORKING && cashiersStatus[cashierLine][ITEMS] > 0) {
                 cashiersStatus[cashierLine][ITEMS] = cashiersStatus[cashierLine][ITEMS] - 1;
@@ -83,7 +86,7 @@ class carrefour {
             System.out.println();
         }
 
-        return customerQueue;
+        return numberOfCustomersToCheckout;
     }
 
     static void cleanScreen() {
