@@ -25,8 +25,31 @@ class Cccf {
          totalPersonsInDay = incomingPerson ? totalPersonsInDay + 1 : totalPersonsInDay ;
          int length = line > 15 ? (cashiers.length - 1) : (cashiers.length - 2);
 
+         if(line > 0) {
+            line = passClientToCashier(cashiers, MAX_ITEMS, MIN_ITEMS, length) ? line - 1 : line;
+         } else {
+            noClients++; 
+         }
+
          printStatus(currentTime, incomingPerson, line);
       }
+   }
+
+   static boolean passClientToCashier(int[] cashiers, int max, int min, int length) {
+      for(int i = 0; i < length; i++) {
+         int cashier = cashiers[i];
+         boolean isOcuppied = cashier > 0;
+         if(cashier < 0) {
+            continue ;
+         }
+         if(!isOcuppied) {
+            int items = generateItems(max, min);
+            cashiers[i] = items;
+            totalItemsSold += items;
+            return true;
+         }
+      }
+      return false;
    }
 
    static void printStatus(int currentTime, boolean incomingPerson, int line) {
