@@ -3,7 +3,7 @@ public class Carrefour {
     public static void main(String[] args) {
         
         final int MINUTOS_FINAL = 720;
-        final double probabilidadLlegadaClientes = 0.4;
+        final double PROBABILIDAD_LLEGADA_CLIENTES = 0.4;
         final int MAX_ITEMS = 15;
         final int MIN_ITEMS = 5;
         int itemsCaja1= 0;
@@ -18,7 +18,7 @@ public class Carrefour {
         boolean disponibilidadCaja1 = true, disponibilidadCaja2 = true, disponibilidadCaja3 = true, disponibilidadCaja4 = true;
         
         for(int minutoActual = 1; minutoActual<=MINUTOS_FINAL; minutoActual++){
-            if (llegaCliente(probabilidadLlegadaClientes)) {
+            if (llegaCliente(PROBABILIDAD_LLEGADA_CLIENTES)) {
                 colaLlegadaClientes = colaLlegadaClientes + 1;
                 mensajeLlegaCliente = "Llega 1 persona";
             }else{
