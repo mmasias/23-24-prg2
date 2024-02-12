@@ -16,7 +16,7 @@ public class Carrefour {
         int minutosSinCola = 0;
         int personasAtendidas = 0;
         int articulosVendidos = 0;
-        boolean disponibilidadCaja1 = true, disponibilidadCaja2 = true, disponibilidadCaja3 = true, disponibilidadCaja4 = true, disponibilidadCaja5 = false , aperturaCaja5 = false;
+        boolean disponibilidadCaja1 = true, disponibilidadCaja2 = true, disponibilidadCaja3 = true, disponibilidadCaja4 = true, disponibilidadCaja5 = true;
         
         for(int minutoActual = 1; minutoActual<=MINUTOS_FINAL; minutoActual++){
             if (llegaCliente(PROBABILIDAD_LLEGADA_CLIENTES)) {
@@ -25,14 +25,16 @@ public class Carrefour {
             }else{
                 mensajeLlegaCliente = "No llega nadie";
             }
-
             if (colaLlegadaClientes==0) {
                 minutosSinCola++;
             }
 
-            if (colaLlegadaClientes>15) {
-                disponibilidadCaja5 = true;
-                aperturaCaja5 = true;
+            if (colaLlegadaClientes > 15) {
+                if (disponibilidadCaja5 == true) {
+                    colaLlegadaClientes--;
+                    disponibilidadCaja5 = false;
+                    itemsCaja5 = crearItemsCaja(MIN_ITEMS, MAX_ITEMS);
+                }
             }
             
             if (disponibilidadCaja1 == true && colaLlegadaClientes>0) {
@@ -54,11 +56,6 @@ public class Carrefour {
                 colaLlegadaClientes--;
                 disponibilidadCaja4 = false;
                 itemsCaja4 = crearItemsCaja(MIN_ITEMS, MAX_ITEMS);
-            }
-            if (disponibilidadCaja5) {
-                colaLlegadaClientes--;
-                disponibilidadCaja5 = false;
-                itemsCaja5 = crearItemsCaja(MIN_ITEMS, MAX_ITEMS);
             }
 
             if (!disponibilidadCaja1) {
@@ -93,17 +90,14 @@ public class Carrefour {
                     personasAtendidas++;
                 }
             }
-            if (!disponibilidadCaja5 && aperturaCaja5) { 
-                if (colaLlegadaClientes<=15) {
-                    aperturaCaja5=false;
-                }
+            if (!disponibilidadCaja5) { 
                 itemsCaja5--;
                 articulosVendidos++;
                 if (itemsCaja5==0) {
                     disponibilidadCaja5 = true;
                     personasAtendidas++;
-                }
-            }
+                }      
+            }            
 
             mostrarEstadisticasPorMinuto(minutoActual, colaLlegadaClientes, itemsCaja1, itemsCaja2, itemsCaja3, itemsCaja4, itemsCaja5, mensajeLlegaCliente);
             pause(2);
