@@ -133,10 +133,6 @@ public class CarrefourMain {
         for(int i=0;i<caja.length;i++){
         total+= caja[i];    
         }
-        System.out.println("Personas que han pasado por la tienda " + total);
-        System.out.println("Hoy se han vendido " + totalItems + " de productos");//Extendido
-        System.out.println("La cola ha estado vacia durante " + minutosSinCola + " minutos");//Extendido
-        System.out.println("Quedan " + cola + " clientes al finalizar el dia en la cola.");//Extendido
              
     }
 }
