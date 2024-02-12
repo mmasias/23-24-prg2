@@ -25,7 +25,6 @@ class CCCF {
             time++;
             carrefourIsOpen = checkIfCarrefourIsOpen(time);
         }
-
     }
 
     static void printStatus(int numberOfCustomersWaiting, int[] cashiers) {
