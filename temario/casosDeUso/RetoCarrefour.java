@@ -1,10 +1,9 @@
 public class RetoCarrefour {
     public static void main(String[] args) {
         final int MINUTE_IN_HOUR = 60 ;
-        int hoursWorking = 9;
-       final double POTENTIALOFARRIVAL = 0.6;
+        int hoursWorking = 12;
+       final double POTENTIALOFARRIVAL = 0.4;
         int timeWorking= 1;
-        int ammountOfCostumers = 0;
         int MaxTimeForWork= hoursWorking*MINUTE_IN_HOUR;
         int cashier1 = 0, cashier2 = 0, cashier3= 0, cashier4=0, cashier5 = 0, cashier6=0;
         boolean isWorking = true;
@@ -14,13 +13,19 @@ public class RetoCarrefour {
         int maxAmountOfPacks = 0;
         final int PACK_MINIMUM = 5;
         final int PACK_MAXIMUM = 15;
+        int arrivesOnLane = 1;
+
         
      do {
-        timeWorking = timeWorking++;
+        timeWorking = timeWorking+1;
         isWorking = timeWorking<=MaxTimeForWork;
         Double probabilityOfNewCostumer = Math.random();
-        if (POTENTIALOFARRIVAL >= probabilityOfNewCostumer){
-            ammountOfCostumers++;
+        if (probabilityOfNewCostumer <= POTENTIALOFARRIVAL){
+            peopleInLine= peopleInLine +1;
+            arrivesOnLane = 1;
+        }
+        else{
+            arrivesOnLane =0;
         }
         if (peopleInLine==0){
             noOneInLine++;
@@ -47,30 +52,37 @@ public class RetoCarrefour {
         }
 
         if (cashier1> 0) {
-            cashier1--;
+            cashier1= cashier1 -1;
             maxAmountOfPacks++;
 
         }
         if (cashier2> 0) {
-            cashier2--;
+            cashier2= cashier2 -1;
             maxAmountOfPacks++;
 
         }
         if (cashier3> 0) {
-            cashier3--;
+            cashier3= cashier3 -1;
             maxAmountOfPacks++;
 
         }
         if (cashier4> 0) {
-            cashier4--;
+            cashier4= cashier4 -1;
             maxAmountOfPacks++;
 
         }
+        System.out.println("Minuto "+timeWorking+ "- Llega "+arrivesOnLane+" persona -"+ " En Cola:"+ peopleInLine );
+        System.out.println("Caja1:["+cashier1+"] | Caja2:["+cashier2+"] | Caja3:["+cashier3+"] | Caja4:["+cashier4+"]");
 
         
      } while (isWorking == true);
-        
+        System.out.println(servicedCostumers);
+        System.out.println(maxAmountOfPacks);
+        System.out.println(peopleInLine);
+        System.out.println(noOneInLine);
     }
+
+    
 
 private static int createPacks(int maxPacks, int minPacks) {
     return (int) (Math.random() * (maxPacks - minPacks)) + minPacks;
