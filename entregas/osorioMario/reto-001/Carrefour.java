@@ -47,3 +47,46 @@ class CentroComercial {
         System.out.println("Artículos vendidos en el día\t: " + totalArticulosVendidos());
         System.out.println("============================================================");
     }
+
+    public void llegadaClientes() {
+        double probabilidad = Math.random();
+        if (probabilidad <= 0.6) {
+            for (int i = 0; i < colaClientes.length; i++) {
+                if (colaClientes[i] == null) {
+                    colaClientes[i] = new Cliente();
+                    break;
+                }
+            }
+        }
+    }
+
+    public void atenderClientes() {
+        for (Caja caja : cajas) {
+            if (caja.estaLibre()) {
+                for (int i = 0; i < colaClientes.length; i++) {
+                    if (colaClientes[i] != null) {
+                        caja.atenderCliente(colaClientes[i]);
+                        colaClientes[i] = null;
+                        clientesAtendidos++;
+                        break;
+                    }
+                }
+            }
+            caja.atenderPack();
+        }
+    }
+
+    public void mostrarEstado(int hora) {
+        System.out.println(
+                "\nMINUTO " + hora + " - Llega " + llegadaActual() + " persona - En Cola: " + clientesEnCola());
+        for (int i = 0; i < NUM_CAJAS; i++) {
+            System.out.print("Caja" + (i + 1) + ":[");
+            if (!cajas[i].estaLibre()) {
+                System.out.print(cajas[i].tiempoRestante);
+            } else {
+                System.out.print(0);
+            }
+            System.out.print("] | ");
+        }
+        System.out.println("\n- - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
+    }
