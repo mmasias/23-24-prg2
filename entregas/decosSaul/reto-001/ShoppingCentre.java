@@ -8,20 +8,32 @@ public class ShoppingCentre {
         final int SHIFT_START = 9;
         final int SHIFT_HOURS = 12;
 
-        final int SHIFT_DURATION = SHIFT_HOURS * 60;
+        final int NEW_CLIENT_CHANCE = 60;
+
         int minutesPassed = 0;
         int hour = 9;
 
-        do{ 
+        int[] register = new int[4];
 
+        int queue = 0;
+
+        do{ 
         minutesPassed += 1;
+        
         if (minutesPassed % 60 == 0){
             hour += 1;
             minutesPassed = 0;
         }
-        System.out.println(hour + ":" + String.format("%02d", minutesPassed) + " horas");
+        if (somethingHappens(NEW_CLIENT_CHANCE)){
+            queue += 1;
+            System.out.println("A new client has arrived, there are " + queue + " clients in the queue");
+        }
+
+        System.out.println("[" + hour + ":" + String.format("%02d", minutesPassed) + "]");
         scanner.nextLine();
+        
         dayFinshed = hour == SHIFT_START + SHIFT_HOURS;
+        
         }while (!dayFinshed);
     }
     static int randomNumber(int min, int max) {
