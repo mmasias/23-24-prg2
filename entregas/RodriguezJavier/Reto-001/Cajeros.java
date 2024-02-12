@@ -48,9 +48,29 @@ public class Cajeros {
             if (clientesEnCola == 0) {
                 minutosSinCola++;
             }
+            
+            System.out.println("--------------------------------------------------------------");
+            System.out.print("MINUTO " + tiempo);
+            if (nuevoCliente) {
+                System.out.println(" - Llega 1 persona - En cola: " + clientesEnCola);
+                nuevoCliente = false;
+            } else {
+                System.out.println(" - Llega 0 persona - En cola: " + clientesEnCola);
+            }
+            for (int i = 0; i < 4; i++) {
+                System.out.print(" Caja" + (i + 1) + ":[" + objetosAtendidos[i] + "] ");
+            }
+            System.out.println();
+
+            if (clientesEnCola >= 15) {
+                quintaCajaActivada = true;
+            } else {
+                quintaCajaActivada = false;
+            }
         }
     }
 }
+
 
 
 
