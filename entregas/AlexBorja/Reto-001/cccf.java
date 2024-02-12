@@ -32,6 +32,7 @@ class Cccf {
          }
 
          printStatus(currentTime, incomingPerson, line);
+         handleCashiers(cashiers, length);
       }
    }
 
@@ -50,6 +51,22 @@ class Cccf {
          }
       }
       return false;
+   }
+
+   static void handleCashiers(int[] cashiers, int length) {
+      for(int i = 0; i < length; i++) {
+         int cashier = cashiers[i];
+         boolean isOcuppied = cashier > 0;
+
+         if(cashier < 0) {
+            System.out.println("Caja: " + (i + 1) + " [Caja cerrada]");
+            continue;
+         }
+         if(isOcuppied) {
+            cashiers[i] = cashier - 1;
+         } 
+         System.out.println("Caja: " + (i + 1) + " [" + (cashier > 0 ? "°".repeat(cashier) : "") + "] " + cashier);
+      }
    }
 
    static void printStatus(int currentTime, boolean incomingPerson, int line) {
