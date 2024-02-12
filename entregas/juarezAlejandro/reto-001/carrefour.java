@@ -19,7 +19,8 @@ class Carrefour {
 
         do {
             atendiendo += MINUTOS;
-            System.out.println("Hora actual: " + atendiendo);
+            double ajustarTiempo = Math.round(atendiendo * AJUSTAR_TIEMPO) / (double) AJUSTAR_TIEMPO;
+            System.out.println("Hora actual: " + ajustarTiempo);
             trabajando = atendiendo < HORA_CIERRE;
             if (Math.random() < PROBABILIDAD_LLEGADA_CLIENTE) {
                 fila = fila + 1;
@@ -33,7 +34,9 @@ class Carrefour {
                     caja[atender]--;
                 }
 
-                if (caja[atender] <= 0){
+                if (caja[atender] > 0){
+                    System.out.println("Caja " + (atender + 1) + " atiende al cliente y le quedan [" + caja[atender] + "] items.");
+                } else {
                     System.out.println("Caja " + (atender + 1) + " se encuentra vacia.");
                 }
             }
