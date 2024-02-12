@@ -32,8 +32,10 @@ class Cccf {
          }
 
          printStatus(currentTime, incomingPerson, line);
+         admin(cashiers, scanner);
          handleCashiers(cashiers, length);
       }
+      summary(line, noClients);
    }
 
    static boolean passClientToCashier(int[] cashiers, int max, int min, int length) {
@@ -72,6 +74,35 @@ class Cccf {
    static void printStatus(int currentTime, boolean incomingPerson, int line) {
       String personas = incomingPerson ? "Llega 1 persona" : "No llega nadie";
       System.out.println("\nMINUTO " + currentTime + " - "  + personas + " - " + "En cola: " + line + "\n");
+   }
+
+   static void admin(int[] cashiers, Scanner scanner) {
+      System.out.println("\nCerrar caja[1] / Abrir caja[2] / Continuar[3]\n");
+      int input = scanner.nextInt();
+      if(input == 1) {
+         System.out.println("\nSeleccion a que caja cerrar\n");
+         int selectedCashier = scanner.nextInt() - 1;
+         cashiers[selectedCashier] = -1;
+      }
+      if(input == 2) {
+         System.out.println("\nSeleccion que caja abrir\n");
+         int selectedCashier = scanner.nextInt() - 1;
+         cashiers[selectedCashier] = 0;
+      }
+      if(input == 3) {
+         return; 
+      }
+   }
+
+   static void summary(int line, int noClients) {
+      System.out.println(
+         "\nResumen" + "\n" +
+         "===".repeat(10) +  "\n" +
+         "Minutos en cola en cero : " + noClients + " \n" +
+         "Personas en cola al cierre : " + line + " \n" +
+         "Personas atendidas en el dia : " + totalPersonsInDay + " \n" +
+         "Articulos vendidos en el dia : " + totalItemsSold + " \n"
+      );
    }
 
 }
