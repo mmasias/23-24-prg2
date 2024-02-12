@@ -9,4 +9,9 @@ public class CentroComercial {
         boolean[] cajaOcupada = new boolean[NUM_CAJAS];
         int[] itemsClienteCaja = new int[NUM_CAJAS];
     }
+
+    static boolean llegaCliente() {
+        return Math.random() <= 0.6;
+    }
+
 }
