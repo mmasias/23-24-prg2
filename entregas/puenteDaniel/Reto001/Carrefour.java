@@ -6,7 +6,7 @@ public class Carrefour{
     public static void main(String[] args) {
         int minuto, hora=0, nuevo;
         int caja1=0, caja2=0, caja3=0, caja4=0, cola=0;
-        int ultimaHora=12, clientesAtendidos=0, productosVendidos=0, minutosSinCola=0;
+        int ultimaHora=12, clientesAtendidos = 0, productosVendidos = 0, minutosSinCola = 0;
         float porcentaje = 0.4f;
 
         boolean caja1Libre, caja2Libre, caja3Libre, caja4Libre;
@@ -155,9 +155,32 @@ public class Carrefour{
                         if (caja4Libre){
                             System.out.println("Caja4: " + caja1);
                         } else System.out.println(" Caja4 : Cerrada");
-                        
+                        System.out.println("-----------------------------------------------------------------------------");
+                            if (cola == 0){
+                                minutosSinCola++;
+                            }
+                        }
+                        if (hora == ultimaHora) {
+                            System.out.println("-----------------------------------------------------------------------------");
+                            System.out.println("Resumen cierre de tienda");
+                            System.out.println("Clientes atendidos: " + clientesAtendidos);
+                            System.out.println("Productos vendidos: " + productosVendidos);
+                            System.out.println("Clientes sin atender en la cola: " + cola);
+                            System.out.println("Minutos sin cola: " + minutosSinCola);
+                            System.out.println("-----------------------------------------------------------------------------");
+                            System.out.println("CIERRE DE TIENDA");
+                            System.out.println("-----------------------------------------------------------------------------");
+                        }
+        
                     }
+                } else {
+                    System.out.println("-----------------------------------------------------------------------------");
+                    System.out.println("EL SUPERMERCADO HA PERMANECIDO CERRADO");
+                    System.out.println("-----------------------------------------------------------------------------");
                 }
-            }
+                s.close();
+                    
+                
+            
     }
 }
