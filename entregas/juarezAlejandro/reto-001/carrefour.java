@@ -8,6 +8,7 @@ class Carrefour {
         final double MINUTOS = 1.0 / 60.0;
         double atendiendo = HORA_APERTURA;
         boolean trabajando = true;
+        int minutosSinFila = 0;
 
         int fila = 0;
         final double PROBABILIDAD_LLEGADA_CLIENTE = 0.6;
@@ -15,13 +16,17 @@ class Carrefour {
         int [] caja = new int [CANTIDAD_CAJEROS];
         final int ITEMS_MAXIMO_CLIENTE = 15;
         final int ITEMS_MINIMO_CLIENTE = 5;
-        final int AJUSTAR_TIEMPO = 100;
 
         do {
             atendiendo += MINUTOS;
-            double ajustarTiempo = Math.round(atendiendo * AJUSTAR_TIEMPO) / (double) AJUSTAR_TIEMPO;
-            System.out.println("Hora actual: " + ajustarTiempo);
+            int horas = (int) atendiendo;
+            int minutos = (int) ((atendiendo - horas) * 60);
+            
+            System.out.println("Hora actual: " + horas + ":" + minutos);
             trabajando = atendiendo < HORA_CIERRE;
+            if (fila == 0){
+                minutosSinFila++;
+            }
             if (Math.random() < PROBABILIDAD_LLEGADA_CLIENTE) {
                 fila = fila + 1;
             }
@@ -44,6 +49,7 @@ class Carrefour {
             System.out.println("Cantidad de clientes en fila: " + fila);
             scanner.nextLine();
         } while (trabajando);
+        System.out.println("Cantidad de minutos en los que no hubo nadie en la fila: " + minutosSinFila);
         scanner.close();
     }
 }
