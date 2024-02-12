@@ -18,6 +18,8 @@ class Carrefour {
         int [] caja = new int [CANTIDAD_CAJEROS];
         final int ITEMS_MAXIMO_CLIENTE = 15;
         final int ITEMS_MINIMO_CLIENTE = 5;
+        boolean clienteCajaExtra = false;
+        int itemsCajaExtra = 0;
 
         do {
             cleanScreen();
@@ -33,6 +35,31 @@ class Carrefour {
             }
             if (Math.random() < PROBABILIDAD_LLEGADA_CLIENTE) {
                 fila = fila + 1;
+            }
+
+            if (clienteCajaExtra){
+                if (itemsCajaExtra > 0) {
+                    itemsCajaExtra--;
+                    if (itemsCajaExtra == 0){
+                        System.out.println("La caja extra está vacía.");
+                        clienteCajaExtra = false;
+                    } else {
+                        System.out.println("Un cliente se dirige a la caja extra con [" +itemsCajaExtra+ "] items");
+                    }
+                }
+            }
+
+            if (fila > 15 && !clienteCajaExtra) {
+                for (int cajaExtra = 0; cajaExtra < CANTIDAD_CAJEROS; cajaExtra++) {
+                    if (caja[cajaExtra] <= 0 && !clienteCajaExtra) {
+                        caja[cajaExtra] = (int) (Math.random() * (ITEMS_MAXIMO_CLIENTE - ITEMS_MINIMO_CLIENTE))  + ITEMS_MINIMO_CLIENTE;
+                        fila--;
+                        totalClientesAtendidos++;
+                        totalItemsVendidos += caja[cajaExtra];
+                        clienteCajaExtra = true;
+                        itemsCajaExtra = caja[cajaExtra];
+                    }
+                }
             }
 
             for (int atender = 0; atender < CANTIDAD_CAJEROS; atender++){

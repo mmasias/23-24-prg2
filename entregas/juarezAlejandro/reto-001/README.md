@@ -3,4 +3,6 @@ Si en algun momento, parece que su código lo copié es porque muchas veces nece
 
 Debido a que el codigo en un momento sentia que no se entendía y no era lo suficientemente legible, mejor opte por volver a iniciarlo todo de 0, para que se pueda leer de mejor manera (además que ahora lo estoy intentando repasar con un esquema de flujo).
 
-Intentaré una pequeña guía, sin embargo, intentaré hacerlo de otra forma 
+Intentaré una pequeña guía, sin embargo, intentaré hacerlo de otra forma.
+
+Para el primer reto ampliado, seré sincero que no logré entender del todo la instrucción, así que lo realicé a como yo creia que era, así que cuando se llegan a más de 15 personas en la fila, una persona se va a la caja extre. A pesar de eso, el programa si realiza la cuenta de la caja extra, así que la caja funciona correctamente.
