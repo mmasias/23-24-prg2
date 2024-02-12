@@ -35,6 +35,19 @@ public class Cajeros {
                     }
                 }
             }
+
+            for (int i = 0; i < 4; i++) {
+                if (objetosAtendidos[i] > 0) {
+                    objetosAtendidos[i]--;
+                    if (objetosAtendidos[i] == 0) {
+                        cajerosLibres[i] = true;
+                    }
+                }
+            }
+            
+            if (clientesEnCola == 0) {
+                minutosSinCola++;
+            }
         }
     }
 }
