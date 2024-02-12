@@ -94,6 +94,10 @@ class Cccf {
       }
    }
 
+   static int generateItems(int max, int min) {
+      return (int) (Math.random() * (max - min)) + min;
+   }
+
    static void summary(int line, int noClients) {
       System.out.println(
          "\nResumen" + "\n" +
