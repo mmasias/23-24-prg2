@@ -1,4 +1,4 @@
-class TestParcial {
+public class Carrefour {
     public static void main(String[] args) {
         CentroComercial centroComercial = new CentroComercial();
         centroComercial.iniciarSimulacion();
