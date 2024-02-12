@@ -28,6 +28,22 @@ public class CCCF {
                 people_queued = false;
 
             }
+
+            for (int j = 0; j < cashiers.length; j++){
+
+                if (cashiers[j] == 0 && queue_size > 0){
+
+                    int next_customer = queue[--queue_size];
+                    cashiers[j] = next_customer;
+                    items_sold = items_sold + next_customer;
+                    
+                }
+
+                if (cashiers[j] > 0){
+
+                    cashiers[j]--;
+                }
+            }
         }
     }
 
