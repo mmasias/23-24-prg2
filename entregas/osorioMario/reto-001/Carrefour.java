@@ -25,3 +25,25 @@ class CentroComercial {
             cajas[i] = new Caja();
         }
     }
+
+    public void simularDia() {
+        for (int hora = HORA_APERTURA; hora < HORA_CIERRE; hora++) {
+            llegadaClientes();
+            atenderClientes();
+            mostrarEstado(hora);
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public void mostrarResumen() {
+        System.out.println("\nRESUMEN\n============================================================");
+        System.out.println("Minutos con cola en cero\t: " + minutosColaCero());
+        System.out.println("Personas en la cola al cierre\t: " + clientesEnCola());
+        System.out.println("Personas atendidas en el día\t: " + clientesAtendidos);
+        System.out.println("Artículos vendidos en el día\t: " + totalArticulosVendidos());
+        System.out.println("============================================================");
+    }
