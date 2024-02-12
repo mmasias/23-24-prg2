@@ -11,6 +11,9 @@ class Carrefour {
 
         int fila = 0;
         final double PROBABILIDAD_LLEGADA_CLIENTE = 0.6;
+        int caja = 0;
+        final int ITEMS_MAXIMO_CLIENTE = 15;
+        final int ITEMS_MINIMO_CLIENTE = 5;
 
         do {
             atendiendo += MINUTOS;
@@ -18,6 +21,14 @@ class Carrefour {
             trabajando = atendiendo < HORA_CIERRE;
             if (Math.random() < PROBABILIDAD_LLEGADA_CLIENTE) {
                 fila = fila + 1;
+            }
+
+            if (caja <= 0){
+                fila = fila - 1;
+                caja = (int) (Math.random() * (ITEMS_MAXIMO_CLIENTE - ITEMS_MINIMO_CLIENTE)) + ITEMS_MINIMO_CLIENTE;
+            }
+            if (caja > 0){
+                caja = caja -1;
             }
 
             System.out.println("Cantidad de clientes en fila: " + fila);
