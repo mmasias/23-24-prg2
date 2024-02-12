@@ -90,3 +90,51 @@ class CentroComercial {
         }
         System.out.println("\n- - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
     }
+
+    public int llegadaActual() {
+        double probabilidad = Math.random();
+        if (probabilidad <= 0.6) {
+            return 1;
+        }
+        return 0;
+    }
+
+    public int clientesEnCola() {
+        int count = 0;
+        for (Cliente cliente : colaClientes) {
+            if (cliente != null) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    public int minutosColaCero() {
+        int minutosCero = 0;
+        for (int i = 0; i < colaClientes.length; i++) {
+            if (colaClientes[i] == null) {
+                minutosCero++;
+            }
+        }
+        return minutosCero;
+    }
+
+    public int totalArticulosVendidos() {
+        for (Caja caja : cajas) {
+            articulosVendidos += 15 - caja.tiempoRestante;
+        }
+        return articulosVendidos;
+    }
+}
+
+class Cliente {
+    int numPacks;
+
+    public Cliente() {
+        numPacks = (int) (Math.random() * 11) + 5;
+    }
+
+    public int getNumPacks() {
+        return numPacks;
+    }
+}
