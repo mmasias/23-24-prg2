@@ -1,17 +1,17 @@
 package Cccf;
+import java.util.Scanner;
 
 public class Cccf {
-
-
     public static void main(String[] args) {
         Cccf reto = new Cccf();
         reto.simularDia();
-       
+        reto.actualizaCaja(); 
     }
 
-    int cola = 0;
+    private int cola = 0;
     int contadorPersonas = 0;
     int contadorPaquetes = 0;
+    int contadorMinA0 = 0; 
     private int paquetesCaja1 = 0;
     private int paquetesCaja2 = 0;
     private int paquetesCaja3 = 0;
@@ -30,6 +30,9 @@ public class Cccf {
                 contadorPersonas++;
             }
     
+            restarPaquetePorMinuto();
+            revisarCola();
+            mostrarMinuto(i, persona);
         }
     }
 
@@ -55,6 +58,4 @@ public class Cccf {
 
 
 
-
-    
 }
