@@ -1,10 +1,11 @@
-
 package Cccf;
+import java.util.Scanner;
+
 public class Cccf {
     public static void main(String[] args) {
         Cccf reto = new Cccf();
         reto.simularDia();
-        
+        reto.actualizaCaja(); 
     }
 
     private int cola = 0;
@@ -30,7 +31,7 @@ public class Cccf {
     
             restarPaquetePorMinuto();
             revisarCola();
-        
+            mostrarMinuto(i, persona);
         }
     }
     
@@ -85,10 +86,26 @@ public class Cccf {
         }
     }
 
+    public void mostrarMinuto(int minuto, int persona) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("-".repeat(25));
+        System.out.println("Minuto " + minuto + ": Ha entrado " + persona + " persona/s");
+        System.out.println("Hay " + cola + " persona/s en la cola");
+        System.out.println("Paquetes: Caja1[" + paquetesCaja1 + "] Caja2[" + paquetesCaja2 + "] Caja3[" + paquetesCaja3 + "] Caja4[" + paquetesCaja4 + "] Caja5[" + paquetesCaja5 + "]");
+        System.out.println("-".repeat(25) + "\n");
+        System.out.println("Presiona Enter para continuar...");
+        scanner.nextLine();
+    }
 
 
-
+    private void actualizaCaja() {
+        int[] registradora = new int[5];
+        int numeroCajas = 5;
+        for (int i = 0; i < numeroCajas; i++) {
+            if (registradora[i] > 0) {
+                registradora[i]--;
+            }
+        }
+    }
 
 }
-
-
