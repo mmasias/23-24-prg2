@@ -102,6 +102,41 @@ public class CarrefourMain {
                 minutosSinCola++;
             }
             System.out.println("--------------------------------------------------------------");
+
+            System.out.print("MINUTO " + tiempo);
+
+            if (llegaNuevo) {//Llega un nuevo cliente
+                System.out.println(" - LLega 1 persona - En cola: " + cola);
+                llegaNuevo = false;
+            } else {//no llega ninguno nuevo
+                System.out.println(" - LLega 0 persona - En cola: " + cola);
+            }
+            System.out.print(" Caja1:[" + nItems[0] + "] | Caja2:[" + nItems[1] + "] | Caja3:[" + nItems[2] + "] | Caja4:["
+                    + nItems[3] + "]");//items en cada caja
+            if (nItems[4] > 0 || activa) {//Items en la ultima caja cuando está activada.
+                System.out.println(" Caja5:[" + nItems[4] + "] ");
+            } else {
+                System.out.println();
+            }
+
+            if (cola >= 15) {//se activa la ultima caja.
+                activa = true;
+            } else {
+                activa = false;
+            }
+        }
+        for(int i=0;i<caja.length;i++){
+            System.out.println("clientes totales que pasan por la caja " + (i+1) + " : " + caja[i]);
+
+        }
+        int total=0;
+        for(int i=0;i<caja.length;i++){
+        total+= caja[i];    
+        }
+        System.out.println("Personas que han pasado por la tienda " + total);
+        System.out.println("Hoy se han vendido " + totalItems + " de productos");//Extendido
+        System.out.println("La cola ha estado vacia durante " + minutosSinCola + " minutos");//Extendido
+        System.out.println("Quedan " + cola + " clientes al finalizar el dia en la cola.");//Extendido
              
     }
 }
