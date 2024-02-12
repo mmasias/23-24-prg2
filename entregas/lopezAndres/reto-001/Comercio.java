@@ -40,6 +40,34 @@ public class Comercio {
                 itemsClienteCaja = Arrays.copyOf(itemsClienteCaja, numCajas);
                 nuevaCajaAgregadaEsteMinuto = true;
             }
+             for (int i = 0; i < numCajas; i++) {
+                if (cajaOcupada[i] && itemsClienteCaja[i] > 0) {
+                    itemsClienteCaja[i]--;
+                    System.out.println("El cliente de la caja " + (i + 1) + " tiene un total de: " + itemsClienteCaja[i]);
+                    itemsVendidos++;
+                }
+
+                if (cola >= 1 && !cajaOcupada[i]) {
+                    System.out.println("Ha pasado a la caja " + (i + 1) + " un cliente");
+                    cola--;
+                    cajaOcupada[i] = true;
+                    itemsClienteCaja[i] = items();
+                    System.out.println("El cliente tiene un total de: " + itemsClienteCaja[i]);
+                    personasAtendidas++;
+                }
+            }
+
+            imprimirEstadoCajas(itemsClienteCaja);
+            pause(2);
+        }
+
+        personasEnColaAlFinalizar = cola;
+
+        System.out.println("\nEstadísticas Finales:");
+        System.out.println("Número de minutos en que no hubo nadie en cola: " + minutosSinCola);
+        System.out.println("Número de personas que estaban en cola al finalizar el día: " + personasEnColaAlFinalizar);
+        System.out.println("Número de personas atendidas durante el día: " + personasAtendidas);
+        System.out.println("Número de items vendidos en el día: " + itemsVendidos);
 
 
     }
