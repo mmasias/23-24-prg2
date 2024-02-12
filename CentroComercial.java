@@ -43,6 +43,14 @@ public class CentroComercial {
 
         System.out.println("\n- - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
     }
+    System.out.println("RESUMEN");
+    System.out.println("============================================================");
+    System.out.println("Minutos con cola en cero\t  : " + minutosConColaCero);
+    System.out.println("Personas en la cola al cierre\t  : " + contarElementosNoCero(colaClientes));
+    System.out.println("Personas atendidas en el día\t  : " + personasAtendidas);
+    System.out.println("Artículos vendidos en el día\t  : " + articulosVendidos);
+    System.out.println("============================================================");
+    }
     private static void agregarACola(int[] cola, int elemento) {
         for (int i = 0; i < cola.length; i++) {
             if (cola[i] == 0) {
