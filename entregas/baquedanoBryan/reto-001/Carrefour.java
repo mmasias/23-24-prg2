@@ -11,6 +11,7 @@ class Carrefour {
 
        do {
         minutesWorked = minutesWorked++;
+        System.out.println("Comprobaciòn de que el while sirve");
         
         
        } while (minutesWorked<TOTAL_MINUTES_PER_DAY);
