@@ -16,7 +16,7 @@ public class CentroCarreFour {
         int servedPeople = 0;
         int soldItems = 0;
 
-        boolean newCashierAddedThisMinute = false;
+        boolean newCashierAddedTh = false;
 
         for (int minuto = 1; minuto <= TOTAL_MINUTES; minuto++) {
             cleanScreen();
@@ -33,13 +33,13 @@ public class CentroCarreFour {
                 minutesWithoutClientInLine++;
             }
 
-            if (cola > NEW_CASHIER_MAX_AMOUNT_ && !newCashierAddedThisMinute) {
+            if (cola > NEW_CASHIER_MAX_AMOUNT_ && !newCashierAddedTh) {
                 numberCashier++;
                 System.out.println("Nueva caja agregada. Total de cajas: " + numberCashier);
                 cola = 0;
                 occupiedCashier = Arrays.copyOf(occupiedCashier, numberCashier);
                 itemsClientCashier = Arrays.copyOf(itemsClientCashier, numberCashier);
-                newCashierAddedThisMinute = true;
+                newCashierAddedTh = true;
             }
 
             for (int i = 0; i < numberCashier; i++) {
@@ -60,7 +60,7 @@ public class CentroCarreFour {
                 }
             }
 
-            printCashierState(itemsClientCashier);
+            imprimirEstadoCajas(itemsClientCashier);
 
             pause(1);
         }
@@ -74,4 +74,36 @@ public class CentroCarreFour {
         System.out.println("Número total de items vendidos en el día: " + soldItems);
     }
 
-    
+    static void imprimirEstadoCajas(int[] itemsClientCashier) {
+        System.out.print("Estado de las cajas: ");
+        for (int i = 0; i < itemsClientCashier.length; i++) {
+            System.out.print("Caja" + (i + 1) + ":[" + itemsClientCashier[i] + "] | ");
+        }
+        System.out.println();
+    }
+
+    static boolean cashierState(int items) {
+        return items > 0;
+    }
+
+    static int items() {
+        return (int) (Math.random() * 11) + 5;
+    }
+
+    static boolean clientArrives() {
+        return Math.random() <= 0.6;
+    }
+
+    static void cleanScreen() {
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
+    }
+
+    static void pause(int seconds) {
+        try {
+            Thread.sleep(1000 * seconds);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+}
