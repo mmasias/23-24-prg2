@@ -68,6 +68,18 @@ public class Cajeros {
                 quintaCajaActivada = false;
             }
         }
+
+        for (int i = 0; i < clientesAtendidos.length; i++) {
+            System.out.println("Clientes totales que pasaron por la caja " + (i + 1) + ": " + clientesAtendidos[i]);
+        }
+        int total = 0;
+        for (int i = 0; i < clientesAtendidos.length; i++) {
+            total += clientesAtendidos[i];
+        }
+
+        System.out.println("Personas que han pasado por la tienda: " + total);
+        System.out.println("Hoy se han vendido " + totalObjetos + " productos");
+        System.out.println("La cola estuvo vacía durante " + minutosSinCola);
     }
 }
 
