@@ -20,8 +20,19 @@ class Carrefour {
         final int ITEMS_MINIMO_CLIENTE = 5;
         boolean clienteCajaExtra = false;
         int itemsCajaExtra = 0;
+        
+
+        boolean bienvenida = false;
 
         do {
+            if (atendiendo == HORA_APERTURA && !bienvenida) {
+                imprimeBienvenida();
+                bienvenida = true;
+                System.out.println("Presione enter para iniciar");
+                scanner.nextLine();
+                cleanScreen();
+            }
+
             cleanScreen();
             atendiendo += MINUTOS;
             int horas = (int) atendiendo;
@@ -81,6 +92,7 @@ class Carrefour {
             }
             imprimeLinea();
             System.out.println("Cantidad de clientes en fila: " + fila);
+            imprimePersona(fila);
             imprimeLinea();
             scanner.nextLine();
         } while (trabajando);
@@ -93,6 +105,27 @@ class Carrefour {
         System.out.println("En total se vendieron " + totalItemsVendidos + " items.");
         imprimeLineaResumen();
         scanner.close();
+    }
+
+    static void imprimePersona(int fila) {
+        int numero = fila / 10 + 1;
+        int repeticion = fila % 10;
+        do {
+            numero--;
+            System.out.println("   O ".repeat(fila = numero != 0 ? 10 : repeticion));
+            System.out.println("  /|\\".repeat(fila = numero != 0 ? 10 : repeticion));
+            System.out.println("  / \\".repeat(fila = numero != 0 ? 10 : repeticion));
+            System.out.println();
+        } while (numero > 0);
+    }
+
+    static void imprimeBienvenida() {
+        System.out.println("  ______      ___      .______      .______       _______  _______   ______    __    __  .______      ");
+        System.out.println(" /      |    /   \\     |   _  \\     |   _  \\     |   ____||   ____| /  __  \\  |  |  |  | |   _  \\     ");
+        System.out.println("|  ,----'   /  ^  \\    |  |_)  |    |  |_)  |    |  |__   |  |__   |  |  |  | |  |  |  | |  |_)  |    ");
+        System.out.println("|  |       /  /_\\  \\   |      /     |      /     |   __|  |   __|  |  |  |  | |  |  |  | |      /     ");
+        System.out.println("|  `----. /  _____  \\  |  |\\  \\----.|  |\\  \\----.|  |____ |  |     |  `--'  | |  `--'  | |  |\\  \\----.");
+        System.out.println(" \\______|/__/     \\__\\ | _| `._____|| _| `._____||_______||__|      \\______/   \\______/  | _| `._____|");
     }
     static void imprimeLineaResumen() {
         System.out.println("===========".repeat(7));
