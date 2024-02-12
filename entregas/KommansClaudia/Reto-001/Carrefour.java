@@ -75,3 +75,21 @@ public class Carrefour{
                     System.out.println("5");
                 }
             }
+            for (int j=0; j<=25; j++){
+                System.out.print("- ");
+            }
+            System.out.println("");
+            System.out.println("Minuto " + i + ": Ha entrado " + personas + " persona/s");
+            System.out.println("Hay "+ cola + " persona/s en la cola");
+            System.out.println("Paquetes: Caja1["+paquetesCaja1+"] Caja2["+paquetesCaja2+"] Caja3["+paquetesCaja3+"] Caja4["+paquetesCaja4+"] Caja5["+paquetesCaja5+"]");
+      
+            for (int j=0; j<=25; j++){
+                System.out.print("- ");
+            }
+            System.out.println("\n");
+            Scanner scanner = new Scanner(System.in);
+            scanner.nextLine();
+
+        }
+    }
+}
