@@ -58,7 +58,7 @@ public class Cccf {
 
     public void revisarCola() {
         if (cola == 0) {
-            contadorMinA0++; // Incrementar el contador de minutos en que la cola ha estado vacía
+            contadorMinA0++; 
         }
         for (int j = 1; j <= cola; j++) {
             int numeroPaquetes = (int) (Math.random() * 11 + 5);
@@ -98,7 +98,7 @@ public class Cccf {
         System.out.println("Paquetes: Caja1[" + paquetesCaja1 + "] Caja2[" + paquetesCaja2 + "] Caja3[" + paquetesCaja3 + "] Caja4[" + paquetesCaja4 + "] Caja5[" + paquetesCaja5 + "]");
         System.out.println("-".repeat(25) + "\n");
 
-        // Verificar si es el último minuto para mostrar el resumen
+       
         if (minuto == 12 * 60 - 1) {
             System.out.println(("=").repeat(35));
             System.out.println("RESUMEN" + ("").repeat(54) + "" + ("").repeat(40) + "");
