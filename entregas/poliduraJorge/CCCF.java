@@ -20,6 +20,8 @@ public class CCCF {
 
             checkNewClient();
 
+            timeProgress();
+
             manageNewCLient(minutes);
 
             minutes++;
@@ -57,23 +59,47 @@ public class CCCF {
         if(cashier1==0){
             generateItemPacks();
             cashier1=cashier1+itemPacks;
+            queue--;
         }else if(cashier2==0){
             generateItemPacks();
             cashier2=cashier2+itemPacks;
+            queue--;
         }else if(cashier3==0){
             generateItemPacks();
             cashier3=cashier3+itemPacks;
+            queue--;
         }else if(cashier4==0){
             generateItemPacks();
             cashier4=cashier4+itemPacks;
+            queue--;
         }else{
             queue++;
         }
 
-        System.out.print("En cola: " + queue);
-        System.out.println("\n");
-        System.out.println();
+        if(queue<0){
+            queue=0;
+        }
 
+        System.out.print("En cola: " + queue);
+        System.out.println();
+        System.out.print("Caja1:[" + cashier1 + "] | Caja2:[" + cashier2 + "] | Caja3:[" + cashier3 + "] | Caja4:[" + cashier4 + "]");
+        System.out.println("\n");
+
+    }
+
+    private static void timeProgress() {
+        if(cashier1!=0){
+            cashier1--;
+        }
+        if(cashier2!=0){
+            cashier2--;
+        }
+        if(cashier3!=0){
+            cashier3--;
+        }
+        if(cashier4!=0){
+            cashier4--;
+        }
     }
 
 }
