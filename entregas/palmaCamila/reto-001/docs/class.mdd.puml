@@ -1,0 +1,14 @@
+@startuml diagrama de clases
+
+CFShoppingCenter -- CashRegister: manages
+CFShoppingCenter  -- Customer: receives
+CFShoppingCenter  -- Cashiers: has
+
+Cashiers -- CashRegister: operates
+
+Customer -- Queue: waits in
+
+Queue -- CashRegister: directs customers to
+Customer -- CashRegister: is processed by
+
+@endtuml
