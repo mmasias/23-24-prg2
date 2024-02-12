@@ -35,7 +35,9 @@ public class Cccf {
             mostrarMinuto(i, persona);
         }
     }
+    
 
+    
     public void restarPaquetePorMinuto() {
         if (paquetesCaja1 != 0) {
             paquetesCaja1--;
@@ -54,8 +56,70 @@ public class Cccf {
         } 
     }
 
+    public void revisarCola() {
+        if (cola == 0) {
+            contadorMinA0++; 
+        }
+        for (int j = 1; j <= cola; j++) {
+            int numeroPaquetes = (int) (Math.random() * 11 + 5);
+            asignarPaqueteACaja(numeroPaquetes);
+        }
+    }
+
+    public void asignarPaqueteACaja(int numeroPaquetes) {
+        if (paquetesCaja1 == 0) {
+            paquetesCaja1 = numeroPaquetes;
+            cola--;
+            contadorPaquetes += numeroPaquetes;
+        } else if (paquetesCaja2 == 0) {
+            paquetesCaja2 = numeroPaquetes;
+            cola--;
+            contadorPaquetes += numeroPaquetes;
+        } else if (paquetesCaja3 == 0) {
+            paquetesCaja3 = numeroPaquetes;
+            cola--;
+            contadorPaquetes += numeroPaquetes;
+        } else if (paquetesCaja4 == 0) {
+            paquetesCaja4 = numeroPaquetes;
+            cola--;
+            contadorPaquetes += numeroPaquetes;
+        } else if (paquetesCaja5 == 0) {
+            paquetesCaja5 = numeroPaquetes;
+            cola--;
+            contadorPaquetes += numeroPaquetes;
+        }
+    }
+
+    public void mostrarMinuto(int minuto, int persona) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("-".repeat(25));
+        System.out.println("Minuto " + minuto + ": Ha entrado " + persona + " persona/s");
+        System.out.println("Hay " + cola + " persona/s en la cola");
+        System.out.println("Paquetes: Caja1[" + paquetesCaja1 + "] Caja2[" + paquetesCaja2 + "] Caja3[" + paquetesCaja3 + "] Caja4[" + paquetesCaja4 + "] Caja5[" + paquetesCaja5 + "]");
+        System.out.println("-".repeat(25) + "\n");
+
+       
+    }
 
 
+    private void actualizaCaja() {
+        if (paquetesCaja1 > 0) {
+            paquetesCaja1--;
+        }
+        if (paquetesCaja2 > 0) {
+            paquetesCaja2--;
+        }
+        if (paquetesCaja3 > 0) {
+            paquetesCaja3--;
+        }
+        if (paquetesCaja4 > 0) {
+            paquetesCaja4--;
+        }
+        if (paquetesCaja5 > 0) {
+            paquetesCaja5--;
+        }
+    }
 
 
 }
+
