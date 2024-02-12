@@ -99,6 +99,17 @@ public class Cccf {
         System.out.println("-".repeat(25) + "\n");
 
        
+        if (minuto == 12 * 60 - 1) {
+            System.out.println(("=").repeat(35));
+            System.out.println("RESUMEN" + ("").repeat(54) + "" + ("").repeat(40) + "");
+            System.out.println("Minutos con la cola a 0: " + contadorMinA0 + " minutos." + ("").repeat(30) + "");
+            System.out.println("Personas en la cola al cerrar:  " + cola);
+            System.out.println("" + contadorPersonas + " han sido antendidas" + ("").repeat(28) + "");
+            System.out.println("" + contadorPaquetes + " articulos vendidos en el dia." + ("").repeat(30) + "" + "" + ("").repeat(65) + "");
+            System.out.println(("=").repeat(35));
+        }
+        
+        scanner.nextLine();
     }
 
 
@@ -119,7 +130,4 @@ public class Cccf {
             paquetesCaja5--;
         }
     }
-
-
 }
-
