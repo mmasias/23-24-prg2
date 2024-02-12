@@ -2,7 +2,7 @@ import java.util.Scanner;
 import java.util.Random;
 
 
-public class RetoCCCF {
+public class Carrefour{
     public static void main(String[] args) {
 
         int minutosDia=12*60;
@@ -47,4 +47,31 @@ public class RetoCCCF {
             }
             if (paquetesCaja5 != 0){
                 paquetesCaja5--;
+            }
+            for (int j=1; j<=cola; j++) {
+                if (paquetesCaja1==0){
+                    paquetesCaja1=numeroPaquetes;
+                    cola--;
+                    System.out.println("1");
+                }
+                else if (paquetesCaja2 == 0){
+                    paquetesCaja2=numeroPaquetes;
+                    cola--;
+                    System.out.println("2");
+                }
+                else if (paquetesCaja3 == 0){
+                    paquetesCaja3=numeroPaquetes;
+                    cola--;
+                    System.out.println("3");
+                }
+                else if (paquetesCaja4 == 0){
+                    paquetesCaja4=numeroPaquetes;
+                    cola--;
+                    System.out.println("4");
+                }
+                else if (paquetesCaja5 == 0){
+                    paquetesCaja5=numeroPaquetes;
+                    cola--;
+                    System.out.println("5");
+                }
             }
