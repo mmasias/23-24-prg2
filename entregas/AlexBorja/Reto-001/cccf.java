@@ -32,8 +32,8 @@ class Cccf {
          }
 
          printStatus(currentTime, incomingPerson, line);
-         admin(cashiers, scanner);
          handleCashiers(cashiers, length);
+         admin(cashiers, scanner);
       }
       summary(line, noClients);
    }
