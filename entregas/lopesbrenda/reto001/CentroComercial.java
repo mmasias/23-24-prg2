@@ -10,11 +10,15 @@ public class CentroComercial {
 
         Random random = new Random();
         int[] cajas = new int[4];
+        int[] cola = new int[720];
         int clientesEnCola = 0;
 
 
-            for (int minuto = 0; minuto < 60; minuto++) {
-                System.out.println("MINUTO " + (minuto + 1) + " - " + (random.nextDouble() < PROBABILIDAD_LLEGADA_CLIENTE ? "Llega 1 persona" : "No llega nadie") + " - En Cola: " + clientesEnCola);
+            for (int minuto = 0; minuto < 720; minuto++) {
+                if (random.nextDouble() < PROBABILIDAD_LLEGADA_CLIENTE) {
+                    cola[minuto] = 1;
+                    clientesEnCola++;
+                }
 
                for (int i = 0; i < 4; i++) {
                 if (cajas[i] > 0) {
@@ -26,6 +30,7 @@ public class CentroComercial {
                 }
             }
 
+            System.out.println("MINUTO " + (minuto + 1) + " - " + (cola[minuto] == 1 ? "Llega 1 persona" : "No llega nadie") + " - En Cola: " + clientesEnCola);
             System.out.print("Caja1:[" + cajas[0] + "] | Caja2:[" + cajas[1] + "] | Caja3:[" + cajas[2] + "] | Caja4:[" + cajas[3] + "]\n");
             System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
 
