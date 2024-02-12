@@ -58,7 +58,44 @@ public class Cccf {
 
             }
 
+            if (nItems[0] > 0) {
+                nItems[0]--;
+                if (nItems[0] == 0) {
+                    libre[0] = true;
+                }
+            }
+            if (nItems[1] > 0) {
+                nItems[1]--;
+                if (nItems[1] == 0) {
+                    libre[1] = true;
+                }
+            }
+           
+            if (nItems[2] > 0) {
+                nItems[2]--;
+                if (nItems[2] == 0) {
+                    libre[2] = true;
+                }
+            }
+            
+            if (nItems[3] > 0) {
+                nItems[3]--;
+                if (nItems[3] == 0) {
+                    libre[3] = true;
+                }
+            }
+            
+            if (nItems[4] > 0) {
+                nItems[4]--;
+                if (nItems[4] == 0) {
+                    libre[4] = true;
+                }
+            }
+            if (cola == 0) {
+                minutosSinCola++;
+            }
+        
         }
-
+    
     }
 }
