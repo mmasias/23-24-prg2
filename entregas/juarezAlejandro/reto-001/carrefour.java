@@ -9,6 +9,8 @@ class Carrefour {
         double atendiendo = HORA_APERTURA;
         boolean trabajando = true;
         int minutosSinFila = 0;
+        int totalClientesAtendidos = 0;
+        int totalItemsVendidos = 0;
 
         int fila = 0;
         final double PROBABILIDAD_LLEGADA_CLIENTE = 0.6;
@@ -18,11 +20,13 @@ class Carrefour {
         final int ITEMS_MINIMO_CLIENTE = 5;
 
         do {
+            cleanScreen();
             atendiendo += MINUTOS;
             int horas = (int) atendiendo;
             int minutos = (int) ((atendiendo - horas) * 60);
             
             System.out.println("Hora actual: " + horas + ":" + minutos);
+            imprimeLinea();
             trabajando = atendiendo < HORA_CIERRE;
             if (fila == 0){
                 minutosSinFila++;
@@ -34,7 +38,10 @@ class Carrefour {
             for (int atender = 0; atender < CANTIDAD_CAJEROS; atender++){
                 if (caja[atender] <= 0 && fila > 0){
                     fila --;
-                    caja[atender] = (int) (Math.random() * (ITEMS_MAXIMO_CLIENTE - ITEMS_MINIMO_CLIENTE)) + ITEMS_MINIMO_CLIENTE;
+                    totalClientesAtendidos++;
+                    int itemsVenta = (int) (Math.random() * (ITEMS_MAXIMO_CLIENTE - ITEMS_MINIMO_CLIENTE)) + ITEMS_MINIMO_CLIENTE;
+                    totalItemsVendidos += itemsVenta;
+                    caja[atender] = itemsVenta;
                 } else if (caja[atender] > 0){
                     caja[atender]--;
                 }
@@ -45,11 +52,24 @@ class Carrefour {
                     System.out.println("Caja " + (atender + 1) + " se encuentra vacia.");
                 }
             }
-
+            imprimeLinea();
             System.out.println("Cantidad de clientes en fila: " + fila);
+            imprimeLinea();
             scanner.nextLine();
         } while (trabajando);
         System.out.println("Cantidad de minutos en los que no hubo nadie en la fila: " + minutosSinFila);
+        System.out.println("Cantidad de clientes que permanecieron en fila a la hora de cierre: " + fila);
+        System.out.println("Al finalizar el día se atendieron " + totalClientesAtendidos + " clientes.");
+        System.out.println("En total se vendieron " + totalItemsVendidos + " items.");
+        imprimeLinea();
         scanner.close();
+    }
+    static void imprimeLinea(){
+        System.out.println("---------+".repeat(5));
+    }
+    
+    static void cleanScreen() {
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
     }
 }
