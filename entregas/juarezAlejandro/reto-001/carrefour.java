@@ -11,9 +11,11 @@ class Carrefour {
 
         int fila = 0;
         final double PROBABILIDAD_LLEGADA_CLIENTE = 0.6;
-        int caja = 0;
+        final int CANTIDAD_CAJEROS = 4;
+        int [] caja = new int [CANTIDAD_CAJEROS];
         final int ITEMS_MAXIMO_CLIENTE = 15;
         final int ITEMS_MINIMO_CLIENTE = 5;
+        final int AJUSTAR_TIEMPO = 100;
 
         do {
             atendiendo += MINUTOS;
@@ -23,12 +25,17 @@ class Carrefour {
                 fila = fila + 1;
             }
 
-            if (caja <= 0){
-                fila = fila - 1;
-                caja = (int) (Math.random() * (ITEMS_MAXIMO_CLIENTE - ITEMS_MINIMO_CLIENTE)) + ITEMS_MINIMO_CLIENTE;
-            }
-            if (caja > 0){
-                caja = caja -1;
+            for (int atender = 0; atender < CANTIDAD_CAJEROS; atender++){
+                if (caja[atender] <= 0 && fila > 0){
+                    fila --;
+                    caja[atender] = (int) (Math.random() * (ITEMS_MAXIMO_CLIENTE - ITEMS_MINIMO_CLIENTE)) + ITEMS_MINIMO_CLIENTE;
+                } else if (caja[atender] > 0){
+                    caja[atender]--;
+                }
+
+                if (caja[atender] <= 0){
+                    System.out.println("Caja " + (atender + 1) + " se encuentra vacia.");
+                }
             }
 
             System.out.println("Cantidad de clientes en fila: " + fila);
