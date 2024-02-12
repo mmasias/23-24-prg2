@@ -9,11 +9,19 @@ class Carrefour {
         double atendiendo = HORA_APERTURA;
         boolean trabajando = true;
 
+        int fila = 0;
+        final double PROBABILIDAD_LLEGADA_CLIENTE = 0.6;
+
         do {
             atendiendo += MINUTOS;
             System.out.println("Hora actual: " + atendiendo);
-            scanner.nextLine();
             trabajando = atendiendo < HORA_CIERRE;
+            if (Math.random() < PROBABILIDAD_LLEGADA_CLIENTE) {
+                fila = fila + 1;
+            }
+
+            System.out.println("Cantidad de clientes en fila: " + fila);
+            scanner.nextLine();
         } while (trabajando);
         scanner.close();
     }
