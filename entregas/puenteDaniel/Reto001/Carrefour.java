@@ -116,6 +116,45 @@ public class Carrefour{
                             cola++;
                             nuevo = 1;
                         }
+                        if (cola >= 1 && caja1 <= 0){
+                            int articulo = (int) (Math.random()*10)+5;
+                            caja1 += articulo;
+                            cola--;
+                        }
+                        if (cola>=1 && caja2 <=0){
+                            int articulo = (int) (Math.random()*10)+5;
+                            caja2 += articulo;
+                            cola--;
+                        }
+                        if (cola>=1 && caja3 <=0){
+                            int articulo = (int) (Math.random()*10)+5;
+                            caja3 += articulo;
+                            cola--;
+                        }
+                        if (cola>=1 && caja4 <=0){
+                            int articulo = (int) (Math.random()*10)+5;
+                            caja4 += articulo;
+                            cola--;
+                        }
+                        System.out.println("MINUTO"+ minuto);
+                        if(nuevo !=0 ){
+                            System.out.println("- Llega " + nuevo + "cliente");
+                        } else {
+                            System.out.println(" - No llega ningún cliente");
+                        }
+                        System.out.println("- Hay " + cola + "clientes en la cola");
+                        if (caja1Libre){
+                            System.out.println("Caja1: " + caja1);
+                        } else System.out.println(" Caja1 : Cerrada");
+                        if (caja2Libre){
+                            System.out.println("Caja2: " + caja1);
+                        } else System.out.println(" Caja2 : Cerrada");
+                        if (caja3Libre){
+                            System.out.println("Caja3: " + caja1);
+                        } else System.out.println(" Caja3 : Cerrada");
+                        if (caja4Libre){
+                            System.out.println("Caja4: " + caja1);
+                        } else System.out.println(" Caja4 : Cerrada");
                         
                     }
                 }
