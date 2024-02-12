@@ -76,6 +76,48 @@ public class Carrefour{
                     } else if (hora==12){
                         System.out.println("21:00 - Cierre del supermercado");
                     }
+                    System.out.println("-----------------------------------------------------------------------------");
+                    System.out.println("");
+                    for(minuto = 1; minuto <= 60 ;minuto++){
+                        if (caja1Libre && caja1 > 0) {
+                            caja1--;
+                            productosVendidos++;
+                            if (caja1 <=0 ){
+                                caja1 = 0;
+                                clientesAtendidos++;
+                            }
+                        }
+                        if (caja2Libre && caja2 > 0) {
+                            caja2--;
+                            productosVendidos++;
+                            if (caja2 <= 0){
+                                caja2 = 0;
+                                clientesAtendidos++;
+                            }
+                        }
+                        if ( caja3Libre && caja3 > 0) {
+                            caja3--;
+                            productosVendidos++;
+                            if (caja3 <= 0){
+                                caja3 = 0;
+                                clientesAtendidos++;
+                            }
+                        }
+                        if ( caja4Libre && caja4 > 0) {
+                            caja4--;
+                            productosVendidos++;
+                            if ( caja4 <= 0 ){
+                                caja4 = 0;
+                                clientesAtendidos++;
+                            }
+                        }
+                        nuevo = 0;
+                        if (Math.random() <= porcentaje) {
+                            cola++;
+                            nuevo = 1;
+                        }
+                        
+                    }
                 }
             }
     }
