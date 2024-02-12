@@ -23,7 +23,7 @@ class Carrefour {
         System.out.println(time);
         System.out.println("Line: " + line);
 
-        if (cashier <= 0) {
+        if (cashier <= 0 & line > 0) {
             line = line - 1;
             cashier = (int) (Math.random() * (ITEM_MAXIMUM - ITEM_MINIMUM)) + ITEM_MINIMUM;
         }
