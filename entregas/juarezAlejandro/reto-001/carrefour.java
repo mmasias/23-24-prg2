@@ -57,17 +57,23 @@ class Carrefour {
             imprimeLinea();
             scanner.nextLine();
         } while (trabajando);
+
+        System.out.println("RESUMEN");
+        imprimeLineaResumen();
         System.out.println("Cantidad de minutos en los que no hubo nadie en la fila: " + minutosSinFila);
         System.out.println("Cantidad de clientes que permanecieron en fila a la hora de cierre: " + fila);
         System.out.println("Al finalizar el día se atendieron " + totalClientesAtendidos + " clientes.");
         System.out.println("En total se vendieron " + totalItemsVendidos + " items.");
-        imprimeLinea();
+        imprimeLineaResumen();
         scanner.close();
+    }
+    static void imprimeLineaResumen() {
+        System.out.println("===========".repeat(7));
     }
     static void imprimeLinea(){
         System.out.println("---------+".repeat(5));
     }
-    
+
     static void cleanScreen() {
         System.out.print("\033[H\033[2J");
         System.out.flush();
