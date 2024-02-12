@@ -11,6 +11,7 @@ public class Cccf {
     private int cola = 0;
     int contadorPersonas = 0;
     int contadorPaquetes = 0;
+    int contadorMinA0 = 0; 
     private int paquetesCaja1 = 0;
     private int paquetesCaja2 = 0;
     private int paquetesCaja3 = 0;
@@ -56,6 +57,9 @@ public class Cccf {
     }
 
     public void revisarCola() {
+        if (cola == 0) {
+            contadorMinA0++; // Incrementar el contador de minutos en que la cola ha estado vacía
+        }
         for (int j = 1; j <= cola; j++) {
             int numeroPaquetes = (int) (Math.random() * 11 + 5);
             asignarPaqueteACaja(numeroPaquetes);
@@ -93,19 +97,37 @@ public class Cccf {
         System.out.println("Hay " + cola + " persona/s en la cola");
         System.out.println("Paquetes: Caja1[" + paquetesCaja1 + "] Caja2[" + paquetesCaja2 + "] Caja3[" + paquetesCaja3 + "] Caja4[" + paquetesCaja4 + "] Caja5[" + paquetesCaja5 + "]");
         System.out.println("-".repeat(25) + "\n");
-        System.out.println("Presiona Enter para continuar...");
+
+        // Verificar si es el último minuto para mostrar el resumen
+        if (minuto == 12 * 60 - 1) {
+            System.out.println(("=").repeat(35));
+            System.out.println("RESUMEN" + ("").repeat(54) + "" + ("").repeat(40) + "");
+            System.out.println("Minutos con la cola a 0: " + contadorMinA0 + " minutos." + ("").repeat(30) + "");
+            System.out.println("Personas en la cola al cerrar:  " + cola);
+            System.out.println("" + contadorPersonas + " han sido antendidas" + ("").repeat(28) + "");
+            System.out.println("" + contadorPaquetes + " articulos vendidos en el dia." + ("").repeat(30) + "" + "\n" + ("").repeat(65) + "");
+            System.out.println(("=").repeat(35));
+        }
+        
         scanner.nextLine();
     }
 
 
     private void actualizaCaja() {
-        int[] registradora = new int[5];
-        int numeroCajas = 5;
-        for (int i = 0; i < numeroCajas; i++) {
-            if (registradora[i] > 0) {
-                registradora[i]--;
-            }
+        if (paquetesCaja1 > 0) {
+            paquetesCaja1--;
+        }
+        if (paquetesCaja2 > 0) {
+            paquetesCaja2--;
+        }
+        if (paquetesCaja3 > 0) {
+            paquetesCaja3--;
+        }
+        if (paquetesCaja4 > 0) {
+            paquetesCaja4--;
+        }
+        if (paquetesCaja5 > 0) {
+            paquetesCaja5--;
         }
     }
-
 }
