@@ -73,4 +73,37 @@ public class CentroComercial {
         System.out.println("Número total de personas atendidas durante el día: " + personasAtendidas);
         System.out.println("Número total de items vendidos en el día: " + itemsVendidos);
     }
+
+    static void imprimirEstadoCajas(int[] itemsClienteEnLaCaja) {
+        System.out.print("Estado de las cajas: ");
+        for (int i = 0; i < itemsClienteEnLaCaja.length; i++) {
+            System.out.print("Caja" + (i + 1) + ":[" + itemsClienteEnLaCaja[i] + "] | ");
+        }
+        System.out.println();
+    }
+
+    static boolean cajaEstado(int items) {
+        return items > 0;
+    }
+
+    static int items() {
+        return (int) (Math.random() * 11) + 5;
+    }
+
+    static boolean llegaCliente() {
+        return Math.random() <= 0.6;
+    }
+
+    static void cleanScreen() {
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
+    }
+
+    static void pause(int seconds) {
+        try {
+            Thread.sleep(1000 * seconds);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 }
