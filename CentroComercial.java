@@ -20,6 +20,28 @@ public class CentroComercial {
             } else {
                 System.out.println("MINUTO " + tiempo + " - No llega nadie  - En Cola: " + contarElementosNoCero(colaClientes));
             }
+            for (int i = 0; i < NUMERO_CAJAS; i++) {
+                if (tiempoAtencionCajas[i] > 0) {
+                    System.out.print("Caja" + (i + 1) + ":[" + tiempoAtencionCajas[i] + "] | ");
+                    tiempoAtencionCajas[i]--;
+                    articulosVendidos++;
+                } else {
+                    int packsDeItems = quitarDeCola(colaClientes);
+                    if (packsDeItems > 0) {
+                        tiempoAtencionCajas[i] = packsDeItems;
+                        System.out.print("Caja" + (i + 1) + ":[" + tiempoAtencionCajas[i] + "] | ");
+                        personasAtendidas++;
+                        articulosVendidos += packsDeItems;
+                    } else {
+                        System.out.print("Caja" + (i + 1) + ":[0] | ");
+                    }
+                }
+            }
+            if (colaClientes[0] == 0) {
+                minutosConColaCero++;
+            }
+
+        System.out.println("\n- - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
     }
     private static void agregarACola(int[] cola, int elemento) {
         for (int i = 0; i < cola.length; i++) {
@@ -38,6 +60,13 @@ public class CentroComercial {
         }
         return count;
     }
-
+    private static int quitarDeCola(int[] cola) {
+        int elemento = cola[0];
+        for (int i = 0; i < cola.length - 1; i++) {
+            cola[i] = cola[i + 1];
+        }
+        cola[cola.length - 1] = 0;
+        return elemento;
+    }
     
 }
