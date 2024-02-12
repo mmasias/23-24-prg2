@@ -1,4 +1,4 @@
-public class Carrefour {
+class TestParcial {
     public static void main(String[] args) {
         CentroComercial centroComercial = new CentroComercial();
         centroComercial.iniciarSimulacion();
@@ -136,5 +136,28 @@ class Cliente {
 
     public int getNumPacks() {
         return numPacks;
+    }
+}
+
+class Caja {
+    boolean libre = true;
+    int tiempoRestante = 0;
+
+    public boolean estaLibre() {
+        return libre;
+    }
+
+    public void atenderCliente(Cliente cliente) {
+        libre = false;
+        tiempoRestante = cliente.getNumPacks();
+    }
+
+    public void atenderPack() {
+        if (!libre) {
+            tiempoRestante--;
+            if (tiempoRestante == 0) {
+                libre = true;
+            }
+        }
     }
 }
