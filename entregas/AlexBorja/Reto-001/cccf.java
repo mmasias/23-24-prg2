@@ -17,7 +17,21 @@ class Cccf {
       boolean is_open = true;
       int[] cashiers = { 0, 0, 0, 0, 0, 0};
 
+      while(is_open) {
+         currentTime++;
+         is_open = currentTime < TOTAL_MINUTES;
+         boolean incomingPerson = Math.random() < NEW_COSTUMER_PROB;
+         line = incomingPerson ? line + 1 : line;
+         totalPersonsInDay = incomingPerson ? totalPersonsInDay + 1 : totalPersonsInDay ;
+         int length = line > 15 ? (cashiers.length - 1) : (cashiers.length - 2);
 
+         printStatus(currentTime, incomingPerson, line);
+      }
+   }
+
+   static void printStatus(int currentTime, boolean incomingPerson, int line) {
+      String personas = incomingPerson ? "Llega 1 persona" : "No llega nadie";
+      System.out.println("\nMINUTO " + currentTime + " - "  + personas + " - " + "En cola: " + line + "\n");
    }
 
 }
