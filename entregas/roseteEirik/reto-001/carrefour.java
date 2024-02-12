@@ -12,17 +12,31 @@ class carrefour {
                 { 0, 0 },
                 { 0, 0 }
         };
-        boolean isWorking = true;
+        boolean workingHours = true;
 
         do {
             minutes++;
-            isWorking = minutes < DAY_MINUTES;
+            workingHours = minutes < DAY_MINUTES;
             currentTime(minutes);
-            customerQueue = customerQueue + addCustomer();
+            customerQueue = customerQueue + addCustomer(workingHours);
             customerQueue = customerQueue - cashierWorking(cashiersStatus, customerQueue);
             System.out.println(customerQueue);
-        } while (isWorking);
+            
+        } while (allCustomersLeft(cashiersStatus, workingHours));
 
+    }
+
+    static boolean allCustomersLeft(int[][] cashiersStatus, boolean workingHours) {
+        int totalValue = 0;
+        for (int cashierLine = 0; cashierLine < cashiersStatus.length; cashierLine++){
+            for (int employeeOrItems = 0; employeeOrItems < cashiersStatus[cashierLine].length; employeeOrItems++){
+                totalValue = totalValue + cashiersStatus[cashierLine][employeeOrItems];
+            }
+        }
+        if (totalValue == 0 && !workingHours){
+            return false;
+        }
+        return true;
     }
 
     static void currentTime(int minutes) {
@@ -35,9 +49,9 @@ class carrefour {
         System.out.println(hour + division + minutes);
     }
 
-    static int addCustomer() {
+    static int addCustomer(boolean isWorking) {
         final double customerSpawnProbability = 0.6;
-        if (Math.random() < customerSpawnProbability) {
+        if (Math.random() < customerSpawnProbability && isWorking) {
             return 1;
         }
         return 0;
