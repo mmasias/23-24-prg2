@@ -94,8 +94,39 @@ public class Cccf {
             if (cola == 0) {
                 minutosSinCola++;
             }
-        
+
+            System.out.println("--------------------------------------------------------------");
+            System.out.print("MINUTO " + tiempo);
+            if (llegaNuevo) {
+                System.out.println(" - LLega 1 persona - En cola: " + cola);
+                llegaNuevo = false;
+            } else {
+                System.out.println(" - LLega 0 persona - En cola: " + cola);
+            }
+            System.out.print(" Caja 1:[" + nItems[0] + "] | Caja 2:[" + nItems[1] + "] | Caja 3:[" + nItems[2] + "] | Caja 4:[" + nItems[3] + "]");
+            if (nItems5 > 0 || activa) {
+                System.out.println(" Caja 5:[" + nItems[4] + "] ");
+            } else {
+                System.out.println();
+            }
+
+            if (cola >= 15) {
+                activa = true;
+            } else {
+                activa = false;
+            }
         }
-    
+        for(int i=0 ; i < caja.length; i++){
+            System.out.println("Clientes totales que pasan por la caja 1"+(i+1) +": " + caja[i]);
+        }
+        
+        int total=0;
+        for(int i=0 ; i < caja.length; i++){
+            total += caja[i]; //total = total + caja[i]
+        }
+        System.out.println("Personas que han pasado por la tienda: " + total);
+        System.out.println("Hoy se han vendido " + totalItems + " de productos");
+        System.out.println("La cola ha estado vacia durante " + minutosSinCola + " minutos");
+        System.out.println("Clientes que han quedado sin atender: " + cola);
     }
 }
