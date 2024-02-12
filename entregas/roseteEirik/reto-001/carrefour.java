@@ -1,6 +1,13 @@
 class carrefour{
     public static void main(String[] args) {
         
+        final int DAY_HOURS = 12;
+        final int DAY_MINUTES = DAY_HOURS * 60;
+
+        for(int minutes = 0; minutes <= DAY_MINUTES; minutes++){
+            
+        }
+
     }
 
     static void cleanScreen() {
