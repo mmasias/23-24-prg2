@@ -8,6 +8,14 @@ public class CentroComercial {
 
         boolean[] cajaOcupada = new boolean[NUM_CAJAS];
         int[] itemsClienteCaja = new int[NUM_CAJAS];
+
+        for(int minuto = 1;minuto <= MINUTOS_JORNADA; minuto++){
+
+            if(llegaCliente()){
+                cola++;
+            }
+            System.out.println(cola);
+        }
     }
 
     static boolean llegaCliente() {
