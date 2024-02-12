@@ -26,6 +26,12 @@ class CCCF {
 
             int freeCashierIndex = checkIfCashierIsFree(cashiers);
 
+            numberOfCustomersWaiting = handleCustomerCheckout(cashiers, freeCashierIndex, numberOfCustomersWaiting);
+
+            handleProducts(cashiers);
+
+            printStatus(numberOfCustomersWaiting, cashiers);
+
             time++;
             carrefourIsOpen = checkIfCarrefourIsOpen(time);
         }
@@ -37,6 +43,13 @@ class CCCF {
             System.out.print("[" + cashier + "] ");
         }
         System.out.println();
+    }
+
+    static void handleProducts(int[] cashiers) {
+        for (int i = 0; i < cashiers.length; i++) {
+            if (cashiers[i] > 0)
+                cashiers[i]--;
+        }
     }
 
     static int handleCustomerCheckout(int[] cashiers, int freeCashierIndex, int numberOfCustomersWaiting) {
@@ -75,7 +88,7 @@ class CCCF {
         } else {
             minutesWithoutClients += 1;
             newNumberOfCustomers = numberOfCustomersWaiting;
-            System.out.println("No new customer arrived" + minutesWithoutClients);
+            System.out.println("No ha llegado nadie" + minutesWithoutClients);
         }
 
         return newNumberOfCustomers;
