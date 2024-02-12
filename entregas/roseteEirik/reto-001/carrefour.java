@@ -1,4 +1,4 @@
-class carrefour {
+class Carrefour {
     public static void main(String[] args) {
 
         final int DAY_HOURS = 12;
@@ -13,29 +13,25 @@ class carrefour {
                 { 0, 0 }
         };
         boolean workingHours = true;
-        int temporarlStatisticCustomer = 0;
 
         do {
             minutes++;
             workingHours = minutes < DAY_MINUTES;
             currentTime(minutes);
             customerQueue = customerQueue + addCustomer(workingHours);
-            temporarlStatisticCustomer = temporarlStatisticCustomer +  addCustomer(workingHours);
             customerQueue = customerQueue - cashierWorking(cashiersStatus, customerQueue);
             System.out.println(customerQueue);
-            
-        } while (allCustomersLeft(cashiersStatus, workingHours));
-        System.out.println(temporarlStatisticCustomer);
 
+        } while (allCustomersLeft(cashiersStatus, workingHours));
     }
 
     static boolean allCustomersLeft(int[][] cashiersStatus, boolean workingHours) {
         final int EMPLOYEE = 0;
         int cashierWorking = 0;
-        for (int cashierLine = 0; cashierLine < cashiersStatus.length; cashierLine++){
+        for (int cashierLine = 0; cashierLine < cashiersStatus.length; cashierLine++) {
             cashierWorking = cashierWorking + cashiersStatus[cashierLine][EMPLOYEE];
         }
-        if (cashierWorking == 0 && !workingHours){
+        if (cashierWorking == 0 && !workingHours) {
             return false;
         }
         return true;
@@ -48,7 +44,7 @@ class carrefour {
         if (minutes < 10) {
             division = ":0";
         }
-        System.out.println(hour + division + minutes);
+        System.out.println("Hora: " + hour + division + minutes);
     }
 
     static int addCustomer(boolean isWorking) {
@@ -80,13 +76,18 @@ class carrefour {
             if (cashiersStatus[cashierLine][ITEMS] == 0) {
                 cashiersStatus[cashierLine][EMPLOYEE] = NOT_WORKING;
             }
-            for (int column = 0; column < cashiersStatus[cashierLine].length; column++){
-                System.out.print(cashiersStatus[cashierLine][column]);
-            }
-            System.out.println();
+            printASCII(cashiersStatus[cashierLine][EMPLOYEE], cashiersStatus[cashierLine][ITEMS]);
         }
-
         return numberOfCustomersToCheckout;
+    }
+
+    static void printASCII(int cashier, int items) {
+        String[] draw = { "O ", "O:" };
+        System.out.println(draw[cashier] + "[#]".repeat(items));
+    }
+
+    static void printItemsASCII(int value) {
+        System.out.println();
     }
 
     static void cleanScreen() {
