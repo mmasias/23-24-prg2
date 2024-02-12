@@ -1,4 +1,3 @@
-
 public class Reto001 {
 
   public static void main(String[] args) {
@@ -11,7 +10,7 @@ public class Reto001 {
     boolean newPerson = false;
     int timeWithoutQueque = 0;
     int totalItems = 0;
-    
+
     for (int time = 1; time < minutesPerDay; time++) {
       boolean activa = true;
       if (Math.random() * 100 < 40) {
@@ -49,6 +48,7 @@ public class Reto001 {
           queque--;
         }
       }
+
       if (items[0] > 0) {
         items[0]--;
         if (items[0] == 0) {
@@ -81,7 +81,58 @@ public class Reto001 {
       }
       if (queque == 0) {
         timeWithoutQueque++;
+      }
+      System.out.println(
+        "--------------------------------------------------------------"
+      );
+      System.out.print("MINUTO " + time);
+      if (newPerson) {
+        System.out.println(" - LLega 1 persona - En cola: " + queque);
+        newPerson = false;
+      } else {
+        System.out.println(" - LLega 0 persona - En cola: " + queque);
+      }
+      System.out.print(
+        " Caja1:[" +
+        items[0] +
+        "] | Caja2:[" +
+        items[1] +
+        "] | Caja3:[" +
+        items[2] +
+        "] | Caja4:[" +
+        items[3] +
+        "]"
+      );
+      if (items[4] > 0 || activa) {
+        System.out.println(" Caja5:[" + items[4] + "] ");
+      } else {
+        System.out.println();
+      }
 
-  
+      if (queque >= 15) {
+        activa = true;
+      } else {
+        activa = false;
+      }
+    }
+
+    for (int i = 0; i < box.length; i++) {
+      System.out.println(
+        "clintes totales que pasan por la caja " + i + ": " + box[i]
+      );
+    }
+
+    for (int i = 0; i < box.length; i++) {
+      int totalPeople = 0;
+      totalPeople = totalPeople + box[i];
+      System.out.println(
+        "Personas que han pasado por la tienda " + totalPeople
+      );
+    }
+
+    System.out.println("Hoy se han vendido " + totalItems + " de productos");
+    System.out.println(
+      "La cola ha estado vacia durante " + timeWithoutQueque + " minutos"
+    );
   }
 }
