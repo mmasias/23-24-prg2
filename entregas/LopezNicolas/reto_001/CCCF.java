@@ -59,9 +59,20 @@ public class CCCF {
 
             for (int k = 0; k < cashiers.length; k++){
 
-                System.out.println("Caja " + (k + 1) + ": [" + cashiers[k] + "] | ");
+                System.out.print("Caja " + (k + 1) + ": [" + cashiers[k] + "] | ");
+
             }
+            
+            System.out.println("\n___________________________________________________________");
+
         }
+        
+        System.out.println("\n- - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
+        System.out.println("RESUMEN FINAL");
+        System.out.println("============================================================");
+        System.out.println("Personas atendidas durante el día: " + customers_total);
+        System.out.println("Artíuclos vendidos durante el día: " + items_sold + "\n");
+
     }
 
 }
