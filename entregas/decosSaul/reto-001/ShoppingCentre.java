@@ -35,7 +35,7 @@ public class ShoppingCentre {
                 minutesPassed = 0;
             }
 
-            System.out.println("[" + hour + ":" + String.format("%02d", minutesPassed) + "]");
+            System.out.print("[" + hour + ":" + String.format("%02d", minutesPassed) + "]" + "  -  ");
             
             if (somethingHappens(NEW_CUSTOMER_CHANCE)){
                 queue += 1;
@@ -63,7 +63,7 @@ public class ShoppingCentre {
 
 
 
-        System.out.println(registerStatusMessage);
+        System.out.println("Register1:[" + register[0] + "] | Register2:[" + register[1] + "] | Register3:[" + register[2] + "] | Register4:[" + register[3] + "]");
         System.out.println();
                 
         scanner.nextLine();
@@ -73,7 +73,8 @@ public class ShoppingCentre {
         }while (!dayFinshed);
 
     System.out.println("The queue has been empty for " + emptyQueueTime + " minutes");
-    System.out.println("In total there has been " + soldItems + " sold items, spreaded over " + dailyClients + " clients");
+    System.out.println("At closing time the queue had " + queue + " clients");
+    System.out.println("In total there has been [" + soldItems + "] sold items, spreaded over " + dailyClients + " clients");
     }
 
     static int randomNumber(int min, int max) {
