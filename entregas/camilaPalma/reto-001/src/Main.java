@@ -20,6 +20,8 @@ class CCCF {
 
         while (carrefourIsOpen) {
 
+            numberOfCustomersWaiting = handleCustomerArrive(numberOfCustomersWaiting);
+
             printStatus(numberOfCustomersWaiting, cashiers);
 
             time++;
@@ -33,6 +35,23 @@ class CCCF {
             System.out.print("[" + cashier + "] ");
         }
         System.out.println();
+    }
+
+    private static int handleCustomerArrive(int numberOfCustomersWaiting) {
+        boolean customerHasArrived = RANDOM.nextDouble() <= CLIENT_ARRIVAL_PROBABILITY;
+        int newNumberOfCustomers;
+
+        if (customerHasArrived) {
+            minutesWithoutClients = 0;
+            newNumberOfCustomers = numberOfCustomersWaiting += 1;
+            System.out.println("A customer has arrived!");
+        } else {
+            minutesWithoutClients += 1;
+            newNumberOfCustomers = numberOfCustomersWaiting;
+            System.out.println("No ha llegado nadie" + minutesWithoutClients);
+        }
+
+        return newNumberOfCustomers;
     }
 
     static boolean checkIfCarrefourIsOpen(int time) {
