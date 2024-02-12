@@ -26,7 +26,7 @@ public class ShoppingCentre {
 
         do{
 
-                System.out.println("What cash register do you want to change status? (1 to 4), by default all cash register are open");
+                System.out.println("What cash register do you want to change status? (1 to 4), by default all cash registers are open");
                 modifiedRegister = scanner.nextInt() - 1;
                 
                 if (modifiedRegister != -1){
