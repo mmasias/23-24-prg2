@@ -115,7 +115,18 @@ public class CentroComercial {
             }
         
         }
+        for(int i=0 ; i < caja.length; i++){
+            System.out.println("Clientes totales que pasan por la caja 1"+(i+1) +": " + caja[i]);
+        }
 
+        int total=0;
+        for(int i=0 ; i < caja.length; i++){
+            total += caja[i];
+        }
+        System.out.println("Personas que han pasado por la tienda: " + total);
+        System.out.println("Hoy se han vendido " + totalItems + " de productos");
+        System.out.println("La cola ha estado vacia durante " + minutosSinCola + " minutos");
+        System.out.println("Clientes que han quedado sin atender: " + cola);
 
 
     }
