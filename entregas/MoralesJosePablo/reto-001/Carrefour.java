@@ -5,75 +5,83 @@ class Carrefour {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-        final double HORARIO_APERTURA = 9.0;
-        final double HORARIO_CIERRE = 21.0;
-        final double DURACION_ATENCION = 1.0 / 60.0;
-        double atendiendoclientes = HORARIO_APERTURA;
-        boolean trabajando = true;
-        int MinutosSinCola = 0;
-        int ClientesAntendidos = 0;
-        int ItemsVendidos = 0;
+        final double OPENING_HOURS = 9.0;
+        final double CLOSING_TIME = 21.0;
+        final double CUSTUMER_SERVICE_DURATION = 1.0 / 60.0;
+        double assistingcustumers = OPENING_HOURS;
+        boolean working = true;
+        int MinutesWithouQueue = 0;
+        int ClientsServed = 0;
+        int Sold_Items = 0;
 
-        int cola = 0;
-        final double PROBABILIDAD_LLEGADA_CLIENTES = 0.6;
-        final int CAJEROS = 4;
-        int [] caja = new int [CAJEROS];
-        final int MAX_ITEMS_CLIENTES = 15;
-        final int MIN_ITEMS_CLIENTES = 5;
+        int line = 0;
+        final double CUSTOMER_ARRIVAL_PROBABILITY = 0.6;
+        final int CASHIERS = 4;
+        int [] cashregister = new int [CASHIERS];
+        final int MAX_ITEMS_CUSTOMERS = 15;
+        final int MIN_ITEMS_CUSTOMERS = 5;
 
         do {
             cleanScreen();
-            atendiendoclientes += DURACION_ATENCION;
-            int horas = (int) atendiendoclientes;
-            int minutos = (int) ((atendiendoclientes - horas) * 60);
+            assistingcustumers += CUSTUMER_SERVICE_DURATION;
+            int hours = (int) assistingcustumers;
+            int minutes = (int) ((assistingcustumers - hours) * 60);
 
-            System.out.println("Hora actual: " + horas + ":" + minutos);
-            ImprimeLinea();
-            trabajando = atendiendoclientes < HORARIO_CIERRE;
+            System.out.println("Hora actual: " + hours + ":" + minutes);
+            imprimeLinea();
+            working = assistingcustumers < CLOSING_TIME;
 
-            if (cola == 0) {
-                MinutosSinCola++;
+            if (line == 0) {
+                MinutesWithouQueue++;
                 
             }
-            if (Math.random() < PROBABILIDAD_LLEGADA_CLIENTES) {
-                cola = cola + 1;
+            if (Math.random() < CUSTOMER_ARRIVAL_PROBABILITY) {
+                line = line + 1;
             }
 
-            for (int antender = 0; antender < CAJEROS; antender++){
-                if (caja [antender] <= 0 && cola > 0) {
-                cola --;
-                ClientesAntendidos++;
-                int ItemsVenta = (int) (Math.random() * (MAX_ITEMS_CLIENTES - MIN_ITEMS_CLIENTES)) +MIN_ITEMS_CLIENTES;
-                ItemsVendidos += ItemsVenta;
-                caja[antender] = ItemsVenta;
+            for (int serve = 0; serve < CASHIERS; serve++){
+                if (cashregister [serve] <= 0 && line > 0) {
+                line --;
+                ClientsServed++;
+                int SaleItems = (int) (Math.random() * (MAX_ITEMS_CUSTOMERS - MIN_ITEMS_CUSTOMERS)) + MIN_ITEMS_CUSTOMERS;
+                Sold_Items += SaleItems;
+                cashregister[serve] = SaleItems;
 
-            }   else if (caja[antender] > 0) {
-                    caja[antender]--;
+            }   else if (cashregister[serve] > 0) {
+                    cashregister[serve]--;
             }
 
-            if (caja[antender] > 0) {
-                System.out.print("Caja " + (antender + 1) + "Se atiende al cliente y le quedan [" + caja[antender] + "] items");
+            if (cashregister[serve] > 0) {
+                System.out.print("Caja " + (serve + 1) + "Se atiende al cliente y le quedan [" + cashregister[serve] + "] items");
             } else {
-                System.out.print("Caja " + (antender + 1) + "La caja se encuentra vacia.)");
+                System.out.print("Caja " + (serve + 1) + "La caja se encuentra vacia.)");
             }
                 
         }
-        ImprimeLinea();
-        System.out.println("Cantidad de clientes en la cola: " + cola);
-        ImprimeLinea();
+        imprimeLinea();
+        System.out.println("Cantidad de clientes en la cola: " + line);
+        imprimeLinea();
         scanner.nextLine();
 
-        } while (trabajando);
-        System.out.println("Total de minutos en la que no hubo clientes en la cola: " + MinutosSinCola);
-        System.out.println("Total de clientes que permanecieron el cola tras la hora de cierre: " + cola);
-        System.out.println("Tras finalizar la jornada laboral se atendieron: " + ClientesAntendidos + " clientes.");
-        System.out.println("El total de productos vendidos fue de: " + ItemsVendidos + "items.");
-        ImprimeLinea();
+        } while (working);
+
+        System.out.println("Resumen: ");
+        imprimeLineaResumen();
+
+        System.out.println("Total de minutos en la que no hubo clientes en la cola: " + MinutesWithouQueue);
+        System.out.println("Total de clientes que permanecieron el cola tras la hora de cierre: " + line);
+        System.out.println("Tras finalizar la jornada laboral se atendieron: " + ClientsServed + " clientes.");
+        System.out.println("El total de productos vendidos fue de: " + Sold_Items + "items.");
+        imprimeLineaResumen();
         scanner.close();
         
     }
-    static void ImprimeLinea(){
+    static void imprimeLineaResumen() {
+        System.out.println("===========".repeat(7));
+    }
+    static void imprimeLinea(){
         System.out.println("---------+".repeat(5));
+
     }
 
     static void cleanScreen(){
