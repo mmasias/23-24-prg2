@@ -7,23 +7,26 @@ public class RetoCCCF {
 
     public static void main(String[] args) {
 
-        int[] cajas = { 0, 0, 0, 0, };
+        int[] cajas = { 0, 0, 0, 0, 0 };
         int cola = 0;
 
         for (int minuto = 1; minuto <= HORAS_JORNADA * 60; minuto++) {
-            
+            System.out.print("MINUTO " + minuto + " - ");
             cola = llegadaCola(cola);
-    
+
             for (int caja = 0; caja < cajas.length; caja++) {
                 if (cajas[caja] > 0) {
                     cajas[caja]--;
-                } else if (cola > 0) {
+                } else if (cola > 0 && caja < 4) {
                     cola--;
-                    cajas[caja] = (int) (Math.random() * (MAXIMO_ITEMS - MINIMO_ITEMS)) + MINIMO_ITEMS;
+                    cajas[caja] = añadirCompra();
                 }
-
+                if (cola > 15) {
+                    cola--;
+                    cajas[4] = añadirCompra();
+                }
             }
-            System.out.print("MINUTO " + minuto + " - ");
+            
             System.out.println("En Cola: " + cola);
             for (int caja = 0; caja < cajas.length; caja++) {
                 System.out.print("Caja " + (caja + 1) + ":[" + cajas[caja] + "] | ");
@@ -31,6 +34,10 @@ public class RetoCCCF {
             System.out.println();
             System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
         }
+    }
+
+    private static int añadirCompra() {
+        return (int) (Math.random() * (MAXIMO_ITEMS - MINIMO_ITEMS)) + MINIMO_ITEMS;
     }
 
     private static int llegadaCola(int cola) {
