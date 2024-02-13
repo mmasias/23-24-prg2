@@ -237,4 +237,5 @@ public class RetoCarrefour {
     private static int createPacks(int maxPacks, int minPacks) {
         return (int) (Math.random() * (maxPacks - minPacks)) + minPacks;
     }
+    
 }
