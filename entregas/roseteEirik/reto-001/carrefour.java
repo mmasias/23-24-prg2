@@ -6,12 +6,7 @@ class Carrefour {
 
         int customerQueue = 0;
         int minutes = 0;
-        int[][] cashiersStatus = {
-                { 0, 0 },
-                { 0, 0 },
-                { 0, 0 },
-                { 0, 0 }
-        };
+        int[] quantityOfItems = { 0, 0, 0, 0 };
         boolean workingHours = true;
 
         do {
@@ -19,19 +14,20 @@ class Carrefour {
             workingHours = minutes < DAY_MINUTES;
             currentTime(minutes);
             customerQueue = customerQueue + addCustomer(workingHours);
-            customerQueue = customerQueue - cashierWorking(cashiersStatus, customerQueue);
+            customerQueue = customerQueue - cashierWorking(quantityOfItems, customerQueue);
             System.out.println(customerQueue);
 
-        } while (allCustomersLeft(cashiersStatus, workingHours));
+        } while (allCustomersLeft(quantityOfItems, workingHours));
     }
 
-    static boolean allCustomersLeft(int[][] cashiersStatus, boolean workingHours) {
-        final int EMPLOYEE = 0;
-        int cashierWorking = 0;
-        for (int cashierLine = 0; cashierLine < cashiersStatus.length; cashierLine++) {
-            cashierWorking = cashierWorking + cashiersStatus[cashierLine][EMPLOYEE];
+    static boolean allCustomersLeft(int[] quantityOfItems, boolean workingHours) {
+        boolean cashiersWorking = true;
+        int totalItems = 0;
+        for (int cashierLine = 0; cashierLine < quantityOfItems.length; cashierLine++) {
+            totalItems = totalItems + quantityOfItems[cashierLine];
         }
-        if (cashierWorking == 0 && !workingHours) {
+        cashiersWorking = totalItems != 0 ? true : false;
+        if (!cashiersWorking && !workingHours) {
             return false;
         }
         return true;
@@ -47,47 +43,45 @@ class Carrefour {
         System.out.println("Hora: " + hour + division + minutes);
     }
 
-    static int addCustomer(boolean isWorking) {
+    static int addCustomer(boolean workingHours) {
         final double customerSpawnProbability = 0.6;
-        if (Math.random() < customerSpawnProbability && isWorking) {
+        if (Math.random() < customerSpawnProbability && workingHours) {
             return 1;
         }
         return 0;
     }
 
-    static int cashierWorking(int[][] cashiersStatus, int customerQueue) {
-        final int EMPLOYEE = 0;
-        final int ITEMS = 1;
-        final int NOT_WORKING = 0;
-        final int WORKING = 1;
+    static int cashierWorking(int[] quantityOfItems, int customerQueue) {
         final int MIN_ITEMS = 5;
         final int MAX_ITEMS = 15;
         int numberOfCustomersToCheckout = 0;
 
-        for (int cashierLine = 0; cashierLine < cashiersStatus.length; cashierLine++) {
-            if (cashiersStatus[cashierLine][EMPLOYEE] == NOT_WORKING && customerQueue > 0) {
-                cashiersStatus[cashierLine][EMPLOYEE] = WORKING;
-                cashiersStatus[cashierLine][ITEMS] = (int) (Math.random() * (MAX_ITEMS - MIN_ITEMS) + MIN_ITEMS);
+        for (int cashierLine = 0; cashierLine < quantityOfItems.length; cashierLine++) {
+            if (quantityOfItems[cashierLine] == 0 && customerQueue > 0) {
+                quantityOfItems[cashierLine] = (int) (Math.random() * (MAX_ITEMS - MIN_ITEMS) + MIN_ITEMS);
+                customerQueue--;
                 numberOfCustomersToCheckout++;
             }
-            if (cashiersStatus[cashierLine][EMPLOYEE] == WORKING && cashiersStatus[cashierLine][ITEMS] > 0) {
-                cashiersStatus[cashierLine][ITEMS] = cashiersStatus[cashierLine][ITEMS] - 1;
+            if (quantityOfItems[cashierLine] != 0) {
+                quantityOfItems[cashierLine]--;
             }
-            if (cashiersStatus[cashierLine][ITEMS] == 0) {
-                cashiersStatus[cashierLine][EMPLOYEE] = NOT_WORKING;
-            }
-            printASCII(cashiersStatus[cashierLine][EMPLOYEE], cashiersStatus[cashierLine][ITEMS]);
+            printASCII(quantityOfItems[cashierLine]);
         }
+
+        reduceCustomer(numberOfCustomersToCheckout);
         return numberOfCustomersToCheckout;
     }
 
-    static void printASCII(int cashier, int items) {
-        String[] draw = { "O ", "O:" };
-        System.out.println(draw[cashier] + "[#]".repeat(items));
+    static int reduceCustomer(int reduce) {
+        return reduce;
     }
 
-    static void printItemsASCII(int value) {
-        System.out.println();
+    static void printASCII(int quantityOfItems) {
+        final int EMPLOYEE_RESTING = 0;
+        final int EMPLOYEE_WORKING = 1;
+        String[] draw = { "O ", "O:" };
+        System.out.println((quantityOfItems == 0 ? draw[EMPLOYEE_RESTING] : draw[EMPLOYEE_WORKING])
+                + "[#]".repeat(quantityOfItems));
     }
 
     static void cleanScreen() {
