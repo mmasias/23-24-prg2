@@ -93,6 +93,27 @@ public class CentroComercial {
                 minutosSinCola++;
             }
             
+
+            System.out.print("MINUTO " + tiempo);
+            if (llegaNuevo) {
+                System.out.println(" - LLega 1 persona - En cola: " + cola);
+                llegaNuevo = false;
+            } else {
+                System.out.println(" - LLega 0 persona - En cola: " + cola);
+            }
+            System.out.print(" Caja 1:[" + nItems[0] + "] | Caja 2:[" + nItems[1] + "] | Caja 3:[" + nItems[2] + "] | Caja 4:[" + nItems[3] + "]");
+            if (nItems5 > 0 || activa) {
+                System.out.println(" Caja 5:[" + nItems[4] + "] ");
+            } else {
+                System.out.println();
+            }
+
+            if (cola >= 15) {
+                activa = true;
+            } else {
+                activa = false;
+            }
+        
         }
 
 
