@@ -1,7 +1,7 @@
 package entregas.OrtizNazaret;
 import java.util.Scanner;
 
-class Carrefour {
+class Cccf {
    static int totalPersonsInDay = 0;
    static int totalItemsSold = 0;
 
