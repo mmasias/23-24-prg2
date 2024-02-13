@@ -12,7 +12,7 @@ public class Carrefour {
         int itemsVendidos = 0;
 
         for (int minuto = 1; minuto <= 720; minuto++) {
-           
+            // Llegada de personas
             if (rand.nextDouble() < 0.6) {
                 cola++;
                 System.out.println("MINUTO " + minuto + " - Llega 1 persona - En Cola: " + cola);
@@ -20,7 +20,7 @@ public class Carrefour {
                 System.out.println("MINUTO " + minuto + " - No llega nadie  - En Cola: " + cola);
             }
 
-
+            // Atención en cajas
             for (int i = 0; i < cajas.length; i++) {
                 if (cajas[i] > 0) {
                     cajas[i]--;
@@ -31,5 +31,17 @@ public class Carrefour {
                     personasAtendidas++;
                 }
             }
+            
+            if (cola == 0) {
+                minutosSinCola++;
+            }
 
+            // Mostrar estado de cajas
+            System.out.print("Caja1:[" + cajas[0] + "] | Caja2:[" + cajas[1] + "] | Caja3:[" + cajas[2] + "] | Caja4:[" + cajas[3] + "] | ");
+            System.out.println();
+            System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
+        }
+
+    }
+}
 
