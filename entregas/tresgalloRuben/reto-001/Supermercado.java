@@ -117,5 +117,17 @@ if (cola >= 15) {
 } else {
     activa = false;
 }
+for (int i = 0; i < caja.length; i++) {
+    System.out.println("clientes totales que pasan por la caja " + (i + 1) + ": " + caja[i]);
+}
+int total = 0;
+for (int i = 0; i < caja.length; i++) {
+    total += caja[i];
+}
+
+System.out.println("Personas que han pasado por la tienda" + ":" + total);
+System.out.println("Hoy se han vendido " + totalObjetos + " de productos");
+System.out.println("La cola ha estado vacia durante " + minutosSinCola + " minutos");
+System.out.println("Clientes en la cola al finalizar el dia " + cola);
 
    
