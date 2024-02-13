@@ -1,0 +1,30 @@
+@startuml
+class Alumno {
+    +Proceso Educativo
+    +Flujo de Trabajo
+    +Ergonomía Educativa
+}
+
+class ProcesoEducativo {
+    +Maximización de la Productividad
+    +Minimización de Recursos
+    +Objetivos Educativos
+}
+
+class FlujoDeTrabajo {
+    +Progresión Educativa
+    +Planificación de Horarios
+    +Optimización de Espacios
+}
+
+class ErgonomíaEducativa {
+    +Diseño de Aulas
+    +Disposición de Entornos de Aprendizaje
+    +Minimización de Fatiga
+}
+
+Alumno "1" *-- "1" ProcesoEducativo : Optimiza >
+Alumno "1" *-- "1" FlujoDeTrabajo : Navega >
+Alumno "1" *-- "1" ErgonomíaEducativa : Beneficia >
+
+@enduml

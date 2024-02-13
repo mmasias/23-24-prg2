@@ -1,0 +1,30 @@
+@startuml
+class Alumno {
+    +Interacción con Sistemas de Información
+    +Manejo de Datos del Alumno
+    +Optimización de la Experiencia de Aprendizaje
+}
+
+class InteracciónConSistemasDeInformación {
+    +Uso de Plataformas Educativas
+    +Acceso a Recursos en Línea
+    +Comunicación Digital
+}
+
+class ManejoDeDatosDelAlumno {
+    +Registro Académico
+    +Preferencias de Aprendizaje
+    +Rendimiento y Evaluaciones
+}
+
+class OptimizaciónDeLaExperienciaDeAprendizaje {
+    +Personalización del Aprendizaje
+    +Análisis Predictivo
+    +Recomendaciones Inteligentes
+}
+
+Alumno "1" *-- "1" InteracciónConSistemasDeInformación : Interactúa >
+Alumno "1" *-- "1" ManejoDeDatosDelAlumno : Se Representa >
+Alumno "1" *-- "1" OptimizaciónDeLaExperienciaDeAprendizaje : Se Mejora >
+
+@enduml

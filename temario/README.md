@@ -1,6 +1,6 @@
 # Temario
 
-- [ ] Introducción
+- [ ] [Introducción](introduccion.md)
   - [ ] Repaso de programación imperativa
   - [ ] Repaso de programación estructurada
 - OOP
