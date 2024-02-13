@@ -13,6 +13,7 @@ class Carrefour {
         int zeroCostumersInLine = 0;
         int costumersAttended = 0;
         int costumersAtTheEnd = 0;
+        int totalItemsSold = 0;
 
         do {
 
@@ -28,6 +29,7 @@ class Carrefour {
                     waitingLineCostumer--;
                 } else if (itemsRemainingPerCashier[i] > 0) {
                     itemsRemainingPerCashier[i]--;
+                    totalItemsSold = totalItemsSold+1;
                     if (itemsRemainingPerCashier[i] == 0) {
                         waitingLinePerCashier[i] = 0;
                     }
@@ -36,10 +38,11 @@ class Carrefour {
             zeroCostumersInLine = zeroCostumersInLineCalculation(waitingLineCostumer, zeroCostumersInLine);
             costumersAttended = costumersAttendedCalculation(waitingLinePerCashier, costumersAttended);
             costumersAtTheEnd = costumersAtTheEndOfTheDay(costumersAtTheEnd, waitingLineCostumer, minutesWorked);
-            imprimirEstadoCajas(minutesWorked, waitingLinePerCashier, itemsRemainingPerCashier, waitingLineCostumer, zeroCostumersInLine, costumersAttended);
+            imprimirEstadoCajas(minutesWorked, waitingLinePerCashier, itemsRemainingPerCashier, waitingLineCostumer, zeroCostumersInLine, costumersAttended, totalItemsSold);
             
             scanner.nextLine();
         } while (minutesWorked < TOTAL_MINUTES_PER_DAY);
+        
         System.out.println("Clientes que quedaron esperando al final del día: " + costumersAtTheEnd);
 
     }
@@ -49,21 +52,29 @@ class Carrefour {
     }
 
     private static void imprimirEstadoCajas(int minutesWorked, int[] waitingLinePerCashier,
-            int[] itemsRemainingPerCashier, int waitingLineCostumer, int zeroCostumersInLine, int costumersAttend) {
+            int[] itemsRemainingPerCashier, int waitingLineCostumer, int zeroCostumersInLine, int costumersAttend, int totalItemsSold) {
         System.out.println("Minuto " + minutesWorked);
         for (int i = 0; i < waitingLinePerCashier.length; i++) {
             System.out.println("Caja " + (i + 1) + ": " + waitingLinePerCashier[i] + " cliente(s) en espera con "
                     + itemsRemainingPerCashier[i] + " item(s) restante(s)");
         }
+        
         System.out.println("Clientes en espera: " + waitingLineCostumer);
         System.out.println("Veces en las que la linea ha tenido 0 clientes: " + zeroCostumersInLine);
         System.out.println("Clientes atendidos: " + costumersAttend);
+        System.out.println("Total de ítems vendidos durante el día: " + totalItemsSold);System.out.println("Total de ítems vendidos durante el día: " + totalItemsSold);
     }
 
     private static int costumerArrival(double probability, double costumerProbability, int waitingLineCostumer) {
         if (costumerProbability < probability) {
             waitingLineCostumer++;
+            System.out.println("¡Ha llegado un cliente!");
+        } else{
+            System.out.println("No ha llegado ningun cliente");
+
         }
+
+        
         return waitingLineCostumer;
     }
 
@@ -88,9 +99,10 @@ class Carrefour {
         if (minutesWorked==720) {
             costumersAtTheEnd = waitingLineCostumer;
         }
-
         return costumersAtTheEnd;
-        
     }
+
+
+
 
 }
