@@ -32,3 +32,62 @@ public class CentroComercial {
                     objetos[1] = ((int) (Math.random() * 100)) % 11 + 5;
                     totalObjetos = totalObjetos + objetos[1];
                     cola--;
+                } else if (libre[1]) {
+                    caja[1]++;
+                    libre[1] = false; 
+                    objetos[1] = ((int) (Math.random() * 100)) % 11 + 5;
+                    totalIObjetos = totalObjetos + objetos[1];
+                    cola--;
+
+                } else if (libre[2]) {
+                    caja[2]++;
+                    libre[2] = false; 
+                } else if (libre[1]) {
+                    caja[1]++;
+                    libre[1] = false; 
+                    objetos[1] = ((int) (Math.random() * 100)) % 11 + 5;
+                    totalObjetos = totalObjetos + objetos[1];
+                    cola--;
+
+                } else if (libre[2]) {
+                    caja[2]++;
+                    libre[2] = false; 
+                    objetos[2] = ((int) (Math.random() * 100)) % 11 + 5;
+                    totalObjetos = totalObjetos + objetos [2];
+                    cola--;
+
+                } else if (libre[3]) {
+                    caja[3]++;
+                    libre[3] = false; 
+                    objetos[3] = ((int) (Math.random() * 100)) % 11 + 5;
+                    totalObjetos = totalObjetos + objetos[3];
+                    cola--;
+                } else if (libre[4] && activa) {
+                    caja[4]++;
+                    libre[4] = false; 
+                    objetos[4] = ((int) (Math.random() * 100)) % 11 + 5;
+                    totalObjetos = totalObjetos + objetos[4];
+                    cola--;
+
+                }
+
+            }[2] = ((int) (Math.random() * 100)) % 11 + 5;
+                    totalObjetos = totalObjetos + objetos[2];
+                    cola--;
+
+                } else if (libre[3]) {
+                    caja[3]++;
+                    libre[3] = false; 
+                    objetos[3] = ((int) (Math.random() * 100)) % 11 + 5;
+                    totalObjetos = totalObjetos + objetos[3];
+                    cola--;
+                } else if (libre[4] && activa) {
+                    caja[4]++;
+                    libre[4] = false; 
+                    objetos[4] = ((int) (Math.random() * 100)) % 11 + 5;
+                    totalObjetos = totalObjetos + objetos[4];
+                    cola--;
+
+                }
+
+            }
