@@ -12,14 +12,14 @@ class Carrefour {
         int[] itemsRemainingPerCashier = { 0, 0, 0, 0 };
         int zeroCostumersInLine = 0;
         int costumersAttended = 0;
+        int costumersAtTheEnd = 0;
 
         do {
 
             double costumerProbability = Math.random();
             minutesWorked++;
             waitingLineCostumer = costumerArrival(PROBABILITY, costumerProbability, waitingLineCostumer);
-            zeroCostumersInLine = zeroCostumersInLineCalculation(waitingLineCostumer, zeroCostumersInLine);
-            costumersAttended = costumersAttendedCalculation(waitingLinePerCashier, costumersAttended);
+            
 
             for (int i = 0; i < waitingLinePerCashier.length && waitingLineCostumer > 0; i++) {
                 if (waitingLinePerCashier[i] == 0) {
@@ -33,11 +33,14 @@ class Carrefour {
                     }
                 }
             }
-
-            imprimirEstadoCajas(minutesWorked, waitingLinePerCashier, itemsRemainingPerCashier, waitingLineCostumer,
-                    zeroCostumersInLine, costumersAttended);
+            zeroCostumersInLine = zeroCostumersInLineCalculation(waitingLineCostumer, zeroCostumersInLine);
+            costumersAttended = costumersAttendedCalculation(waitingLinePerCashier, costumersAttended);
+            costumersAtTheEnd = costumersAtTheEndOfTheDay(costumersAtTheEnd, waitingLineCostumer, minutesWorked);
+            imprimirEstadoCajas(minutesWorked, waitingLinePerCashier, itemsRemainingPerCashier, waitingLineCostumer, zeroCostumersInLine, costumersAttended);
+            
             scanner.nextLine();
         } while (minutesWorked < TOTAL_MINUTES_PER_DAY);
+        System.out.println("Clientes que quedaron esperando al final del día: " + costumersAtTheEnd);
 
     }
 
@@ -78,9 +81,16 @@ class Carrefour {
                     costumersAttended++;
                 }
             }
-
         return costumersAttended;
+    }
 
+    public static int costumersAtTheEndOfTheDay(int costumersAtTheEnd, int waitingLineCostumer, int minutesWorked) {
+        if (minutesWorked==720) {
+            costumersAtTheEnd = waitingLineCostumer;
+        }
+
+        return costumersAtTheEnd;
+        
     }
 
 }
