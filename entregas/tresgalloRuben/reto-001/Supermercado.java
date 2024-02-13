@@ -32,29 +32,12 @@ public class CentroComercial {
                     objetos[1] = ((int) (Math.random() * 100)) % 11 + 5;
                     totalObjetos = totalObjetos + objetos[1];
                     cola--;
-                } else if (libre[1]) {
-                    caja[1]++;
-                    libre[1] = false; 
-                    objetos[1] = ((int) (Math.random() * 100)) % 11 + 5;
-                    totalIObjetos = totalObjetos + objetos[1];
-                    cola--;
+              
 
                 } else if (libre[2]) {
                     caja[2]++;
                     libre[2] = false; 
-                } else if (libre[1]) {
-                    caja[1]++;
-                    libre[1] = false; 
-                    objetos[1] = ((int) (Math.random() * 100)) % 11 + 5;
-                    totalObjetos = totalObjetos + objetos[1];
-                    cola--;
-
-                } else if (libre[2]) {
-                    caja[2]++;
-                    libre[2] = false; 
-                    objetos[2] = ((int) (Math.random() * 100)) % 11 + 5;
-                    totalObjetos = totalObjetos + objetos [2];
-                    cola--;
+              
 
                 } else if (libre[3]) {
                     caja[3]++;
@@ -62,25 +45,7 @@ public class CentroComercial {
                     objetos[3] = ((int) (Math.random() * 100)) % 11 + 5;
                     totalObjetos = totalObjetos + objetos[3];
                     cola--;
-                } else if (libre[4] && activa) {
-                    caja[4]++;
-                    libre[4] = false; 
-                    objetos[4] = ((int) (Math.random() * 100)) % 11 + 5;
-                    totalObjetos = totalObjetos + objetos[4];
-                    cola--;
 
-                }
-
-            }[2] = ((int) (Math.random() * 100)) % 11 + 5;
-                    totalObjetos = totalObjetos + objetos[2];
-                    cola--;
-
-                } else if (libre[3]) {
-                    caja[3]++;
-                    libre[3] = false; 
-                    objetos[3] = ((int) (Math.random() * 100)) % 11 + 5;
-                    totalObjetos = totalObjetos + objetos[3];
-                    cola--;
                 } else if (libre[4] && activa) {
                     caja[4]++;
                     libre[4] = false; 
@@ -91,3 +56,66 @@ public class CentroComercial {
                 }
 
             }
+        }
+    }
+}    if (objetos[0] > 0) {
+    objetos[0]--;
+    if (objetos[0] == 0) {
+        libre[0] = true;
+    }
+}
+if (objetos[1] > 0) {
+    objetos[1]--;
+
+    if (objetos[1] == 0) {
+
+        libre[1] = true;
+    }
+}
+if (objetos[2] > 0) {
+    objetos[2]--;
+
+    if (objetos[2] == 0) {
+
+        libre[2] = true;
+    }
+}
+if (objetos[3] > 0) {
+    objetos[3]--;
+
+    if (objetos[3] == 0) {
+        libre[3] = true;
+    }
+}
+if (objetos[4] > 0) {
+    objetos[4]--;
+    if (objetos[4] == 0) {
+        libre[4] = true;
+    }
+}
+if (cola == 0) {
+    minutosSinCola++;
+}   
+
+System.out.println("--------------------------------------------------------------");
+System.out.print("MINUTO " + tiempo);
+if (llegaNuevo) {
+    System.out.println(" - LLega 1 persona - En cola: " + cola);
+    llegaNuevo = false;
+} else {
+    System.out.println(" - LLega 0 persona - En cola: " + cola);
+}
+System.out.print(" Caja1:[" + objetos[0] + "] | Caja2:[" + objetos[1] + "] | Caja3:[" + objetos[2] + "] | Caja4:[" + objetos[3] + "]");
+if (objetos[4] > 0 || activa) {
+    System.out.println(" Caja5:[" + objetos[4] + "] ");
+} else {
+    System.out.println();
+}
+
+if (cola >= 15) {
+    activa = true;
+} else {
+    activa = false;
+}
+
+   
