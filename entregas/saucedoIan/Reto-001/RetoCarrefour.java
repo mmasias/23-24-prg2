@@ -24,72 +24,7 @@ public class RetoCarrefour {
         do {
             timeWorking = timeWorking + 1;
             isWorking = timeWorking <= MaxTimeForWork;
-            System.out.println(
-                    "Seleccione caja a activar a desactivar digitando su numero, para mantener el status de las cajas digite 0");
-            selectedCashier = scanner.nextInt();
-            switch (selectedCashier) {
-                case 1:
-                if (cashier1Working == true) {
-                    System.out.println("Se desactivara la caja 1");
-                    cashier1Working = false;
-                } else {
-                    System.out.println("Se activara la caja 1");
-                    cashier1Working = true;
-                }
 
-                    break;
-                case 2:
-                if (cashier2Working == true) {
-                    System.out.println("Se desactivara la caja 2");
-                    cashier2Working = false;
-                } else {
-                    System.out.println("Se activara la caja 2");
-                    cashier2Working = true;
-                }
-
-                    break;
-                case 3:
-                if (cashier3Working == true) {
-                    System.out.println("Se desactivara la caja 3");
-                    cashier3Working = false;
-                } else {
-                    System.out.println("Se activara la caja 3");
-                    cashier3Working = true;
-                }
-
-                    break;
-                case 4:
-                if (cashier4Working == true) {
-                    System.out.println("Se desactivara la caja 4");
-                    cashier4Working = false;
-                } else {
-                    System.out.println("Se activara la caja 4");
-                    cashier4Working = true;
-                }
-                case 5:
-                if (cashier5Working == true) {
-                    System.out.println("Se desactivara la caja 5");
-                    cashier5Working = false;
-                } else {
-                    System.out.println("Se activara la caja 5");
-                    cashier5Working = true;
-                }
-                
-                break;
-              case 6:
-              if (cashier6Working == true) {
-                System.out.println("Se desactivara la caja 6");
-                cashier6Working = false;
-            } else {
-                System.out.println("Se activara la caja 6");
-                cashier6Working = true;
-            }
-              
-                break;
-
-                default:
-                    break;
-            }
             Double probabilityOfNewCostumer = Math.random();
             if (probabilityOfNewCostumer <= POTENTIALOFARRIVAL) {
                 peopleInLine = peopleInLine + 1;
@@ -100,7 +35,7 @@ public class RetoCarrefour {
             if (peopleInLine == 0) {
                 noOneInLine++;
             }
-            if (peopleInLine > 0 && cashier1 <= 0 && cashier1Working == true ) {
+            if (peopleInLine > 0 && cashier1 <= 0 && cashier1Working == true) {
                 peopleInLine--;
                 servicedCostumers++;
                 cashier1 = createPacks(PACK_MINIMUM, PACK_MAXIMUM);
@@ -161,8 +96,78 @@ public class RetoCarrefour {
                 maxAmountOfPacks++;
 
             }
-            printInterface(timeWorking, cashier1, cashier2, cashier3, cashier4,cashier5, cashier6, peopleInLine, arrivesOnLane);
+            printInterface(timeWorking, cashier1, cashier2, cashier3, cashier4, cashier5, cashier6, peopleInLine,
+                    arrivesOnLane, cashier1Working,cashier2Working, cashier3Working, cashier4Working, cashier5Working, cashier6Working );
+            System.out.println(
+                    "Seleccione caja a activar a desactivar digitando su numero, para mantener el status de las cajas digite 0");
+            selectedCashier = scanner.nextInt();
+            switch (selectedCashier) {
+                case 1:
+                    if (cashier1Working == true) {
+                        System.out.println("Se desactivara la caja 1");
+                        cashier1Working = false;
+                    } else {
+                        System.out.println("Se activara la caja 1");
+                        cashier1Working = true;
+                    }
 
+                    break;
+                case 2:
+                    if (cashier2Working == true) {
+                        System.out.println("Se desactivara la caja 2");
+                        cashier2Working = false;
+                    } else {
+                        System.out.println("Se activara la caja 2");
+                        cashier2Working = true;
+                    }
+
+                    break;
+                case 3:
+                    if (cashier3Working == true) {
+                        System.out.println("Se desactivara la caja 3");
+                        cashier3Working = false;
+                    } else {
+                        System.out.println("Se activara la caja 3");
+                        cashier3Working = true;
+                    }
+
+                    break;
+                case 4:
+                    if (cashier4Working == true) {
+                        System.out.println("Se desactivara la caja 4");
+                        cashier4Working = false;
+                    } else {
+                        System.out.println("Se activara la caja 4");
+                        cashier4Working = true;
+                    }
+                case 5:
+                    if (cashier5Working == true) {
+                        System.out.println("Se desactivara la caja 5");
+                        cashier5Working = false;
+                    } else {
+                        System.out.println("Se activara la caja 5");
+                        cashier5Working = true;
+                    }
+
+                    break;
+                case 6:
+                    if (cashier6Working == true) {
+                        System.out.println("Se desactivara la caja 6");
+                        cashier6Working = false;
+                    } else {
+                        System.out.println("Se activara la caja 6");
+                        cashier6Working = true;
+                    }
+
+                    break;
+
+                default:
+                    break;
+            }
+            if (peopleInLine >= 15) {
+                cashier5Working = true;
+                System.out.println("Se activara la caja 5 por exceso de clientes");
+            } 
         } while (isWorking == true);
         statistics(peopleInLine, servicedCostumers, noOneInLine, maxAmountOfPacks);
     }
@@ -178,14 +183,55 @@ public class RetoCarrefour {
     }
 
     private static void printInterface(int timeWorking, int cashier1, int cashier2, int cashier3, int cashier4,
-    int cashier5, int cashier6, int peopleInLine, int arrivesOnLane
-) {
-        System.out.println("-".repeat(60));
+            int cashier5, int cashier6, int peopleInLine, int arrivesOnLane, boolean cashier1Working, boolean cashier2Working,  boolean cashier3Working, boolean cashier4Working, boolean cashier5Working, boolean cashier6Working) {
+        System.out.println("-".repeat(120));
         System.out.println(
                 "Minuto " + timeWorking + "- Llega " + arrivesOnLane + " persona -" + " En Cola:" + peopleInLine);
         System.out.println("Caja1:[" + cashier1 + "] | Caja2:[" + cashier2 + "] | Caja3:[" + cashier3 + "] | Caja4:["
-                + cashier4 + "] | Caja5:["+cashier5+"]"+" | Caja6:["+cashier6+"]");
-        System.out.println("-".repeat(60));
+                + cashier4 + "] | Caja5:[" + cashier5 + "]" + " | Caja6:[" + cashier6 + "]");
+            if (cashier1Working == true) {
+                System.out.print("Caja1:[ACTIVADA] ");
+            }
+            else {
+                System.out.print("Caja1:[DESACTIVADA] ");
+            }
+            if (cashier2Working == true) {
+                System.out.print("Caja2:[ACTIVADA]  ");
+            }
+            else {
+                System.out.print("Caja2:[DESACTIVADA] ");
+            }
+            if (cashier3Working == true) {
+                System.out.print("Caja3:[ACTIVADA]  ");
+                
+            }
+            else {
+                System.out.print("Caja3:[DESACTIVADA] ");
+            }
+            if (cashier4Working == true) {
+                System.out.print("Caja4:[ACTIVADA]  ");
+            }
+            else {
+                System.out.print("Caja4:[DESACTIVADA] ");
+            }
+            if (cashier5Working == true) {
+                System.out.print("Caja5:[ACTIVADA] " );
+                
+                
+            }
+            else {
+                System.out.print("Caja5:[DESACTIVADA] ");
+            }
+            if (cashier6Working == true) {
+                System.out.print("Caja6:[ACTIVADA] ");
+                
+            }
+            else {
+                System.out.print("Caja6:[DESACTIVADA] ");
+            }
+            System.out.println();
+        System.out.println("-".repeat(120));
+
     }
 
     private static int createPacks(int maxPacks, int minPacks) {
