@@ -55,7 +55,11 @@ class Carrefour {
                         System.out.println("La caja extra está vacía.");
                         clienteCajaExtra = false;
                     } else {
-                        System.out.println("Un cliente se dirige a la caja extra con [" +itemsCajaExtra+ "] items");
+                        System.out.print("Un cliente se dirige a la caja extra con ");
+                        for (int dibujoItemsExtra = 0; dibujoItemsExtra < itemsCajaExtra; dibujoItemsExtra++){
+                            System.out.print("[#]");
+                        }
+                        System.out.println(" items. Lo que es igual a [" + itemsCajaExtra + "] items.");
                     }
                 }
             }
@@ -85,7 +89,11 @@ class Carrefour {
                 }
 
                 if (caja[atender] > 0){
-                    System.out.println("Caja " + (atender + 1) + " atiende al cliente y le quedan [" + caja[atender] + "] items.");
+                    System.out.print("Caja " + (atender + 1) + " atiende al cliente y le quedan ");
+                    for (int dibujoItems = 0; dibujoItems < caja[atender]; dibujoItems++){
+                        System.out.print("[#]");
+                    }
+                    System.out.println(" items. Lo que es igual a que le quedan [" + caja[atender] + "] items.");
                 } else {
                     System.out.println("Caja " + (atender + 1) + " se encuentra vacia.");
                 }
