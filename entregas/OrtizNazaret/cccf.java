@@ -48,25 +48,66 @@ class Carrefour {
     );
  }
 
-private static void admin(int[] cashiers, Scanner scanner) {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'admin'");
+ static void handleCashiers(int[] cashiers, int length) {
+    for(int i = 0; i < length; i++) {
+       int cashier = cashiers[i];
+       boolean isOcuppied = cashier > 0;
+
+       if(cashier < 0) {
+          System.out.println("Register: " + (i + 1) + " [Register close ]");
+          continue;
+       }
+       if(isOcuppied) {
+          cashiers[i] = cashier - 1;
+       } 
+       System.out.println("Register: " + (i + 1) + " [" + (cashier > 0 ? "°".repeat(cashier) : "") + "] " + cashier);
+    }
+ }
+
+ static boolean passClientToCashier(int[] cashiers, int max, int min, int length) {
+    for(int i = 0; i < length; i++) {
+       int cashier = cashiers[i];
+       boolean isOcuppied = cashier > 0;
+       if(cashier < 0) {
+          continue ;
+       }
+       if(!isOcuppied) {
+          int items = generateItems(max, min);
+          cashiers[i] = items;
+          totalItemsSold += items;
+          return true;
+       }
+    }
+    return false;
+ }
+
+ static int generateItems(int max, int min) {
+    return (int) (Math.random() * (max - min)) + min;
+ }
+
+ static void printStatus(int currentTime, boolean incomingPerson, int line) {
+    String personas = incomingPerson ? "One person is here" : "Nobody's here";
+    System.out.println("\nMINUTE " + currentTime + " - "  + personas + " - " + "In line: " + line + "\n");
+ }
+
+ static void admin(int[] cashiers, Scanner scanner) {
+    System.out.println("\nClose Register [1] / Open Register [2] / Continue [3]\n");
+    int input = scanner.nextInt();
+
+    if(input == 1) {
+       System.out.println("\nChoose wich register you want to close\n");
+       int selectedCashier = scanner.nextInt() - 1;
+       cashiers[selectedCashier] = -1;
+    }
+
+    if(input == 2) {
+       System.out.println("\nChoose wich register you want to open\n");
+       int selectedCashier = scanner.nextInt() - 1;
+       cashiers[selectedCashier] = 0;
+    }
+
+    if(input == 3) {
+       return; 
+    }
+ }
 }
-
-private static void handleCashiers(int[] cashiers, int length) {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'handleCashiers'");
-}
-
-private static void printStatus(int currentTime, boolean incomingPerson, int line) {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'printStatus'");
-}
-
-private static boolean passClientToCashier(int[] cashiers, int mAX_ITEMS, int mIN_ITEMS, int length) {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'passClientToCashier'");
-}
-   }
-
-
