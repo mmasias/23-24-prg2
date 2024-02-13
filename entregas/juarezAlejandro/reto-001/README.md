@@ -6,3 +6,8 @@ Debido a que el codigo en un momento sentia que no se entendía y no era lo sufi
 Intentaré una pequeña guía, sin embargo, intentaré hacerlo de otra forma.
 
 Para el primer reto ampliado, seré sincero que no logré entender del todo la instrucción, así que lo realicé a como yo creia que era, así que cuando se llegan a más de 15 personas en la fila, una persona se va a la caja extre. A pesar de eso, el programa si realiza la cuenta de la caja extra, así que la caja funciona correctamente.
+
+Intente arreglar el código para que fuera más bonito visualmete, sin embargo, por la manera en la que lo hice, muchas cosas no podia sacarlas. Además que por falta de tiempo no pude hacer otro código.
+
+
+"Quisiera que las cosas con ella funcionaran, así como funciona este código." :(
