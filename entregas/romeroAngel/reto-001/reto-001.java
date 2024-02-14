@@ -1,62 +1,78 @@
-import java.util.Scanner;
+    import java.util.Scanner;
 
-class RetoCarrefour {
+    class RetoCarrefour {
 
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
 
-        final int CLOSING_TIME = 720;
-        final double CLIENT_ARRIVAL_PROBABILITY = 0.4;
+            final int CLOSING_TIME = 720;
+            final double CLIENT_ARRIVAL_PROBABILITY = 0.4;
+            final int ITEMS_MAXIMUM = 15;
+            final int ITEMS_MINIMUM = 5;
 
-        int currentMinute = 0;
-        int queue = 0;
-        boolean working;
+            int queue = 0;
+            int currentMinute = 0;
+            boolean working;
 
-        int itemsMaximum = 15;
-        int itemsMinimum = 5;
+            int[] cashiers = { 0, 0, 0, 0 };
 
-        int[] cashiers = { 0, 0, 0, 0 };
+            do {
+                queue = clientArrives(queue, CLIENT_ARRIVAL_PROBABILITY);
 
-        do {
-            queue = clientArrives(queue, CLIENT_ARRIVAL_PROBABILITY);
-            cashiers = sendClientToCashier(cashiers, queue, itemsMaximum, itemsMinimum);
-            currentMinute++;
-            showData(queue, cashiers, currentMinute);
+                int[] data = sendClientToCashier(cashiers, queue, ITEMS_MAXIMUM, ITEMS_MINIMUM);
+                cashiers = new int[] {data[0], data[1], data[2], data[3]};
+                queue = data[4];
+                
+                scanProducts(cashiers);
+                currentMinute++;
+                showData(queue, cashiers, currentMinute);
 
-            scanner.nextLine();
-            
-            working = currentMinute < CLOSING_TIME;
-        } while (working);
+                scanner.nextLine();
 
-    }
+                working = currentMinute < CLOSING_TIME;
+            } while (working);
 
-    private static void showData(int queue, int[] cashiers, int currentMinute) {
-        System.out.println("MINUTO " + currentMinute + " -  - En Cola: " + queue);
-        System.out.print("Caja 1:[" + cashiers[0] + "] | Caja 2:[" + cashiers[1] + "] | Caja 3:[" + cashiers[2] + "] | Caja 4: [" + cashiers[3] + "]");
-    }
+        }
 
-    private static int[] sendClientToCashier(int[] cashiers, int queue, int itemsMaximum, int itemsMinimum) {
-        if (queue > 0) {
+        private static void showData(int queue, int[] cashiers, int currentMinute) {
+            System.out.println("MINUTO " + currentMinute + " -  - En Cola: " + queue);
+            System.out.print("Caja 1:[" + cashiers[0] + "] | Caja 2:[" + cashiers[1] + "] | Caja 3:[" + cashiers[2]
+                    + "] | Caja 4: [" + cashiers[3] + "]");
+        }
+
+        private static int[] sendClientToCashier(int[] cashiers, int queue, int ITEMS_MAXIMUM, int ITEMS_MINIMUM) {
+
             for (int i = 0; i < cashiers.length && queue > 0; i++) {
                 if (cashiers[i] == 0) {
-                    int itemsAsigned = (int) (Math.random() * (itemsMaximum - itemsMinimum) + itemsMaximum);
+                    int itemsAsigned = (int) (Math.random() * (ITEMS_MAXIMUM - ITEMS_MINIMUM) + ITEMS_MINIMUM);
                     cashiers[i] = itemsAsigned;
+                    
                     queue--;
-                    return cashiers;
+                    return new int[] {cashiers[0], cashiers[1], cashiers[2], cashiers[3], queue};
+
+                }
+
+            }
+
+            return new int[] {cashiers[0], cashiers[1], cashiers[2], cashiers[3], queue};
+
+        }
+
+        private static void scanProducts(int[] cashiers) {
+            for (int i = 0; i < cashiers.length; i++) {
+                if (cashiers[i] > 0) {
+                    cashiers[i]--;
                 }
             }
         }
 
-        return cashiers;
-    }
+        private static int clientArrives(int queue, double CLIENT_ARRIVAL_PROBABILITY) {
+            double clientArrival = Math.random();
+            if (clientArrival <= CLIENT_ARRIVAL_PROBABILITY) {
+                queue++;
+            }
+            return queue;
 
-    private static int clientArrives(int queue, double CLIENT_ARRIVAL_PROBABILITY) {
-        double clientArrival = Math.random();
-        if (clientArrival <= CLIENT_ARRIVAL_PROBABILITY) {
-            queue++;
         }
-        return queue;
 
     }
-
-}
