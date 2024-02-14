@@ -13,6 +13,7 @@
             int queue = 0;
             int currentMinute = 0;
             boolean working;
+            
 
             int[] cashiers = { 0, 0, 0, 0 };
 
@@ -35,10 +36,12 @@
         }
 
         private static void showData(int queue, int[] cashiers, int currentMinute) {
-            System.out.println("MINUTO " + currentMinute + " -  - En Cola: " + queue);
+            System.out.println("MINUTO " + currentMinute + " --- En Cola: " + queue);
             System.out.print("Caja 1:[" + cashiers[0] + "] | Caja 2:[" + cashiers[1] + "] | Caja 3:[" + cashiers[2]
                     + "] | Caja 4: [" + cashiers[3] + "]");
         }
+
+        
 
         private static int[] sendClientToCashier(int[] cashiers, int queue, int ITEMS_MAXIMUM, int ITEMS_MINIMUM) {
 
@@ -68,10 +71,15 @@
 
         private static int clientArrives(int queue, double CLIENT_ARRIVAL_PROBABILITY) {
             double clientArrival = Math.random();
+
+
             if (clientArrival <= CLIENT_ARRIVAL_PROBABILITY) {
-                queue++;
+                queue++;               
             }
+            
+            
             return queue;
+            
 
         }
 
