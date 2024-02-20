@@ -2,7 +2,7 @@
 
 ## ¿Por qué?
 
-Porque como ingenieros hemos de lidiar con la complejidad inherente a los sistemas que hemos de modelar.
+Porque hemos de lidiar con la complejidad inherente a los sistemas que vamos a desarrollar / modelar.
 
 ## ¿Qué?
 
@@ -10,14 +10,15 @@ La historia del ser humano disfruta de **cuatro mecanismos mentales** que facili
 
 |||
 |-|-|
-|Abstracción|Proceso mental de extracción de las características esenciales de algo, ignorando los detalles superfluos
-|Encapsulación|Proceso por el que se ocultan los detalles del soporte de las características esenciales de una abstracción
-|Modularización|Proceso de descomposición de un sistema en un conjunto de piezas poco acoplados y cohesivos
-|Jerarquización|Proceso de estructuración por el que se produce una organización de un conjunto de elementos en grados o niveles de responsabilidad, de clasificación o de composición, …​ entre otros
+|Abstracción|Proceso mental de extracción de las características esenciales de algo, ignorando los detalles superfluos|
+|Encapsulación|Proceso por el que se ocultan los detalles del soporte de las características esenciales de una abstracción|
+|Modularización|Proceso de descomposición de un sistema en un conjunto de piezas poco acopladas y cohesivas|
+|Jerarquización|Proceso de estructuración por el que se produce una organización de un conjunto de elementos en grados o niveles de responsabilidad, de clasificación o de composición, …​ entre otros|
 
 ## ¿Para qué?
 
-Dominar la complejidad.
+- A partir de estos mecanismos, abordar el desarrollo / modelado.
+- Dominar la complejidad.
 
 ## ¿Cómo?
 
@@ -25,16 +26,20 @@ Dominar la complejidad.
 
 ||Clase|Objeto|
 |-|-|-|
-||Descripción de los datos y de las operaciones que describen el comportamiento de un cierto conjunto de elementos homogéneos.|Ejemplar concreto (instancia) de una clase, que responde al comportamiento definido por las operaciones de la clase a la que pertenece, adecuándose al estado de sus datos particulares.|
+||Descripción de los **datos** y de las **operaciones** que describen el comportamiento de un cierto conjunto de elementos homogéneos.|Ejemplar concreto (instancia) de una clase, que responde al comportamiento definido por las operaciones de la clase a la que pertenece, adecuándose al estado de sus datos particulares.|
 ||Intervalo|horasDeClase / miPresionArterial
 |Datos|Extremos inferior y superior|(8,10) / (80,120)
 |Operaciones|intersección, longitud, desplazar, etc.|
 
 ### Mensaje
 
-Invocación de una operación sobre un objeto. Un objeto es el agente activo que lanza el mensaje y otro objeto es el agente pasivo que recibe el mensaje. El objeto receptor del mensaje debe contemplar dicha operación entre las definidas en su clase.
+Invocación de una operación sobre un objeto.
 
-Ej. Mensajes a objetos de la Clase Intervalo
+Un objeto es el agente activo que lanza el mensaje y otro objeto es el agente pasivo que recibe el mensaje.
+
+**El objeto receptor del mensaje debe contemplar dicha operación entre las definidas en su clase.**
+
+Ej. Mensajes a objetos de la clase *Intervalo*
 
 ```java
     (8,10).longitud() --> obtengo 2
@@ -61,7 +66,7 @@ Ej. Atributos de la clase Intervalo
 
 ### Estado
 
-Conjunto de los valores de los atributos que tiene un objeto, por pertenecer a una clase, en un instante dado.
+Conjunto de los **valores de los atributos que tiene un objeto**, por pertenecer a una clase, en un instante dado.
 
 Ej. Estados de objetos de la clase Intervalo
 
@@ -69,8 +74,6 @@ Ej. Estados de objetos de la clase Intervalo
 - 9 en el extremo inferior y 18 en el extremo superior de misHorasDeTrabajo;
 
 ### Relación de todos estos elementos
-
-
 
 |Clase|Objeto|
 |-|-|
@@ -80,9 +83,9 @@ Ej. Estados de objetos de la clase Intervalo
 Las clases asumen el principio de encapsulación: cuando se describe una clase, se debe describir tanto su vista pública o
 interfaz como su vista privada o implantación.
 
-La vista pública o interfaz describe qué operaciones responden los objetos de esta clase, o sea, su comportamiento.
+La **vista pública** o **interfaz** describe qué operaciones responden los objetos de esta clase, o sea, su comportamiento.
 
-La vista privada o implantación describe las estructuras de datos de la clase y cómo manipulan las operaciones los datos. De esta forma, se conjugan la abstracción inherente en la clase con la encapsulación de sus datos y de su forma de operar
+La **vista privada** o **implantación** describe las estructuras de datos de la clase y cómo manipulan las operaciones los datos. De esta forma, se conjugan la abstracción inherente en la clase con la encapsulación de sus datos y de su forma de operar
 
 Las clases que conjugan de forma equilibrada atributos (datos) y métodos (operaciones) son el único bloque de construcción de programas: módulos.
 
@@ -98,7 +101,7 @@ Ej. A partir de la Clase Intervalo
 - IntervaloCerradoCerrado [x,x]
 - IntervaloAbiertoCerrado (x,x]
 
-**Polimorfismo:** enlace dinámico de expresiones a clases y/o de mensajes a métodos.
+**Polimorfismo:** enlace dinámico (en tiempo de ejecución) de expresiones a clases y/o de mensajes a métodos.
 
 Ej. Objetos intercambiables de las clases Intervalo, IntervaloCerradoCerrado, ...
 
