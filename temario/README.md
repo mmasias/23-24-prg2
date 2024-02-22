@@ -1,12 +1,14 @@
 # Temario
 
-- [ ] [Introducción](introduccion.md)
+- [x] [Introducción](introduccion.md)
   - [ ] Repaso de programación imperativa
   - [ ] Repaso de programación estructurada
+  - [x] [Evolución de los lenguajes de programación](evolucion.md)
 - OOP
   - Programación basada a objetos
-    - [ ] Clases y objetos
-      - [ ] Vista pública de las clases
+    - [ ] [Clases y objetos](clasesObjetos.md)
+      - [ ] [Introducción](introVistas.md)
+      - [ ] [Vista pública de las clases](vistaPublicaClases.md)
         - Cabeceras de métodos de clase
         - Sobrecarga de métodos de clase
         - Constructores
