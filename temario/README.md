@@ -7,18 +7,9 @@
 - OOP
   - Programación basada a objetos
     - [ ] [Clases y objetos](clasesObjetos.md)
-      - [ ] [Introducción](introVistas.md)
-      - [ ] [Vista pública de las clases](vistaPublicaClases.md)
-        - Cabeceras de métodos de clase
-        - Sobrecarga de métodos de clase
-        - Constructores
-        - Destructores
-      - [ ] Vista Pública de los objetos
-        - Creación de un objeto
-        - Referencia a un objeto
-        - Paso de mensajes
-        - Vectores de objetos
-        - Referencia a un vector de referencia a objetos
+      - [x] [Introducción](introVistas.md)
+      - [x] [Vista pública de las clases](vistaPublicaClases.md) / [Ejemplos](vistaPublicaClasesEjemplos.md)
+      - [x] [Vista Pública de los objetos](vistaPublicaObjetos.md)
       - [ ] Vista privada de las clases
         - Definición de atributos
         - Definición de constructores
