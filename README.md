@@ -30,4 +30,4 @@ NOTA: *Algunos enlaces podrían requerir **credenciales de acceso al campus** o 
 
 - Hoja de asistencia et-al
 - Libro de la asignatura
-- Este repo, versión de ediciones pasadas
+- [U.Santa Tecla](https://github.com/USantaTecla-0-general/3-publicaciones), Prof. Dr. Luis Fernández
