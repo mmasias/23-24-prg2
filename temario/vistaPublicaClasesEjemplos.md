@@ -2,6 +2,12 @@
 
 ```java
     class Intervalo {
+
+        public Intervalo(double puntoInicial, double puntoFinal)
+        public Intervalo()
+        public Intervalo(double punto)
+        public Intervalo(Intervalo intervalo)
+
         public void mostrar()
         public void recoger()
         public double longitud()
