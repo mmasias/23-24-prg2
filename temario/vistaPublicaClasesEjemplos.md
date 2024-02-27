@@ -36,13 +36,14 @@ class Rectangulo {
     public Rectangulo interseccion(Rectangulo rectangulo)
     public Rectangulo union(Rectangulo rectangulo)
     public void rotar(int grados) 
-    public Rectangulo[] dividir(char orientacion, double posicion) 
+    public Rectangulo[] dividir(double x, double y, char orientacion) 
     public void establecerColor(String color) 
     public String obtenerColor()
     public void establecerTransparencia(double porcentaje)
     public double obtenerTransparencia()
 }
 ```
+
 ---
 
 ```java
@@ -60,7 +61,7 @@ class Poligono {
     public Poligono union(Poligono poligono) 
     public void añadirVertice(double x, double y)
     public void eliminarVertice(int indice)
-    public Poligono convexHull()
+    public Poligono envolventeConvexa()
     public int numeroDeVertices()
     public void normalizar()
 }
@@ -140,5 +141,3 @@ class CuentaBancaria {
     public Persona[] obtenerTitulares()
 }
 ```
-
----
