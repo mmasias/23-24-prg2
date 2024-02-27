@@ -9,6 +9,7 @@
         public void escalar(double factor)
         public void desplazar(double desplazamiento)
         public boolean incluye(double punto)
+        public boolean incluye(Intervalo intervalo)
         public boolean igual(Intervalo intervalo)
         public boolean distinto(Intervalo intervalo)
         public boolean intersecta(Intervalo intervalo)
