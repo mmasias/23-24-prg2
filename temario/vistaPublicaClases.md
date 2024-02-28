@@ -8,10 +8,10 @@ class  <NombreClase> {
 }
 ```
 
-## Cabecera de Métodos de la Clase
+## Cabecera de métodos de la clase
 
 ```java
-public <tipo1> <nombreMetodo> ( {<tipo2> <parametro>, ...}* )
+  public <tipo1> <nombreMetodo> ({<tipo2> <parametro>, ...}*)
 
 ```
 
@@ -23,9 +23,12 @@ public <tipo1> <nombreMetodo> ( {<tipo2> <parametro>, ...}* )
   - etc...
 - el nombre del método debe comenzar con minúscula
 - el tipo2 puede ser igual que tipo1 excepto void
-- todos los parámetros son pasados por valor
+- Todos los parámetros son pasados **por valor**
 
-## Sobrecarga de Métodos
+> *En Java, cuando se pasa un parámetro a un método, lo que se pasa realmente es una **copia del valor** de ese parámetro. Esto implica que cualquier cambio en ese valor dentro del método no afectará al valor original fuera del método.<br><br>
+Sin embargo, la confusión suele surgir cuando se trata de objetos. En Java, las variables de tipo objeto en realidad contienen **referencias a objetos** en lugar de los objetos mismos. Cuando se pasa una variable de objeto a un método, Java pasa la copia de la referencia al objeto. Aunque técnicamente esto sigue siendo "pasar por valor" (porque la referencia se copia por valor), en la práctica significa que el método llamado puede modificar el objeto al que apunta la referencia. Esto es porque tanto la referencia original como la copia apuntan al mismo objeto en la memoria.<br><br>Es crucial entender que, aunque se pueda modificar el objeto al que apunta la referencia dentro del método (porque la referencia copiada apunta al mismo objeto), no se puede cambiar la referencia original para que apunte a un nuevo objeto. En otras palabras, dentro del método, si se intenta hacer que la referencia copiada apunte a un nuevo objeto, esto no afectará a la referencia original fuera del método.*
+
+## Sobrecarga de métodos
 
 Varios métodos pueden tener el mismo nombre con las siguientes restricciones:
 
@@ -36,6 +39,7 @@ Varios métodos pueden tener el mismo nombre con las siguientes restricciones:
 
 Son métodos que reúnen las tareas de inicialización (no construyen) y se lanzan automáticamente en la construcción de objetos. 
 
+- `public NombreDeLaClase()`
 - Deben coincidir su nombre con el de la clase;
 - No devuelven nada (ni void);
 - No se pueden lanzar mensajes que se correspondan con los constructores de la clase.
@@ -44,7 +48,7 @@ Son métodos que reúnen las tareas de inicialización (no construyen) y se lanz
 
 Son métodos que reúnen las tareas de liberación de recursos (no destruyen) y se lanzan automáticamente en la destrucción de objetos. 
 
-- Su cabecera debe ser: public void finalize()
+- Su cabecera debe ser: `public void finalize()`
 - No se pueden lanzar mensajes que se correspondan con los destructores de la clase.
 - muy poco frecuentes porque:
   - Java tiene incorporado un recolector de basura que libera automáticamente la memoria dinámica no apuntada por ninguna referencia
