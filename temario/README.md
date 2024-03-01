@@ -1,24 +1,14 @@
 # Temario
 
 - [x] [Introducción](introduccion.md)
-  - [ ] Repaso de programación imperativa
-  - [ ] Repaso de programación estructurada
+  - [x] [Repaso de programación estructurada](https://github.com/mmasias/23-24-prg1/blob/main/temario/README.md)
   - [x] [Evolución de los lenguajes de programación](evolucion.md)
 - OOP
   - Programación basada a objetos
-    - [ ] [Clases y objetos](clasesObjetos.md)
-      - [ ] [Introducción](introVistas.md)
-      - [ ] [Vista pública de las clases](vistaPublicaClases.md)
-        - Cabeceras de métodos de clase
-        - Sobrecarga de métodos de clase
-        - Constructores
-        - Destructores
-      - [ ] Vista Pública de los objetos
-        - Creación de un objeto
-        - Referencia a un objeto
-        - Paso de mensajes
-        - Vectores de objetos
-        - Referencia a un vector de referencia a objetos
+    - [x] [Clases y objetos](clasesObjetos.md)
+      - [x] [Introducción](introVistas.md)
+      - [x] [Vista pública de las clases](vistaPublicaClases.md) / [Ejemplos](vistaPublicaClasesEjemplos.md)
+      - [x] [Vista Pública de los objetos](vistaPublicaObjetos.md)
       - [ ] Vista privada de las clases
         - Definición de atributos
         - Definición de constructores
@@ -31,6 +21,7 @@
       - [ ] Clases de recubrimiento
       - [ ] Cadenas de caracteres
       - [ ] Enumerados
+  - [ ] Colaboración entre objetos: HOOD
   - Programación orientada a objetos
     - [ ] Relación de Herencia
     - [ ] Herencia por extensión
