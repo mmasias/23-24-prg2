@@ -21,6 +21,7 @@
       - [ ] Clases de recubrimiento
       - [ ] Cadenas de caracteres
       - [ ] Enumerados
+  - [ ] Colaboración entre objetos: HOOD
   - Programación orientada a objetos
     - [ ] Relación de Herencia
     - [ ] Herencia por extensión
