@@ -1,5 +1,16 @@
 # Vista pública de los objetos
 
+<div align=center>
+
+|Creación|Referencia|Interacción|
+|-|-|-|
+Crear objetos|Referenciar objetos|Enviar mensajes
+Creación de vectores de objetos|Referencia a un vector de referencias a objetos
+
+</div>
+
+---
+
 ## Creación de objetos
 
 ***new*** es un operador unario prefijo cuyo operando es una clase de objetos y **devuelve la dirección de memoria donde se ha reservado el espacio para dicho objeto**.
