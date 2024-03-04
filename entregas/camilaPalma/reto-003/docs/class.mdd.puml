@@ -1,0 +1,34 @@
+@startuml Diagrama de clases
+class Restaurante{
+    + Horario
+    + Mesas
+    + Reserva
+}
+
+class Cliente{
+    + Nombre
+}
+class Reserva{
+    + ID
+    + Fecha
+    + Hora
+    + Cliente
+    + NumeroDeMesa
+}
+
+class Mesa{
+    + NumeroDeMesa
+    + Capacidad
+    + PersonasSentadas
+}
+
+
+Cliente -- Restaurante: Solicita reserva 
+Restaurante -- Reserva: Crea
+Reserva -- Mesa:Revisa
+Restaurante -- Mesa:Tiene
+Cliente .. Reserva
+
+
+
+@enduml

@@ -1,0 +1,14 @@
+@startuml 
+
+[*] -->  MesaNoDisponible
+MesaNoDisponible -down-> MesaDisponible
+
+MesaDisponible -up-> MesaNoDisponible  
+
+MesaNoDisponible -down-> [*]
+
+@enduml
+
+
+
+
