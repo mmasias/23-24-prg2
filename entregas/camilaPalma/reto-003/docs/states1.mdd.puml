@@ -1,0 +1,11 @@
+@startuml DiagramaEstados
+
+[*] -->  NoReservado
+NoReservado -down-> Reservado
+
+Reservado -up->NoReservado 
+
+NoReservado -down-> [*]
+
+@enduml
+
