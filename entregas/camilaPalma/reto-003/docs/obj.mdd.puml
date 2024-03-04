@@ -1,0 +1,74 @@
+@startuml Registro de un fichaje
+
+
+
+object "resturante : Restaurante" as restaurante {
+    Horario = "9am - 10pm"
+    Mesa = [Mesa1,Mesa2,...]
+    Reservas = [Reserva1,Reserva2,...]
+}
+
+object "cliente : Cliente" as cliente {
+    Nombre = "Damian"
+}
+object "cliente1 : Cliente" as cliente1 {
+    Nombre = "Jesús"
+}
+
+object "cliente2 : Cliente" as cliente2 {
+    Nombre = "Javier"
+}
+
+object "mesa1 : Mesa" as mesa1 {
+    numeroDeMesa = "01"
+    capacidad = "2"
+    asientosOcupados = "2"
+}
+
+object "mesa2 : Mesa" as mesa2 {
+    numeroDeMesa = "02"
+    capacidad = "5"
+    asientosOcupados = "4"
+}
+
+object "mesa3 : Mesa" as mesa3 {
+    numeroDeMesa = "03"
+    capacidad = "10"
+    asientosOcupados = "10"
+}
+
+object "reserva1 : Reserva" as reserva1 {
+    Nombre = "Damian"
+    Fecha = "9/11/2023"
+    Hora = "8:00"
+    ID = "1054GP"
+    numeroDeMesa = "01"
+}
+
+object "reserva2 : Reserva" as reserva2 {
+    Nombre = "Jesús"
+    Fecha = "6/09/2023"
+    Hora = "10:00"
+    ID = "1057GP"
+    numeroDeMesa = "02"
+}
+
+object "reserva3 : Reserva" as reserva3 {
+    Nombre = "Javier"
+    Fecha = "20/023/2023"
+    Hora = "6:00"
+    ID = "9057GP"
+    numeroDeMesa = "03"
+}
+
+cliente1 -- restaurante
+cliente -- restaurante
+restaurante -- reserva1
+restaurante -- reserva2
+restaurante -- reserva3
+restaurante .. mesa1
+restaurante .. mesa2
+restaurante .. mesa3
+
+
+@enduml
