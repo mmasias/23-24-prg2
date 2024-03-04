@@ -1,0 +1,11 @@
+@startuml DiagramaEstados
+
+[*] -->  Cerrado
+Cerrado -down-> Abierto
+
+Abierto -up->Cerrado 
+
+Cerrado -down-> [*]
+
+@enduml
+
