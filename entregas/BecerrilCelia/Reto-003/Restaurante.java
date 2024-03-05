@@ -1,4 +1,4 @@
-package Reto3;
+package Restaurante;
 
 import java.time.LocalDateTime;
 
@@ -224,6 +224,26 @@ class Mesa {
             this.disponible = false;
         } else {
             this.disponible = true;
+        }
+    }
+
+    public class Main {
+        public static void main(String[] args) {
+            Cliente cliente = new Cliente("Celia", "Becerril");
+            Mesa mesa = new Mesa(1, 4, true); // Fix: Update the constructor call for the Mesa class
+            Reserva reserva = new Reserva(cliente, mesa, LocalDateTime.now());
+
+            Restaurante restaurante = new Restaurante(cliente, mesa, reserva, 10, 10);
+
+            Cliente newCliente = new Cliente("Celia", "Becerril");
+            restaurante.setCliente(newCliente);
+
+            Reserva newReserva = new Reserva(newCliente, mesa, LocalDateTime.now().plusDays(1));
+            restaurante.setReserva(newReserva);
+
+            System.out.println(
+                    "Cliente: " + restaurante.getCliente().getNombre() + "  " + restaurante.getCliente().getApellido());
+            System.out.println("Reserva: " + restaurante.getReserva().getFechaHora());
         }
     }
 }
