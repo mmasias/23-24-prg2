@@ -11,11 +11,25 @@ package entregas.LopezNicolas.reto003;
     public boolean nowOpen();
     public String[] billboard(Movie movie);
     public int rooms();
-
+    public Ticket sellTicket();
  }
-
  class Movie {
-
-    public Movie (String title, String director, long duration);
-    
+    public Movie (String title, String director, int duration);
  }
+ class Location{
+    public Location (String street, String city, int number);
+ }
+ class Room{
+    public Room (int roomNumber, int roomCapacity);
+ }
+ class Ticket {
+    public Ticket (Movie movie, Room room, int seat, Visitor visitor);
+ }
+ class Visitor {
+    public Visitor (String name, int age);
+ }
+
+
+
+
+ 
