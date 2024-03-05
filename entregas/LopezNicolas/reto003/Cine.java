@@ -29,7 +29,17 @@ package entregas.LopezNicolas.reto003;
     public Visitor (String name, int age);
  }
 
+ Location myLocation = new Location("C. Ruamayor","Santander",6);
+ Cinema myCinema = new Cinema("Los Angeles", myLocation);
 
+ if(myCinema.nowOpen()){
+    Movie Cars = new Movie("Cars","John Lasseter", 117);
+    Visitor mMasias = new Visitor("Masias", 25);
+    myCinema.sellTicket(mMasias);
+ } else {
+    myCinema.open();
+ }
+myCinema.closed();
 
 
  
