@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="252px" preserveAspectRatio="none" style="width:196px;height:252px;background:#FFFFFF;" version="1.1" viewBox="0 0 196 252" width="196px" zoomAndPan="magnify"><defs/><g><ellipse cx="75.5" cy="16" fill="#222222" rx="10" ry="10" style="stroke:none;stroke-width:1.0;"/><g id="MesaNoDisponible"><rect fill="#F1F1F1" height="50" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="137" x="7" y="86"/><line style="stroke:#181818;stroke-width:0.5;" x1="7" x2="144" y1="113.6094" y2="113.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="117" x="17" y="105.5332">MesaNoDisponible</text></g><g id="MesaDisponible"><rect fill="#F1F1F1" height="50" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="120" x="15.5" y="196"/><line style="stroke:#181818;stroke-width:0.5;" x1="15.5" x2="135.5" y1="223.6094" y2="223.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="100" x="25.5" y="215.5332">MesaDisponible</text></g><ellipse cx="180.5" cy="221" fill="none" rx="10" ry="10" style="stroke:#222222;stroke-width:1.0;"/><ellipse cx="181" cy="221.5" fill="#222222" rx="6" ry="6" style="stroke:none;stroke-width:1.0;"/><!--MD5=[8037ac7e368a81b800d0f8a45bb23aa3]
+link *start to MesaNoDisponible--><g id="link_*start_MesaNoDisponible"><path d="M75.5,26.26 C75.5,38.86 75.5,61.98 75.5,80.74 " fill="none" id="*start-to-MesaNoDisponible" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="75.5,85.91,79.5,76.91,75.5,80.91,71.5,76.91,75.5,85.91" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[5745bb0f6df61599338496ed32a67b10]
+link MesaNoDisponible to MesaDisponible--><g id="link_MesaNoDisponible_MesaDisponible"><path d="M64.66,136.24 C62.35,152.36 62.14,173.62 64.02,190.69 " fill="none" id="MesaNoDisponible-to-MesaDisponible" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="64.67,195.84,67.5061,186.4083,64.041,190.8797,59.5696,187.4147,64.67,195.84" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[2ee0bc8525f18162af3bdf37a805ed1f]
+reverse link MesaNoDisponible to MesaDisponible--><g id="link_MesaNoDisponible_MesaDisponible"><path d="M87.67,141.39 C89.65,158.48 89.42,179.74 86.97,195.84 " fill="none" id="MesaNoDisponible-backto-MesaDisponible" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="86.98,136.24,84.1974,145.6876,87.6371,141.1966,92.128,144.6363,86.98,136.24" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[c83708b4c76d8e231bf9138fff3b470f]
+link MesaNoDisponible to *end--><g id="link_MesaNoDisponible_*end"><path d="M99.06,136.24 C121.36,159.17 153.78,192.52 170.18,209.38 " fill="none" id="MesaNoDisponible-to-*end" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="173.99,213.3,170.5848,204.0585,170.5048,209.7148,164.8485,209.6348,173.99,213.3" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[1a3b10a4a699c0979d25366dc3e4587a]
+@startuml 
+
+[*] - ->  MesaNoDisponible
+MesaNoDisponible -down-> MesaDisponible
+
+MesaDisponible -up-> MesaNoDisponible  
+
+MesaNoDisponible -down-> [*]
+
+@enduml
+
+PlantUML version 1.2022.7(Mon Aug 22 19:01:30 CEST 2022)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Default Encoding: UTF-8
+Language: es
+Country: SV
+--></g></svg>

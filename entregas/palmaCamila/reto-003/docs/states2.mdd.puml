@@ -1,0 +1,11 @@
+@startuml DiagramaEstados
+
+[*] -->  RestauranteCerrado
+RestauranteCerrado -down-> RestauranteAbierto
+
+RestauranteAbierto -up->RestauranteCerrado 
+
+RestauranteCerrado -down-> [*]
+
+@enduml
+

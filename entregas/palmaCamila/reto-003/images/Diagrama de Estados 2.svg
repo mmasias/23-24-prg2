@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="252px" preserveAspectRatio="none" style="width:200px;height:252px;background:#FFFFFF;" version="1.1" viewBox="0 0 200 252" width="200px" zoomAndPan="magnify"><defs/><g><ellipse cx="77" cy="16" fill="#222222" rx="10" ry="10" style="stroke:none;stroke-width:1.0;"/><g id="MesaNoReservada"><rect fill="#F1F1F1" height="50" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="140" x="7" y="86"/><line style="stroke:#181818;stroke-width:0.5;" x1="7" x2="147" y1="113.6094" y2="113.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="120" x="17" y="105.5332">MesaNoReservada</text></g><g id="MesaReservada"><rect fill="#F1F1F1" height="50" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="123" x="15.5" y="196"/><line style="stroke:#181818;stroke-width:0.5;" x1="15.5" x2="138.5" y1="223.6094" y2="223.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="103" x="25.5" y="215.5332">MesaReservada</text></g><ellipse cx="184" cy="221" fill="none" rx="10" ry="10" style="stroke:#222222;stroke-width:1.0;"/><ellipse cx="184.5" cy="221.5" fill="#222222" rx="6" ry="6" style="stroke:none;stroke-width:1.0;"/><!--MD5=[0f4fa45a4b7396bcf34d1bd4cd2d48d9]
+link *start to MesaNoReservada--><g id="link_*start_MesaNoReservada"><path d="M77,26.26 C77,38.86 77,61.98 77,80.74 " fill="none" id="*start-to-MesaNoReservada" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="77,85.91,81,76.91,77,80.91,73,76.91,77,85.91" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[96318c5122a5dd0ee58fe9351229829b]
+link MesaNoReservada to MesaReservada--><g id="link_MesaNoReservada_MesaReservada"><path d="M66.16,136.24 C63.85,152.36 63.64,173.62 65.52,190.69 " fill="none" id="MesaNoReservada-to-MesaReservada" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="66.17,195.84,69.0061,186.4083,65.541,190.8797,61.0696,187.4147,66.17,195.84" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[d97c7c1d52c2f42723169f0c9202fb0d]
+reverse link MesaNoReservada to MesaReservada--><g id="link_MesaNoReservada_MesaReservada"><path d="M89.17,141.39 C91.15,158.48 90.92,179.74 88.47,195.84 " fill="none" id="MesaNoReservada-backto-MesaReservada" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="88.48,136.24,85.6974,145.6876,89.1371,141.1966,93.628,144.6363,88.48,136.24" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[cbc40dc11a1b4f6099cc14a000b79a28]
+link MesaNoReservada to *end--><g id="link_MesaNoReservada_*end"><path d="M101.01,136.24 C123.73,159.17 156.77,192.52 173.48,209.38 " fill="none" id="MesaNoReservada-to-*end" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="177.36,213.3,173.8802,204.0864,173.846,209.7431,168.1892,209.7088,177.36,213.3" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[c877ee1f8c9e8476e6f0f81954adb7ea]
+@startuml DiagramaEstados
+
+[*] - ->  MesaNoReservada
+MesaNoReservada -down-> MesaReservada
+
+MesaReservada -up->MesaNoReservada
+
+MesaNoReservada -down-> [*]
+
+@enduml
+
+PlantUML version 1.2022.7(Mon Aug 22 19:01:30 CEST 2022)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Default Encoding: UTF-8
+Language: es
+Country: SV
+--></g></svg>
