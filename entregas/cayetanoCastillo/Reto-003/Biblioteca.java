@@ -1,87 +1,55 @@
 public class Biblioteca {
-    private Libro[] libros;
-    private Usuario[] usuarios;
-    private Prestamo[] prestamos;
-    private int maxLibros;
-    private int maxUsuarios;
-    private int maxPrestamos;
-    private int indiceLibros = 0;
-    private int indiceUsuarios = 0;
-    private int indicePrestamos = 0;
 
-    public Biblioteca(int maxLibros, int maxUsuarios, int maxPrestamos) {
-        this.maxLibros = maxLibros;
-        this.maxUsuarios = maxUsuarios;
-        this.maxPrestamos = maxPrestamos;
-        this.libros = new Libro[maxLibros];
-        this.usuarios = new Usuario[maxUsuarios];
-        this.prestamos = new Prestamo[maxPrestamos];
+    private Interval horario;
+
+    public boolean estaBibliotecaAbierta(Interval horarioAbierto) {
     }
 
-    public boolean agregarLibro(Libro libro) {
-        if (indiceLibros < maxLibros) {
-            libros[indiceLibros++] = libro;
-            return true;
-        } else {
-            System.out.println("Capacidad máxima de libros alcanzada.");
-            return false;
-        }
+    public Biblioteca(Interval horarioAbierto) {
+    }
+}
+
+public class Usuario {
+
+    private String nombre;
+    private String dni;
+
+    public String getNombre() {
     }
 
-    public boolean agregarUsuario(Usuario usuario) {
-        if (indiceUsuarios < maxUsuarios) {
-            usuarios[indiceUsuarios++] = usuario;
-            return true;
-        } else {
-            System.out.println("Capacidad máxima de usuarios alcanzada.");
-            return false;
-        }
+    public String getDni() {
     }
 
-    public boolean registrarPrestamo(Prestamo prestamo) {
-        if (indicePrestamos < maxPrestamos) {
-            prestamos[indicePrestamos++] = prestamo;
-            return true;
-        } else {
-            System.out.println("Capacidad máxima de préstamos alcanzada.");
-            return false;
-        }
+    public Usuario(String nombre, String dni) {
+    }
+}
+
+public class Libro {
+
+    private boolean disponible;
+    private int numeroEjemplares;
+    private String titulo;
+
+    public boolean isDisponible() {
     }
 
-    public Libro buscarLibroPorId(int id) {
-        for (int i = 0; i < indiceLibros; i++) {
-            if (libros[i].getId() == id) {
-                return libros[i];
-            }
-        }
-        return null;
+    public int getNumeroEjemplares() {
     }
 
-    public Libro buscarLibroPorTitulo(String titulo) {
-        for (int i = 0; i < indiceLibros; i++) {
-            if (libros[i].getTitulo().equalsIgnoreCase(titulo)) {
-                return libros[i];
-            }
-        }
-        return null;
+    public String getTitulo() {
     }
 
-    public Usuario buscarUsuarioPorNombre(String nombre) {
-        for (int i = 0; i < indiceUsuarios; i++) {
-            if (usuarios[i].getNombre().equalsIgnoreCase(nombre)) {
-                return usuarios[i];
-            }
-        }
-        return null;
+    public Libro(String titulo, int numeroEjemplares) {
     }
+}
 
-    public Usuario buscarUsuarioPorId(int id) {
-        for (int i = 0; i < indiceUsuarios; i++) {
-            if (usuarios[i].getId() == id) {
-                return usuarios[i];
-            }
-        }
-        return null;
+public class Prestamo {
+
+    private Usuario usuario;
+    private String fechaInicio;
+    private String fechaFin;
+    private Libro libro;
+
+    public Prestamo(Usuario usuario, String fechaInicio, String fechaFin, Libro libro) {
     }
-
 }
