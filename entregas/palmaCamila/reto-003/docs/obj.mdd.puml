@@ -62,13 +62,15 @@ object "reserva3 : Reserva" as reserva3 {
 }
 
 cliente1 -- restaurante
+cliente2 -- restaurante
 cliente -- restaurante
 restaurante -- reserva1
 restaurante -- reserva2
 restaurante -- reserva3
-restaurante .. mesa1
-restaurante .. mesa2
-restaurante .. mesa3
+restaurante -- mesa1
+restaurante -- mesa2
+restaurante -- mesa3
+
 
 
 @enduml

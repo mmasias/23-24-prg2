@@ -1,0 +1,11 @@
+@startuml DiagramaEstados
+
+[*] -->  MesaNoReservada
+MesaNoReservada -down-> MesaReservada
+
+MesaReservada -up->MesaNoReservada
+
+MesaNoReservada -down-> [*]
+
+@enduml
+
