@@ -22,9 +22,9 @@ class Pelicula{
 
 class Ticket{
 
-    public Ticket(int identificacion, Visitante visitante){
+    public Ticket(int identificacion, Visitante visitante, Pelicula pelicula){
     }
-    public int obtenerIdentificacion(){
+    public Pelicula obtenerPelicula(){
     }
 
 }
@@ -33,7 +33,7 @@ class Visitante{
 
     public Visitante(String nombre){
     }
-    public Ticket comprarTicket(){
+    public Ticket comprarTicket(Pelicula pelicula, LocalTime horaSesion){
     }
     public void enseñarTicket(Ticket ticket){
     }
