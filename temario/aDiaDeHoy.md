@@ -6,3 +6,8 @@
 - Clase / Objeto / Mensaje / Método / Atributo / Estado
 - Vista pública de la clase
   - Cabecera de métodos
+  - El constructor, el destructor, la sobrecarga.
+    - Un constructor no construye nada.
+- Vista pública de objetos
+  - Crear objetos
+  - Enviar mensajes
