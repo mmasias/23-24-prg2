@@ -1,55 +1,44 @@
+import java.time.*;
+
 class Cine{
 
-    public Cine(String nombreCine, String direccion){
-
+    public Cine(String nombre, LocalTime horaApertura, LocalTime horaCierre){
+    }
+    public boolean comprobarEstadoTicket(Ticket ticket){
+    }
+    public void reproducirPelicula(Pelicula pelicula){
+    }
+    public void pausarPelicula(Pelicula pelicula){
     }
 
-    Cine cine1 = new Cine("Cinesa", "C. Francisco Tomás y Valiente");
-
-    
-
 }
+
 class Pelicula{
 
-    public Pelicula(String nombrePelicula, String horaSesionPelicula, int salaEstablecida){
-
-    }
-
-    Pelicula starWars1 = new Pelicula("Star Wars", "20:45", 3);
+    public Pelicula(String nombre, LocalTime horaSesion, int salaEstablecida){
+    } 
 
 }
+
 class Ticket{
 
-    public Ticket(String nombrePelicula, String sesionPelicula, int precio, boolean ticketValidad){
-
+    public Ticket(int identificacion, Visitante visitante){
     }
-
-    Ticket ticket1 = new Ticket("Star Wars", "20:45", 7, false);
-
+    public int obtenerIdentificacion(){
+    }
 
 }
+
 class Visitante{
 
-    public Visitante(boolean tieneTciket){
-
+    public Visitante(String nombre){
     }
-
-    Visitante visitante1 = new Visitante(true);
-
-    public void comprarTicket(){
-
+    public Ticket comprarTicket(){
     }
-
-    public void enseñarTicket(){
-
+    public void enseñarTicket(Ticket ticket){
     }
     public void entrarSala(){
-
     }
     
 }
-
-
-
-
 
