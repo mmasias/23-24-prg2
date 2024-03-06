@@ -1,3 +1,4 @@
+package entregas;
 public class CentroComercial {
 
     private static final int NUMERO_CAJAS = 4;
