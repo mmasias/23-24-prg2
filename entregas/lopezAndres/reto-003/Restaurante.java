@@ -21,3 +21,20 @@ public class Booking {
     public boolean inSchedule(Interval schedule);
 
 }
+
+public class Table {
+
+    public int capacity();
+    public int number();
+    public boolean available();    
+    public Table(int capacity, int number, boolean available);
+
+}
+
+public class Interval{
+
+    public Interval createSchedule(int opening, int closing);
+    public Interval(Interval openSchedule);
+
+}
+
