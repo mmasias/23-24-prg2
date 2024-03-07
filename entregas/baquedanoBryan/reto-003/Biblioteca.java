@@ -17,3 +17,11 @@ class Libro {
     public boolean disponibilidad();
     
 }
+
+class Préstamo{
+
+    class Préstamo(String nombreUsuario, int DNI, int DíaQueSeHiZO, Int DíaDevolución, String nombreLibro )
+
+    class int obtenerIdentificador();
+
+}
