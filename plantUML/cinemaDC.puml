@@ -1,0 +1,30 @@
+@startuml
+class Cinema {
+  +Cinema()
+  +showMovies(): void
+  +buyTicket(Moviegoer, Movie): Ticket
+}
+
+class Movie {
+  +Movie(title: String, director: String, length: int)
+  +getTitle(): String
+  +getDirector(): String
+  +getLength(): int
+}
+
+class Ticket {
+  +Ticket(Moviegoer, Movie)
+  +getMovie(): Movie
+  +getMoviegoer(): Moviegoer
+}
+
+class Moviegoer {
+  +Moviegoer(name: String)
+  +getName(): String
+}
+
+Cinema -- Ticket
+Ticket -- Moviegoer
+Ticket -- Movie
+
+@enduml
