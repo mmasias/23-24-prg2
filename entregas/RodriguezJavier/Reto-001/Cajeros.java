@@ -7,12 +7,9 @@ public class Cajeros {
         boolean[] cajerosLibres = {true, true, true, true}; // Estado de cada cajero (libre/ocupado)
         int clientesEnCola = 0; // Número de clientes en cola
         final int minutosEnUnDia = 12 * 60; // Total de minutos en un día
-        int totalClientes = 0; // Contador de clientes que han pasado por la tienda
         boolean nuevoCliente = false; // Indica si llega un nuevo cliente
         int minutosSinCola = 0; // Contador de minutos en los que la cola está vacía
         int totalObjetos = 0; // Total de objetos vendidos durante el día
-        boolean quintaCajaActivada = false; // Indica si se activa la quinta caja
-
         Random aleatorio = new Random();
 
         // Simulación de los minutos del día
@@ -63,9 +60,7 @@ public class Cajeros {
             System.out.println();
 
             if (clientesEnCola >= 15) {
-                quintaCajaActivada = true;
             } else {
-                quintaCajaActivada = false;
             }
         }
 
