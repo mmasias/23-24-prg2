@@ -34,9 +34,14 @@ class Usuario {
 
 class Prestamo {
     
-    public Prestamo(String nombreUsuario, String nombreLibro, int diaEntregaLibro, int diaDevolucionLibro)
-
-public void agregarPrestamo(Prestamo prestamo) {
-    
-}
+    public Prestamo(String nombreUsuario, String nombreLibro, int diaEntregaLibro, int diaDevolucionLibro){
+    }
+    public void pedirPrestamoLibro(Prestamo prestamo){
+    }
+    public boolean comprobarDisponibilidadLibroParaPrestamo(Libro libro){ 
+    }
+    public void cancelarPrestamo(Prestamo prestamo){
+    }
+    public boolean pedirAmpliacion(Prestamo prestamo){
+    }
 }
