@@ -39,3 +39,16 @@ class Pelicula{
 }
 
 
+class Persona{
+
+    public Persona(String nombre){}
+
+    public void nombre(){}
+    public void edad(){}
+    public void dni(){}
+    public void genero(){}
+
+}
+
+
+
