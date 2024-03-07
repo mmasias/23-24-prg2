@@ -6,3 +6,14 @@ class Usuario {
     public String obtenerNombre();
     public int obtenerDNI();
 }
+
+class Libro {
+
+    public Libro(String obtenerTítulo, String Autor);
+    public Libro(String obtenerTítulo);
+    
+    public String obtenerTítulo();
+    public String obtenerAutor();
+    public boolean disponibilidad();
+    
+}
