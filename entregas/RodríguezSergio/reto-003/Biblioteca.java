@@ -1,28 +1,26 @@
 class Biblioteca {
 
-    public Biblioteca(String nombre, String ciudad, LocalTime horaApertura, LocalTime horaCierre) {
-
-
-
-}
+    public Biblioteca(String nombre, String ciudad, LocalTime horaApertura, LocalTime horaCierre){
+    }
+    public boolean estado(Biblioteca biblioteca){
+    }
 }
 
 class Libro {     
 
-    public Libro(String titulo, String autor, int año, String editorial, String genero) {    
+    public Libro(String titulo, String autor, int año, String editorial, String genero){    
     }
-    public void agregarLibro(Libro libro) {
+    public void agregarLibro(Libro libro){
     }
     public boolean comprobarDisponibilidad(Libro libro){ 
     }
-
 }
 
 class Usuario {
     
     public Usuario(String nombre, int numeroID){ 
     }
-    public boolean comprobarExistencia(Usuario usuario){ 
+    public boolean comprobarExistenciaUsuario(Usuario usuario){ 
     }
     public void agregarNuevoUsuario(Usuario usuario){ 
     }
