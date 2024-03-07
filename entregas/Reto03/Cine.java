@@ -43,3 +43,36 @@ public class Pelicula {
     }
 }
 
+class Ticket {
+
+    public Ticket(String persona, int edad) {
+    }
+
+    public Pelicula pelicula() {
+        return null;
+    }
+
+    public void asientos() {
+    }
+
+    public boolean asientosEspeciales() {
+        return false;
+    }
+
+    public boolean snacks() {
+        return false;
+    }
+
+    public void promociones() {
+    }
+
+    public void precio() {
+    }
+
+    public void pago() {
+    }
+
+    public Persona persona() {
+        return null;
+    }
+}
