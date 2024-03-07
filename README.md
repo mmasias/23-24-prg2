@@ -22,7 +22,7 @@ Repo de materiales y proyectos de la asignatura **Programación II** del [Grado 
 - [PlantText](https://www.planttext.com/), para usar el formato [PlantUML](https://plantuml.com/es/) al realizar diagramas [de actividades](https://plantuml.com/es/activity-diagram-beta), [de estados](https://plantuml.com/es/state-diagram), de [clases](https://plantuml.com/es/class-diagram) y de [objetos](https://plantuml.com/es/object-diagram). 
 - [Google Docs](https://drive.google.com/drive/u/0/my-drive)
 - [Visual Studio Code](https://code.visualstudio.com/)
-- [GIT](https://git-scm.com/) & [GitHub](https://github.com/)
+- [GIT](https://git-scm.com/) & [GitHub](https://github.com/) & Vídeo repaso ([Un repo, dos repos, un fork, varios commit &  un PR](https://www.youtube.com/watch?v=p8dV1d97o4s))
 
 ## Bibliografía & enlaces interesantes
 
@@ -30,4 +30,4 @@ NOTA: *Algunos enlaces podrían requerir **credenciales de acceso al campus** o 
 
 - Hoja de asistencia et-al
 - Libro de la asignatura
-- Este repo, versión de ediciones pasadas
+- [U.Santa Tecla](https://github.com/USantaTecla-0-general/3-publicaciones), Prof. Dr. Luis Fernández
