@@ -22,3 +22,13 @@ public class Pelicula {
     }
 }
 
+
+public class Ticket {
+    String codigo;
+    double precio;
+
+    public Ticket(String codigo, double precio) {
+        codigo = codigo;
+        precio = precio;
+    }
+}
