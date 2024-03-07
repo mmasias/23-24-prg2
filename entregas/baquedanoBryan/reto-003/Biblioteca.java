@@ -25,3 +25,14 @@ class Préstamo{
     class int obtenerIdentificador();
 
 }
+
+class Biblioteca{ 
+
+class Biblioteca(String Ubicación);
+
+class boolean hacerPréstamo(Préstamo prestamo);
+class boolean operativa(Fecha fecha);
+class void operativa(Hora hora);
+class void aplicarMulta(Préstamo préstamo);
+class void actualizarDisponilidad();
+}
