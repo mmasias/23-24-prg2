@@ -11,5 +11,18 @@ class Cine {
     public Ticket comprarTicket(){}
 
     
-    
 }
+class Ticket{
+    
+    public Ticket(String persona, int edad){}
+    
+    public Pelicula pelicula(){}
+    public boolean promociones(String pelicula){}
+    public String[ ][ ] asientos(String fila, int numeroAsiento){}
+    public boolean asientosEspeciales(){}
+    public boolean snacks(){}
+    public void precio(){}
+    public void pago(){}
+    public Persona persona(){}
+}
+
