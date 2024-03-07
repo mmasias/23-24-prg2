@@ -1,4 +1,4 @@
-class RetoCCCF {
+class retoCCCF {
     public static void main(String[] args) {
         int totaltime;
         double probabilityarrivals;
