@@ -22,3 +22,24 @@ public class Cine {
     }
 }
 
+public class Pelicula {
+
+    public Pelicula(String tituloPelicula, double duracionPelicula) {
+    }
+
+    public void tituloPelicula() {
+    }
+
+    public int horario() {
+    }
+
+    public double duracionPelicula() {
+    }
+
+    public boolean estaDisponible() {
+    }
+
+    public void fecha(int fecha) {
+    }
+}
+
