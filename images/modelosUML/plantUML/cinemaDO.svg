@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="300px" preserveAspectRatio="none" style="width:942px;height:300px;background:#FFFFFF;" version="1.1" viewBox="0 0 942 300" width="942px" zoomAndPan="magnify"><defs/><g><g id="elem_cinesaSantander"><rect fill="#F1F1F1" height="39.0679" style="stroke:#181818;stroke-width:0.5;" width="186" x="406" y="7"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="172" x="413" y="23.9659">cinesaSantander: Cinema</text><line style="stroke:#181818;stroke-width:0.5;" x1="407" x2="591" y1="30.0679" y2="30.0679"/></g><g id="elem_interstellar"><rect fill="#F1F1F1" height="88.2717" style="stroke:#181818;stroke-width:0.5;" width="209" x="525.5" y="205"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="122" x="569" y="221.9659">interstellar: Movie</text><line style="stroke:#181818;stroke-width:0.5;" x1="526.5" x2="733.5" y1="228.0679" y2="228.0679"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="121" x="531.5" y="247.0339">title: "Interstellar"</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="197" x="531.5" y="266.1018">director: "Christopher Nolan"</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="76" x="531.5" y="285.1697">length: 169</text></g><g id="elem_lordOfTheRings"><rect fill="#F1F1F1" height="88.2717" style="stroke:#181818;stroke-width:0.5;" width="206" x="7" y="205"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="154" x="33" y="221.9659">lordOfTheRings: Movie</text><line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="212" y1="228.0679" y2="228.0679"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="194" x="13" y="247.0339">title: "El Señor de los Anillos"</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="162" x="13" y="266.1018">director: "Peter Jackson"</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="76" x="13" y="285.1697">length: 178</text></g><g id="elem_rogerWilco"><rect fill="#F1F1F1" height="50.1358" style="stroke:#181818;stroke-width:0.5;" width="166" x="770" y="224"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="152" x="777" y="240.9659">rogerWilco: Moviegoer</text><line style="stroke:#181818;stroke-width:0.5;" x1="771" x2="935" y1="247.0679" y2="247.0679"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="88" x="776" y="266.0339">name: "Juan"</text></g><g id="elem_guybrushThreepwood"><rect fill="#F1F1F1" height="50.1358" style="stroke:#181818;stroke-width:0.5;" width="242" x="248" y="224"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="228" x="255" y="240.9659">guybrushThreepwood: Moviegoer</text><line style="stroke:#181818;stroke-width:0.5;" x1="249" x2="489" y1="247.0679" y2="247.0679"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="97" x="254" y="266.0339">name: "Pedro"</text></g><g id="elem_ticket1"><rect fill="#F1F1F1" height="39.0679" style="stroke:#181818;stroke-width:0.5;" width="105" x="577.5" y="106"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="91" x="584.5" y="122.9659">ticket1: Ticket</text><line style="stroke:#181818;stroke-width:0.5;" x1="578.5" x2="681.5" y1="129.0679" y2="129.0679"/></g><g id="elem_ticket2"><rect fill="#F1F1F1" height="39.0679" style="stroke:#181818;stroke-width:0.5;" width="105" x="316.5" y="106"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="91" x="323.5" y="122.9659">ticket2: Ticket</text><line style="stroke:#181818;stroke-width:0.5;" x1="317.5" x2="420.5" y1="129.0679" y2="129.0679"/></g><!--MD5=[88bbfd402acc18c529f206ad63f69ace]
+link cinesaSantander to ticket1--><g id="link_cinesaSantander_ticket1"><path codeLine="32" d="M524.26,46.2 C547.46,63.38 581.65,88.7 604.82,105.85 " fill="none" id="cinesaSantander-ticket1" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[aebd7d437947f64c23d7daa0d601c723]
+link cinesaSantander to ticket2--><g id="link_cinesaSantander_ticket2"><path codeLine="33" d="M473.93,46.2 C450.91,63.38 416.98,88.7 393.99,105.85 " fill="none" id="cinesaSantander-ticket2" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[fc9e44ec5c75c880a9c5f0e79d5d348e]
+link ticket1 to interstellar--><g id="link_ticket1_interstellar"><path codeLine="34" d="M630,145.22 C630,161.06 630,184.38 630,204.81 " fill="none" id="ticket1-interstellar" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[847e336ddd5d3ff28b4439f949997d54]
+link ticket2 to lordOfTheRings--><g id="link_ticket2_lordOfTheRings"><path codeLine="35" d="M329.38,145.09 C295.51,160.97 245.46,184.45 201.71,204.98 " fill="none" id="ticket2-lordOfTheRings" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[0e97afe87eaec61c3098492c952b5c60]
+link ticket1 to rogerWilco--><g id="link_ticket1_rogerWilco"><path codeLine="36" d="M664.36,145.22 C703.08,166.32 766.17,200.69 808.61,223.81 " fill="none" id="ticket1-rogerWilco" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[1184486920755fa9ed46240f5913d35a]
+link ticket2 to guybrushThreepwood--><g id="link_ticket2_guybrushThreepwood"><path codeLine="37" d="M369,145.22 C369,166.25 369,200.47 369,223.59 " fill="none" id="ticket2-guybrushThreepwood" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[1628cd44e01aa8cb7adea7253ffdd7a7]
+@startuml
+object "cinesaSantander: Cinema" as cinesaSantander {
+}
+
+object "interstellar: Movie" as interstellar {
+    title: "Interstellar"
+    director: "Christopher Nolan"
+    length: 169
+}
+
+object "lordOfTheRings: Movie" as lordOfTheRings {
+    title: "El Señor de los Anillos"
+    director: "Peter Jackson"
+    length: 178
+}
+
+object "rogerWilco: Moviegoer" as rogerWilco {
+    name: "Juan"
+}
+
+object "guybrushThreepwood: Moviegoer" as guybrushThreepwood {
+    name: "Pedro"
+}
+
+object "ticket1: Ticket" as ticket1 {
+    
+}
+
+object "ticket2: Ticket" as ticket2 {
+
+}
+
+cinesaSantander -d- ticket1 
+cinesaSantander -d- ticket2 
+interstellar -u- ticket1 
+lordOfTheRings -u- ticket2 
+rogerWilco -u- ticket1 
+guybrushThreepwood -u- ticket2 
+@enduml
+
+PlantUML version 1.2022.7(Mon Aug 22 19:01:30 CEST 2022)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: es
+Country: ES
+--></g></svg>
