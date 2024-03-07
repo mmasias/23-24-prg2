@@ -26,3 +26,16 @@ class Ticket{
     public Persona persona(){}
 }
 
+class Pelicula{
+
+    public Pelicula(String titulodePelicula,double duracionDePelicula){}
+
+    public void titulodePelicula(){}
+    public double horario(){}
+    public double duracionDePelicula(){}
+    public boolean estaDisponible(){}
+    public void fecha(int fecha){}
+
+}
+
+
