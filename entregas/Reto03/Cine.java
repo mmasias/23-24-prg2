@@ -76,3 +76,21 @@ class Ticket {
         return null;
     }
 }
+
+public class Persona {
+
+    public Persona(Sting nombre) {
+    }
+
+    public void nombre() {
+    }
+
+    public void dni() {
+    }
+
+    public void edad() {
+    }
+
+    public void genero() {
+    }
+}
