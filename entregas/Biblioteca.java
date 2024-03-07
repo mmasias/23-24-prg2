@@ -24,8 +24,13 @@ class Usuario {
     
     public Usuario(String nombre, int numeroID)
 
-public void agregarUsuario(Usuario usuario) {
-    
+public boolean comprobarExistencia(Usuario usuario) { 
+}
+public void agregarNuevoUsuario(Usuario usuario) { 
+}
+public void editarUsuarioExistente(Usuario usuario) { 
+}
+public void darDeBajaUsuario(Usuario usuario) { 
 }
 }
 
