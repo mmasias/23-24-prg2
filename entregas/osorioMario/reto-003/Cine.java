@@ -32,3 +32,14 @@ public class Ticket {
         precio = precio;
     }
 }
+
+
+public class Visitante {
+    String nombre;
+    int edad;
+
+    public Visitante(String nombre, int edad) {
+        nombre = nombre;
+        edad = edad;
+    }
+}
