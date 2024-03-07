@@ -1,36 +1,36 @@
 public class Mesa {
     
-    private Int asientos;
-    private Int numeroDeMesa;
-    private Int asientosOcupados;
+    private int asientos;
+    private int numeroDeMesa;
+    private int asientosOcupados;
     
-    public Mesa(Int asientos, Int numeroDeMesa, Int asientosOcupados) {
+    public Mesa(int asientos, int numeroDeMesa, int asientosOcupados) {
         this.asientos = asientos;
         this.numeroDeMesa = numeroDeMesa;
         this.asientosOcupados = asientosOcupados;
     }
 
-    public Int getAsientos() {
+    public int getAsientos() {
         return asientos;
     }
 
-    public void setAsientos(Int asientos) {
+    public void setAsientos(int asientos) {
         this.asientos = asientos;
     }
 
-    public Int getNumeroDeMesa() {
+    public int getNumeroDeMesa() {
         return numeroDeMesa;
     }
 
-    public void setNumeroDeMesa(Int numeroDeMesa) {
+    public void setNumeroDeMesa(int numeroDeMesa) {
         this.numeroDeMesa = numeroDeMesa;
     }
 
-    public Int getAsientosOcupados() {
+    public int getAsientosOcupados() {
         return asientosOcupados;
     }
 
-    public void setAsientosOcupados(Int asientosOcupados) {
+    public void setAsientosOcupados(int asientosOcupados) {
         this.asientosOcupados = asientosOcupados;
     }
 
