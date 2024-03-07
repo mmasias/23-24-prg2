@@ -1,0 +1,39 @@
+@startuml
+object "cinesaSantander: Cinema" as cinesaSantander {
+}
+
+object "interstellar: Movie" as interstellar {
+    title: "Interstellar"
+    director: "Christopher Nolan"
+    length: 169
+}
+
+object "lordOfTheRings: Movie" as lordOfTheRings {
+    title: "El Señor de los Anillos"
+    director: "Peter Jackson"
+    length: 178
+}
+
+object "rogerWilco: Moviegoer" as rogerWilco {
+    name: "Juan"
+}
+
+object "guybrushThreepwood: Moviegoer" as guybrushThreepwood {
+    name: "Pedro"
+}
+
+object "ticket1: Ticket" as ticket1 {
+    
+}
+
+object "ticket2: Ticket" as ticket2 {
+
+}
+
+cinesaSantander -d- ticket1 
+cinesaSantander -d- ticket2 
+interstellar -u- ticket1 
+lordOfTheRings -u- ticket2 
+rogerWilco -u- ticket1 
+guybrushThreepwood -u- ticket2 
+@enduml
