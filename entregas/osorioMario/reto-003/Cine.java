@@ -12,3 +12,13 @@ public class Cine {
     public void iniciar() {
     }
 }
+public class Pelicula {
+    String titulo;
+    int duracion;
+
+    public Pelicula(String titulo, int duracion) {
+        titulo = titulo;
+        duracion = duracion;
+    }
+}
+
