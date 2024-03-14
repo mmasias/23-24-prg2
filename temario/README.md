@@ -9,13 +9,7 @@
       - [x] [Introducción](introVistas.md)
       - [x] [Vista pública de las clases](vistaPublicaClases.md) / [Ejemplos](vistaPublicaClasesEjemplos.md)
       - [x] [Vista Pública de los objetos](vistaPublicaObjetos.md)
-      - [ ] Vista privada de las clases
-        - Definición de atributos
-        - Definición de constructores
-        - Definición de métodos
-        - Referencia this
-        - Métodos privados
-        - Aserciones
+      - [x] [Vista privada de las clases](vistaPrivadaClases.md) / Ejemplos
       - [ ] Vista privada de los objetos
       - [ ] Miembros de clase
       - [ ] Clases de recubrimiento
