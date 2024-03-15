@@ -4,22 +4,23 @@
 |Vista pública clase Intervalo|
 |-|
 public Intervalo(double inferior, double superior)
-public Intervalo() 
+public void mostrar()
 public Intervalo(double superior) 
 public Intervalo(Intervalo intervalo)
-public void mostrar()
-public void recoger()
+public Intervalo() 
 public double longitud()
+public void doblar()
 public Intervalo clone()
+public void recoger()
 public void desplazar(double desplazamiento)
+public void oponer()
 public Intervalo desplazado(double desplazamiento)
 public boolean incluye(double valor)
 public boolean incluye(Intervalo intervalo)
 public boolean equals(Intervalo intervalo)
-public Intervalo interseccion(Intervalo intervalo)
 public boolean intersecta(Intervalo intervalo)
-public void oponer()
-public void doblar()
+public Intervalo interseccion(Intervalo intervalo)
 public Intervalo[] trocear(int trozos)
 
 </div>
+

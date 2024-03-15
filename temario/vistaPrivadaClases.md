@@ -1,5 +1,7 @@
 # Vista Privada de las Clases
 
+> [Punto de partida](ejercicios/001/README.md)
+
 ## Definición de Atributos
 
 - **Datos constantes**
