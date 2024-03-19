@@ -11,3 +11,6 @@
 - Vista pública de objetos
   - Crear objetos
   - Enviar mensajes
+- Vista privada de las clases
+  - Implementar la vista privada de una clase
+  - Instanciarla y ver su funcionamiento de modo individual
