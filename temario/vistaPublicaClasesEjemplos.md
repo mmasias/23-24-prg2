@@ -112,31 +112,8 @@ class CuentaBancaria {
     public boolean transferir(double cantidad, CuentaBancaria destino)
     public String obtenerNumeroDeCuenta()
     public String obtenerTitular()
-    public void cambiarPIN(String nuevoPIN)
-    public boolean validarPIN(String PIN)
-    public void bloquearCuenta()
-    public void desbloquearCuenta()
-    public String generarEstadoDeCuenta()
-    public void establecerLimiteRetiroDiario(double limite)
-    public double obtenerLimiteRetiroDiario()
-    public boolean establecerNotificaciones(boolean activar, String tipo) 
-    public void añadirTitularSecundario(String titular)
-    public void eliminarTitularSecundario(String titular)
-}
-```
-
----
-
-```java
-class CuentaBancaria {
-    public void depositar(double cantidad)
-    public boolean retirar(double cantidad)
-    public double consultarSaldo()
-    public boolean transferir(double cantidad, CuentaBancaria destino)
-    public String obtenerNumeroDeCuenta()
-    public String obtenerTitular()
-    public void cambiarPIN(String nuevoPIN)
-    public boolean validarPIN(String PIN)
+    public void cambiarPin(String nuevoPin)
+    public boolean validarPin(String pin)
     public void bloquearCuenta()
     public void desbloquearCuenta()
     public String generarEstadoDeCuenta()
