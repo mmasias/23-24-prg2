@@ -1,0 +1,34 @@
+
+public class Visitante {
+    public Visitante(String nombre, int edad);
+    public String obtenerNombre();
+    public int obtenerEdad();
+}
+
+Class Pelicula {
+    public pelicula(String nombre, int duraccion, int sala);
+    public String obtenerNombre();
+    public int obtenerDuraccion();
+    public int obtenerSala();
+}
+
+Class Ticket {
+    public ticket(Pelicula pelicula, Visitante visitante, LocalDate fecha, int asiento, double precio, boolean descuento);
+    public int obtenerAsiento();
+    public double obtenerPrecio();
+    public boolean descuento();
+}
+
+Class Cine {
+    public Cine(LocalDate apertura, LocalDate cierre);
+    public boolean abierto();
+    public Ticket comprarTicket(Visitante visitante);
+}
+
+Class App {
+    Cine cinepolis = new Cine(apertura, cierre);
+    Pelicula shrek = new Pelicula("shrek", duraccion, sala);
+    Visitante elena = new Visitante("Elena", edad);
+
+    cinepolis.comprarTicket(elena);
+}
