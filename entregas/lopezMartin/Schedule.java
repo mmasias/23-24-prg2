@@ -26,6 +26,12 @@ public class Schedule {
         return schedule;
     }    
 
+    public void switchSubject(int firstDay, int firstHour, int secondDay, int secondHour){
+        Subject asignaturaTemporal = subjects[firstDay-1][firstHour-1];
+        subjects[firstDay-1][firstHour-1] = subjects[secondDay-1][secondHour-1];
+        subjects[secondDay-1][secondHour-1] = asignaturaTemporal; 
+    }
+
     public static void main(String[] args) {
         
         Schedule schedule = new Schedule();
@@ -56,6 +62,8 @@ public class Schedule {
         schedule.addSubject(mateDiscreta, 2, 2);
         schedule.addSubject(mateDiscreta, 3, 1);
         schedule.addSubject(mateDiscreta, 3, 2);
+
+        schedule.switchSubject(1,2,1,3);
     
         System.out.println(schedule.show());
 
