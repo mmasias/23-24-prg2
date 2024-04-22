@@ -10,8 +10,8 @@
       - [x] [Vista pública de las clases](vistaPublicaClases.md) / [Ejemplos](vistaPublicaClasesEjemplos.md)
       - [x] [Vista Pública de los objetos](vistaPublicaObjetos.md)
       - [x] [Vista privada de las clases](vistaPrivadaClases.md) / Ejemplos
-      - [ ] Vista privada de los objetos
-  - [ ] Colaboración entre objetos: HOOD
+      - [x] Vista privada de los objetos
+  - [x] [Colaboración entre objetos: HOOD](hood.md)
   - Programación orientada a objetos
     - [ ] Relación de Herencia
     - [ ] Herencia por extensión
