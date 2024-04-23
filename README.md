@@ -28,6 +28,6 @@ Repo de materiales y proyectos de la asignatura **Programación II** del [Grado 
 
 NOTA: *Algunos enlaces podrían requerir **credenciales de acceso al campus** o a otros espacios colaborativos.*
 
-- Hoja de asistencia et-al
+- [Hoja de asistencia et-al](https://docs.google.com/spreadsheets/d/1kzA5eHJtHyxrxYVbTrbaM8zTaQAkO99sw1cy2aXucuw/edit?usp=sharing)
 - Libro de la asignatura
 - [U.Santa Tecla](https://github.com/USantaTecla-0-general/3-publicaciones), Prof. Dr. Luis Fernández
