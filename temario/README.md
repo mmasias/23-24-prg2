@@ -10,8 +10,8 @@
       - [x] [Vista pública de las clases](vistaPublicaClases.md) / [Ejemplos](vistaPublicaClasesEjemplos.md)
       - [x] [Vista Pública de los objetos](vistaPublicaObjetos.md)
       - [x] [Vista privada de las clases](vistaPrivadaClases.md) / Ejemplos
-      - [ ] Vista privada de los objetos
-  - [ ] Colaboración entre objetos: HOOD
+      - [x] Vista privada de los objetos
+  - [x] [Colaboración entre objetos: HOOD](hood.md)
   - Programación orientada a objetos
     - [ ] Relación de Herencia
     - [ ] Herencia por extensión
@@ -22,25 +22,6 @@
     - [ ] Polimorfismo
     - [ ] Conversión de Tipos
     - [ ] Herencia y Enumerados
-- [ ] Programación modular
-  - Jerarquía de Paquetes
-  - Visibilidad de Clasificadores
-  - Importación de Clasificadores
-  - Visibilidad de Miembros
-  - Paquetes y Herencia
-  - API de J2SE
-- [ ] Programación con excepciones
-  - Elevación de Excepciones
-  - Captura de Excepciones
-  - Delegación de Excepciones
-  - Excepciones Polimorficas
-  - Clasificación de Excepciones
-- [ ] Programación parametrizada
-  - Clases Genéricas
-  - Parámetros Limitados
-  - Parámetros Comodines
-  - Métodos Genéricos
-  - Colecciones
 
 ## Temario++
 
