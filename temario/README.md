@@ -22,25 +22,6 @@
     - [ ] Polimorfismo
     - [ ] Conversión de Tipos
     - [ ] Herencia y Enumerados
-- [ ] Programación modular
-  - Jerarquía de Paquetes
-  - Visibilidad de Clasificadores
-  - Importación de Clasificadores
-  - Visibilidad de Miembros
-  - Paquetes y Herencia
-  - API de J2SE
-- [ ] Programación con excepciones
-  - Elevación de Excepciones
-  - Captura de Excepciones
-  - Delegación de Excepciones
-  - Excepciones Polimorficas
-  - Clasificación de Excepciones
-- [ ] Programación parametrizada
-  - Clases Genéricas
-  - Parámetros Limitados
-  - Parámetros Comodines
-  - Métodos Genéricos
-  - Colecciones
 
 ## Temario++
 
