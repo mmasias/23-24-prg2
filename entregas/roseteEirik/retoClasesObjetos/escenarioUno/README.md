@@ -34,4 +34,4 @@ Nombre del centro comercial: Carrefour El Alisal
 
 ### Parte 3 - Vista privada de clases
 
-Implemente este examen en el escenario que se ha mencionado arriba, (empleando estrictamente la vista privada de clases que ha propuesto)
+Implemente este escenario que se ha mencionado arriba, (empleando estrictamente la vista privada de clases que ha propuesto)
