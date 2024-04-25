@@ -12,13 +12,14 @@
       - [x] [Vista privada de las clases](vistaPrivadaClases.md) / Ejemplos
       - [x] Vista privada de los objetos
   - [x] [Colaboración entre objetos: HOOD](hood.md)
+    - [ ] [Desarrollo de una aplicación usano HOOD](https://github.com/mmasias/23-24-prg2-tictactoe/blob/main/README.md) 
   - Programación orientada a objetos
     - [ ] Relación de Herencia
-    - [ ] Herencia por extensión
-    - [ ] Clases Abstractas
-    - [ ] Herencia por Implementación
-    - [ ] Limitaciones de la Herencia
-    - [ ] Beneficios de la Herencia
+      - [ ] Herencia por extensión
+      - [ ] Clases Abstractas
+      - [ ] Herencia por Implementación
+      - [ ] Limitaciones de la Herencia
+      - [ ] Beneficios de la Herencia
     - [ ] Polimorfismo
     - [ ] Conversión de Tipos
     - [ ] Herencia y Enumerados
