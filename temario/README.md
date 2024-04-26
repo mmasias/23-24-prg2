@@ -12,7 +12,7 @@
       - [x] [Vista privada de las clases](vistaPrivadaClases.md) / Ejemplos
       - [x] Vista privada de los objetos
   - [x] [Colaboración entre objetos: HOOD](hood.md)
-    - [ ] [Desarrollo de una aplicación usano HOOD](https://github.com/mmasias/tictactoe/blob/main/README.md) 
+    - [ ] [Desarrollo de una aplicación usando HOOD](https://github.com/mmasias/tictactoe/blob/main/README.md) 
   - Programación orientada a objetos
     - [ ] Relación de Herencia
       - [ ] Herencia por extensión
