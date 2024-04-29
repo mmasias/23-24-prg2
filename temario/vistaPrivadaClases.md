@@ -140,7 +140,7 @@ Si el tipo devuelto no es_ void, se determinará el valor devuelto por el métod
 
 ```
 
-### Evita la multiplicidad de identificadores innecesarios
+### Para evitar la multiplicidad de identificadores innecesarios
 
 Sirve para resolución de ambigüedades en la colisión de parámetros o declaraciones locales con el mismo nombre que los atributos;
 
@@ -153,7 +153,7 @@ Sirve para resolución de ambigüedades en la colisión de parámetros o declara
 
 ```
 
-### Reutilización de constructures
+### Para la reutilización de constructures
 
 Sirve para la reutilización de contructores en la definición de otros constructores, siendo la primera sentencia del constructor, mediante la sintaxis:
 
@@ -179,7 +179,7 @@ Sirve para la reutilización de contructores en la definición de otros construc
 
 ```
 
-### Reutilización de métodos
+### Para la reutilización de métodos
 
 Sirve para la reutilización de métodos en la codificación de otros métodos
 
