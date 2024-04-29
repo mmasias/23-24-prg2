@@ -1,10 +1,10 @@
 class Restaurante {
-    public Restaurante (localDate horaApertura, localDate horaCierre);
+    
+    public Restaurante (LocalDate horaApertura, LocalDate horaCierre);
+    public Restaurante (Intervalo horas);
+    
     public boolean abierto();
-    public boolean diaDisponible();
-    public boolean mesaDisponible();
-    public boolean horaDisponible();
-    public void hacerReserva();
-    public void recibirCliente (Cliente nombre);
-
+    public boolean disponible(Intervalo horas);
+    public boolean disponible(LocalDate dia);
+    public void recibirCliente (Cliente cliente);
 }
