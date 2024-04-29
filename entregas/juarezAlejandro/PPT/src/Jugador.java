@@ -6,6 +6,7 @@ public class Jugador {
 
     private String nombre;
     private Opcion opcion;
+    private int victorias;
 
     public Jugador(String nombre) {
         this.nombre = nombre;
@@ -33,8 +34,15 @@ public class Jugador {
         return opcion;
     }
 
+    public void incrementarVictorias() {
+        victorias++;
+    }
+
+    public int getVictorias() {
+        return victorias;
+    }
+
     public enum Opcion {
         Piedra, Papel, Tijera
     }
-
 }

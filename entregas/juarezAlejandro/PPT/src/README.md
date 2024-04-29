@@ -16,3 +16,5 @@
 3.  Siguiendo con la misma idea del Juego, ¿Que tiene que llevar el jugador?
     - Nombre
     - Opciones
+
+---
