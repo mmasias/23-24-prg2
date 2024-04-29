@@ -15,7 +15,15 @@ public class Juego {
     }
 
     public void determinarGanador() {
-
+        if (jugador1.getOpcion() == jugador2.getOpcion()) {
+            System.out.println("Empate!");
+        } else if ((jugador1.getOpcion() == Jugador.Opcion.Piedra && jugador2.getOpcion() == Jugador.Opcion.Tijera) ||
+                (jugador1.getOpcion() == Jugador.Opcion.Papel && jugador2.getOpcion() == Jugador.Opcion.Piedra) ||
+                (jugador1.getOpcion() == Jugador.Opcion.Tijera && jugador2.getOpcion() == Jugador.Opcion.Papel)) {
+            System.out.println(jugador1.getNombre() + " gana!");
+        } else {
+            System.out.println(jugador2.getNombre() + " gana!");
+        }
     }
 
 }

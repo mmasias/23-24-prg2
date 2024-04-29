@@ -13,12 +13,6 @@
 
 ---
 
-3. Se agrega a Ppt el metodo para determinar quien gana
-
----
-
-4. Se crea la parte Juego con lo "lógico" de cada clase, sin embargo aun no se crea la parte de determinarGanador ya que aún no e pensado como hacerlo
-
----
-
-5. Se crea la clase Jugador
+3.  Siguiendo con la misma idea del Juego, ¿Que tiene que llevar el jugador?
+    - Nombre
+    - Opciones
