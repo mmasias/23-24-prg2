@@ -68,4 +68,4 @@ El método propuesto es una simplificación extrema y variación de HOOD (diseñ
 1. Codificar los métodos
 1. Recapitular nuevas clases y métodos.
 
-Usaremos este método para desarrollar el juego del [Tic tac toe](https://github.com/mmasias/23-24-prg2-tictactoe/blob/main/README.md)
+Usaremos este método para desarrollar el juego del [Tic tac toe](https://github.com/mmasias/tictactoe/blob/main/README.md)
