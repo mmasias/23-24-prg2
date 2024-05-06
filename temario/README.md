@@ -32,5 +32,3 @@
 ---
 
 Con todo esto, [a día de hoy deberíamos saber](aDiaDeHoy.md)...
-
-
