@@ -3,6 +3,7 @@ package retosvarios;
 class carrefour {
     public static void main(String[] args) {
 
+        double [] checkout = {0, 0, 0, 0};
         for (int hTime = 9; hTime <= 21; hTime++) {
             for (int timeMinutes = 0; timeMinutes <= 24; timeMinutes++) {
                 boolean Client = Math.random() < 0.6;
@@ -10,6 +11,12 @@ class carrefour {
                 // arrivalClient(Client, reception);
                 for(int column = 0;column<reception.length;column++) {
                     System.out.print(reception[column] + " ");
+                    if(Client == true && reception [column] == false){
+                        reception[0] = true;
+                        double clientTime = Math.random() * (14 - 5 + 1) + 5;
+                        checkout [column] = clientTime; 
+                        checkout [column] = checkout [column] -1;
+                    }
                 } System.out.println();
 
             }
