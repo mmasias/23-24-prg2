@@ -119,3 +119,24 @@ public class Persona {
 |||*Bloques estáticos*: Se ejecutan solo una vez, cuando se carga la clase por primera vez.
 |**Sobrecarga**|Pueden sobrecargarse para ofrecer diferentes formas de inicializar un objeto con distintos parámetros.|No permiten sobrecarga.
 |**Función principal**|Inicializan las propiedades de una instancia y permiten recibir parámetros para ajustar los valores.|Se utilizan para inicializar propiedades comunes a todos los constructores, para reducir duplicación de código o para realizar tareas iniciales específicas que no dependen de los parámetros de entrada.
+
+```java
+public class Persona {
+    private String nombre;
+    private int edad;
+
+    {
+        nombre = "Sin nombre";
+        edad = 0;
+    }
+
+    static {
+        System.out.println("Clase Persona cargada");
+    }
+
+    public Persona(String nombre, int edad) {
+        this.nombre = nombre;
+        this.edad = edad;
+    }
+}
+```
