@@ -14,3 +14,5 @@
 - Vista **privada** de las clases
   - Implementar la vista privada de una clase
   - Instanciarla y ver su funcionamiento de modo individual
+- Desarrollar un programa pequeño utilizando HOOD & *flipping@beach*
+- Contar clases e instancias.
