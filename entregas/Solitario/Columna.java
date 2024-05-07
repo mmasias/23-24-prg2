@@ -21,4 +21,14 @@ public class Columna {
         throw new UnsupportedOperationException("Unimplemented method 'voltearCarta'");
     }
 
+    public boolean apilable(Carta carta) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'apilable'");
+    }
+
+    public void poner(Carta carta) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'poner'");
+    }
+
 }
