@@ -7,13 +7,21 @@
 |*Ej.: día, mes y año de una fecha concreta.*|*Ej.: los nombres y duración de los meses de cualquier fecha, excepto en Febrero de años bisiestos...*|
 |Si no hay objetos, no hay atributos de instancia|Si no hay objetos, **sí** hay atributos de clase|
 |**Métodos de instancia** cuyos mensajes se lanzan sobre un objeto particular de la clase|**Métodos de clase** cuyos mensajes NO se lanzan sobre un objetos particular|
-|*Ej.: si es primavera, si una fecha concreta se encuentra en una año bisiesto​*|*Ej. si un año (de cualquier fecha, no de una fecha particular) es bisiesto*|
+|*Ej.: si una fecha concreta está dentro de la primavera, si una fecha concreta se encuentra en un año bisiesto​*|*Ej.: si un año (de cualquier fecha, no de una fecha particular) es bisiesto*|
 |Si no hay objetos, no hay mensajes|Si no hay objetos, no hay mensajes|
-
 
 ## Atributos y métodos estaticos
 
-Caracterizados por la palabra reservada static tras su visibilidad;
+Caracterizados por la palabra reservada `static` tras su visibilidad
+
+<div align=center>
+
+|||
+|-|-|
+|**Atributo**|`<Visibilidad> static <Tipo> <atributoEstático> = <Valor>`|
+|**Método**|`<Visibilidad> static <TipoDevuelto> <métodoEstático>([<argumento> { <argumento>, }])`|
+
+</div>
 
 ### Atributos estáticos
 
