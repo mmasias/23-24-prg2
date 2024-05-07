@@ -16,7 +16,7 @@ class Klondike {
             palos[i] = new Palo();
         }
         for (int i = 0; i < 7; i++) {
-            columnas[i] = new Columna();
+            columnas[i] = new Columna(baraja, i + 1);
         }
     }
 
