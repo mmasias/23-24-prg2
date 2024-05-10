@@ -10,15 +10,17 @@
       - [x] [Vista pública de las clases](vistaPublicaClases.md) / [Ejemplos](vistaPublicaClasesEjemplos.md)
       - [x] [Vista Pública de los objetos](vistaPublicaObjetos.md)
       - [x] [Vista privada de las clases](vistaPrivadaClases.md) / Ejemplos
-      - [x] Vista privada de los objetos
+      - [x] [Vista privada de los objetos](vistaPrivadaObjetos.md)
+      - [x] [Miembros de clase](miembrosClase.md)
   - [x] [Colaboración entre objetos: HOOD](hood.md)
+    - [x] [Desarrollo de una aplicación usando HOOD](https://github.com/mmasias/tictactoe/blob/main/README.md) 
   - Programación orientada a objetos
     - [ ] Relación de Herencia
-    - [ ] Herencia por extensión
-    - [ ] Clases Abstractas
-    - [ ] Herencia por Implementación
-    - [ ] Limitaciones de la Herencia
-    - [ ] Beneficios de la Herencia
+      - [ ] Herencia por extensión
+      - [ ] Clases Abstractas
+      - [ ] Herencia por Implementación
+      - [ ] Limitaciones de la Herencia
+      - [ ] Beneficios de la Herencia
     - [ ] Polimorfismo
     - [ ] Conversión de Tipos
     - [ ] Herencia y Enumerados
@@ -30,5 +32,3 @@
 ---
 
 Con todo esto, [a día de hoy deberíamos saber](aDiaDeHoy.md)...
-
-
