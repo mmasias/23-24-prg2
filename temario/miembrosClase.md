@@ -6,7 +6,7 @@
 |**Atributos de instancia** presentes en cada uno de los objetos de la clase|**Atributos de clase** compartidos por la globalidad de objetos de la clase|
 |*Ej.: día, mes y año de una fecha concreta.*|*Ej.: los nombres y duración de los meses de cualquier fecha, excepto en Febrero de años bisiestos...*|
 |Si no hay objetos, no hay atributos de instancia|Si no hay objetos, **sí** hay atributos de clase|
-|**Métodos de instancia** cuyos mensajes se lanzan sobre un objeto particular de la clase|**Métodos de clase** cuyos mensajes NO se lanzan sobre un objetos particular|
+|**Métodos de instancia** cuyos mensajes se lanzan sobre un objeto particular de la clase|**Métodos de clase** cuyos mensajes NO se lanzan sobre objetos particulares|
 |*Ej.: si una fecha concreta está dentro de la primavera, si una fecha concreta se encuentra en un año bisiesto​*|*Ej.: si un año (de cualquier fecha, no de una fecha particular) es bisiesto*|
 
 ## Atributos y métodos estaticos
