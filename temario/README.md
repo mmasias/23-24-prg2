@@ -13,7 +13,10 @@
       - [x] [Vista privada de los objetos](vistaPrivadaObjetos.md)
       - [x] [Miembros de clase](miembrosClase.md)
   - [x] [Colaboración entre objetos: HOOD](hood.md)
-    - [x] [Desarrollo de una aplicación usando HOOD](https://github.com/mmasias/tictactoe/blob/main/README.md) 
+    - [x] Desarrollo de aplicaciones usando HOOD:
+      - [x] [Tic Tac Toe](https://github.com/mmasias/tictactoe/blob/main/README.md)
+      - [x] [Klondike](https://github.com/mmasias/23-24-pyKlondike)
+      - [x] [Blackjack](https://github.com/mmasias/23-24-pyKlondike/tree/XXI)
   - Programación orientada a objetos
     - [ ] Relación de Herencia
       - [ ] Herencia por extensión
