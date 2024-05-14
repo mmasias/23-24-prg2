@@ -18,7 +18,7 @@
       - [x] [Klondike](https://github.com/mmasias/23-24-pyKlondike)
       - [x] [Blackjack](https://github.com/mmasias/23-24-pyKlondike/tree/XXI)
   - Programación orientada a objetos
-    - [ ] Relación de Herencia
+    - [ ] [Relación de Herencia](herencia.md)
       - [ ] Herencia por extensión
       - [ ] Clases Abstractas
       - [ ] Herencia por Implementación
