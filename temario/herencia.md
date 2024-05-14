@@ -8,11 +8,11 @@ En Programación Orientada a Objetos es la transmisión de todos los miembros (a
 
 <div align=center>
 
-|Clase base|Clase derivada|
-|-|-|
-|La que transmite|La que recibe la transmisión
-|padre|hija|
-|Superclase|Subclase|
+||Clase base|Clase derivada|
+|-|-|-|
+||La que transmite|La que recibe la transmisión
+|*también llamadas*|padre|hija|
+|*también llamadas (aunque en desuso)*|Superclase|Subclase|
 
 </div>
 
