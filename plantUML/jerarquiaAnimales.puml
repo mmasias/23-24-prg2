@@ -47,7 +47,7 @@ class Humano {
 - celulas
 - huesos
 - labios
-- racio cinio
+- raciocinio
 + comer()
 + romperHuesos()
 + mamar()
