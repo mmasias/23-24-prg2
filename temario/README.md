@@ -10,11 +10,15 @@
       - [x] [Vista pública de las clases](vistaPublicaClases.md) / [Ejemplos](vistaPublicaClasesEjemplos.md)
       - [x] [Vista Pública de los objetos](vistaPublicaObjetos.md)
       - [x] [Vista privada de las clases](vistaPrivadaClases.md) / Ejemplos
-      - [x] Vista privada de los objetos
+      - [x] [Vista privada de los objetos](vistaPrivadaObjetos.md)
+      - [x] [Miembros de clase](miembrosClase.md)
   - [x] [Colaboración entre objetos: HOOD](hood.md)
-    - [ ] [Desarrollo de una aplicación usando HOOD](https://github.com/mmasias/tictactoe/blob/main/README.md) 
+    - [x] Desarrollo de aplicaciones usando HOOD:
+      - [x] [Tic Tac Toe](https://github.com/mmasias/tictactoe/blob/main/README.md)
+      - [x] [Klondike](https://github.com/mmasias/23-24-pyKlondike)
+      - [x] [Blackjack](https://github.com/mmasias/23-24-pyKlondike/tree/XXI)
   - Programación orientada a objetos
-    - [ ] Relación de Herencia
+    - [ ] [Relación de Herencia](herencia.md)
       - [ ] Herencia por extensión
       - [ ] Clases Abstractas
       - [ ] Herencia por Implementación
@@ -31,5 +35,3 @@
 ---
 
 Con todo esto, [a día de hoy deberíamos saber](aDiaDeHoy.md)...
-
-
