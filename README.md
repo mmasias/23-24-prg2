@@ -11,7 +11,7 @@ Repo de materiales y proyectos de la asignatura **Programación II** del [Grado 
 - Evaluaciones
   - Evaluación continua: [Retos!](evaluaciones/retos/README.md)
   - Exámenes
-    - Parcial: Enunciado | Repositorio de trabajo y entrega.
+    - Parcial: [Enunciado](https://github.com/mmasias/23-24-prg2-ep) | [Repositorio de entrega](https://github.com/mmasias/23-24-prg2-ep).
     - Final: Enunciado | Repositorio de trabajo y entrega.
 
 > ***NOTA:*** Los repositorios de entrega de exámenes estarán disponible días antes del examen. El repositorio con el enunciado del examen se activa al inicio del examen y permitirá entregas hasta la finalización del mismo.
@@ -28,6 +28,6 @@ Repo de materiales y proyectos de la asignatura **Programación II** del [Grado 
 
 NOTA: *Algunos enlaces podrían requerir **credenciales de acceso al campus** o a otros espacios colaborativos.*
 
-- Hoja de asistencia et-al
+- [Hoja de asistencia et-al](https://docs.google.com/spreadsheets/d/1kzA5eHJtHyxrxYVbTrbaM8zTaQAkO99sw1cy2aXucuw/edit?usp=sharing)
 - Libro de la asignatura
 - [U.Santa Tecla](https://github.com/USantaTecla-0-general/3-publicaciones), Prof. Dr. Luis Fernández
