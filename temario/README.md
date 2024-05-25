@@ -9,48 +9,24 @@
       - [x] [Introducción](introVistas.md)
       - [x] [Vista pública de las clases](vistaPublicaClases.md) / [Ejemplos](vistaPublicaClasesEjemplos.md)
       - [x] [Vista Pública de los objetos](vistaPublicaObjetos.md)
-      - [ ] Vista privada de las clases
-        - Definición de atributos
-        - Definición de constructores
-        - Definición de métodos
-        - Referencia this
-        - Métodos privados
-        - Aserciones
-      - [ ] Vista privada de los objetos
-      - [ ] Miembros de clase
-      - [ ] Clases de recubrimiento
-      - [ ] Cadenas de caracteres
-      - [ ] Enumerados
-  - [ ] Colaboración entre objetos: HOOD
+      - [x] [Vista privada de las clases](vistaPrivadaClases.md) / Ejemplos
+      - [x] [Vista privada de los objetos](vistaPrivadaObjetos.md)
+      - [x] [Miembros de clase](miembrosClase.md)
+  - [x] [Colaboración entre objetos: HOOD](hood.md)
+    - [x] Desarrollo de aplicaciones usando HOOD:
+      - [x] [Tic Tac Toe](https://github.com/mmasias/tictactoe/blob/main/README.md)
+      - [x] [Klondike](https://github.com/mmasias/23-24-pyKlondike)
+      - [x] [Blackjack](https://github.com/mmasias/23-24-pyKlondike/tree/XXI)
   - Programación orientada a objetos
-    - [ ] Relación de Herencia
-    - [ ] Herencia por extensión
-    - [ ] Clases Abstractas
-    - [ ] Herencia por Implementación
-    - [ ] Limitaciones de la Herencia
-    - [ ] Beneficios de la Herencia
+    - [ ] [Relación de Herencia](herencia.md)
+      - [ ] Herencia por extensión
+      - [ ] Clases Abstractas
+      - [ ] Herencia por Implementación
+      - [ ] Limitaciones de la Herencia
+      - [ ] Beneficios de la Herencia
     - [ ] Polimorfismo
     - [ ] Conversión de Tipos
     - [ ] Herencia y Enumerados
-- [ ] Programación modular
-  - Jerarquía de Paquetes
-  - Visibilidad de Clasificadores
-  - Importación de Clasificadores
-  - Visibilidad de Miembros
-  - Paquetes y Herencia
-  - API de J2SE
-- [ ] Programación con excepciones
-  - Elevación de Excepciones
-  - Captura de Excepciones
-  - Delegación de Excepciones
-  - Excepciones Polimorficas
-  - Clasificación de Excepciones
-- [ ] Programación parametrizada
-  - Clases Genéricas
-  - Parámetros Limitados
-  - Parámetros Comodines
-  - Métodos Genéricos
-  - Colecciones
 
 ## Temario++
 
@@ -59,5 +35,3 @@
 ---
 
 Con todo esto, [a día de hoy deberíamos saber](aDiaDeHoy.md)...
-
-

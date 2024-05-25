@@ -1,0 +1,74 @@
+@startuml
+
+hide stereotype
+
+class Animal{
+- celulas
++ comer()
+}
+class Vertebrado {
+- celulas
+- huesos
++ comer()
++ romperHuesos()
+}
+class Invertebrado {
+- celulas
++ comer()
+}
+
+class Mamifero {
+- celulas
+- huesos
+- labios
++ comer()
++ romperHuesos()
++ mamar()
+}
+class Ave {
+- celulas
+- huesos
+- pico
++ comer()
++ romperHuesos()
++ volar()
++ ponerHuevos()
+}
+class Canino {
+-celulas
+- huesos
+- labios
+- colmillos
++ comer()
++ romperHuesos()
++ mamar()
+}
+class Humano {
+- celulas
+- huesos
+- labios
+- raciocinio
++ comer()
++ romperHuesos()
++ mamar()
++ pensar()
+}
+class Ornitorrinco {
+-celulas
+- huesos
+-pico
++ comer()
++ romperHuesos()
++ ponerHuevos()
++ mamar()
+}
+
+Animal <|-- Vertebrado
+Animal <|-- Invertebrado
+Vertebrado <|-- Mamifero
+Vertebrado <|-- Ave
+Mamifero <|-- Canino
+Mamifero <|-- Humano
+Mamifero <|-- Ornitorrinco
+Ave <|-- Ornitorrinco
+@enduml
