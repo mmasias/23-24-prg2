@@ -1,4 +1,4 @@
-package entregas.CentroComercial;
+package entregas.garciaLydia.Carrefour;
 
 public class Persona {
     private int items;
