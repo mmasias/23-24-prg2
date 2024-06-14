@@ -1,0 +1,187 @@
+public class Restaurante {
+    private String nombre;
+    private String direccion;
+    private String telefono;
+
+
+    public Restaurante(String nombre, String direccion, String telefono) {
+        this.nombre = nombre;
+        this.direccion = direccion;
+        this.telefono = telefono;
+    }
+
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
+}
+
+
+public class Mesa {
+    private int numero;
+    private int capacidad;
+    private boolean ocupada;
+
+
+    public Mesa(int numero, int capacidad) {
+        this.numero = numero;
+        this.capacidad = capacidad;
+        this.ocupada = false; // Inicialmente la mesa está desocupada
+    }
+
+
+    public int getNumero() {
+        return numero;
+    }
+
+    public void setNumero(int numero) {
+        this.numero = numero;
+    }
+
+    public int getCapacidad() {
+        return capacidad;
+    }
+
+    public void setCapacidad(int capacidad) {
+        this.capacidad = capacidad;
+    }
+
+    public boolean isOcupada() {
+        return ocupada;
+    }
+
+    public void setOcupada(boolean ocupada) {
+        this.ocupada = ocupada;
+    }
+}
+
+
+public class Cliente {
+    private String nombre;
+    private String telefono;
+
+
+    public Cliente(String nombre, String telefono) {
+        this.nombre = nombre;
+        this.telefono = telefono;
+    }
+
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
+}
+
+
+public class Reserva {
+    private Cliente cliente;
+    private Mesa mesa;
+    private String fecha;
+    private String hora;
+
+
+    public Reserva(Cliente cliente, Mesa mesa, String fecha, String hora) {
+        this.cliente = cliente;
+        this.mesa = mesa;
+        this.fecha = fecha;
+        this.hora = hora;
+    }
+
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
+
+    public Mesa getMesa() {
+        return mesa;
+    }
+
+    public void setMesa(Mesa mesa) {
+        this.mesa = mesa;
+    }
+
+    public String getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(String fecha) {
+        this.fecha = fecha;
+    }
+
+    public String getHora() {
+        return hora;
+    }
+
+    public void setHora(String hora) {
+        this.hora = hora;
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+
+        Restaurante restaurante = new Restaurante("Restaurante1", "Restaurante2", "Restaurante3");
+
+
+        Mesa mesa1 = new Mesa(1, 4);
+        Mesa mesa2 = new Mesa(2, 6);
+        Mesa mesa3 = new Mesa(3, 2);
+
+
+        Cliente cliente1 = new Cliente("Juan", "555-5678");
+        Cliente cliente2 = new Cliente("María", "555-9876");
+
+
+        Reserva reserva1 = new Reserva(cliente1, mesa1, "2024-03-15", "19:00");
+
+
+        mesa1.setOcupada(true);
+
+
+        System.out.println("Reserva realizada por " + reserva1.getCliente().getNombre() +
+                " para la mesa " + reserva1.getMesa().getNumero() +
+                " el día " + reserva1.getFecha() + " a las " + reserva1.getHora());
+
+
+        if (mesa1.isOcupada()) {
+            System.out.println("La mesa " + mesa1.getNumero() + " está ocupada.");
+        } else {
+            System.out.println("La mesa " + mesa1.getNumero() + " está libre.");
+        }
+    }
+}
