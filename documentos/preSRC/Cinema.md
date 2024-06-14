@@ -1,4 +1,3 @@
-```java
 package documentos.preSRC;
 
 class Cinema {
@@ -9,6 +8,7 @@ class Cinema {
     public Ticket buyTicket(Moviegoer moviegoer, Movie movie) {
         return
     }
+
 }
 
 class Movie {
@@ -64,4 +64,3 @@ class Simulation {
 
     }
 }
-```
