@@ -12,7 +12,8 @@ Repo de materiales y proyectos de la asignatura **Programación II** del [Grado 
   - Evaluación continua: [Retos!](evaluaciones/retos/README.md)
   - Exámenes
     - Parcial: [Enunciado](https://github.com/mmasias/23-24-prg2-ep) | [Repositorio de entrega](https://github.com/mmasias/23-24-prg2-ep).
-    - Final: Enunciado | [Repositorio de trabajo y entrega](https://classroom.github.com/a/sE-EGMrx)
+    - Final: [Enunciado](https://github.com/mmasias/23-24-PRG2-examenFinal) | [Repositorio de trabajo y entrega](https://classroom.github.com/a/sE-EGMrx)
+    - Extraordinario: [Enunciado](https://docs.google.com/presentation/d/1rAec1FEdtUFlQWJBtW8YAG4o4q_w5WOmhwTutOohf7A/edit?usp=sharing) | [Repositorio de trabajo y entrega](https://classroom.github.com/a/BeIjBWlK)
 
 > ***NOTA:*** Los repositorios de entrega de exámenes estarán disponible días antes del examen. El repositorio con el enunciado del examen se activa al inicio del examen y permitirá entregas hasta la finalización del mismo.
 
