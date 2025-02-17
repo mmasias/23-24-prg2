@@ -2,27 +2,15 @@
 
 <div align=center>
 
-|BASES|CÓDIGO MÁQUINA|ENSAMBLADOR|PROGRAMACIÓN DE ALTO NIVEL
-|-|:-:|:-:|:-:|
-***Abstracción***|{0,1}|Identificadores|Subprogramas
-***Encapsulación***|Nula|Nula|Reglas de Ámbito
-***Modularización***|Nula|Macros|Subprogramas
-***Jerarquización***|Nula|Nula|Expresiones, Registros y Subprogramas
-
-|BASES|PROGRAMACIÓN ESTRUCTURADA|PROGRAMACIÓN MODULAR|
-|-|:-:|:-:|
-***Abstracción***|Estructuras de|Espacios de nombre
-***Encapsulación***|control del flujo|Privacidad en módulos
-***Modularización***|de ejecución|Módulos
-***Jerarquización***||Jerarquías de dependencia entre módulos
-
-|BASES|TAD|PROGRAMACIÓN ORIENTADA A OBJETOS|
-|-|:-:|:-:|
-***Abstracción***|Vista pública|Herencia y polimorfismo
-***Encapsulación***|Vista privada|Herencia y polimorfismo
-***Modularización***|TAD's|Clases
-***Jerarquización***|Jerarquías de composición y dependencia|Jerarquías de clasificación
-
+| | **ABSTRACCIÓN** | **ENCAPSULACIÓN** | **MODULARIZACIÓN** | **JERARQUIZACIÓN** |
+|--|:-:|:-:|:-:|:-:|
+|**CÓDIGO MÁQUINA**|{0,1}|Nula|Nula|Nula|
+|**ENSAMBLADOR**|Identificadores|Nula|Macros|Nula|
+|**PROGRAMACIÓN DE ALTO NIVEL**|Subprogramas|Reglas de Ámbito|Subprogramas|Expresiones, Registros y Subprogramas|
+|**PROGRAMACIÓN ESTRUCTURADA**|Estructuras de control del flujo|control del flujo de ejecución|control del flujo de ejecución||
+|**PROGRAMACIÓN MODULAR**|Espacios de nombre|Privacidad en módulos|Módulos|Jerarquías de dependencia entre módulos|
+|**TAD**|Vista pública|Vista privada|TAD's|Jerarquías de composición y dependencia|
+|**PROGRAMACIÓN ORIENTADA A OBJETOS**|Herencia y polimorfismo|Herencia y polimorfismo|Clases|Jerarquías de clasificación|
 ---
 
 **OO = TAD + Herencia & Polimorfismo**
